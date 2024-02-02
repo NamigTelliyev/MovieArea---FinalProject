@@ -1,0 +1,51 @@
+Home\
+Categories\
+3.Istek Listesi\
+4.Sepetteki filmler\
+Hakkımızda\
+7.add film daveti
+6.Profilim\
+
+
+2.Trend\en cok izlenen\arsiv\imdp
+\site puanlamasi\Seriler
+
+
+mockapi
+name
+description
+price
+image
+popularity
+date
+dublaj-altyazi
+yerli yabanci- turk-az-hind-amerikan-ispan-other
+janr\categories
+y[netmen
+trailer
+imdb
+seri
+pegi
+site-puanlamasi
+
+
+
+header altindaki skrolda 5dene popular film olsun
+
+sec 2 de populer filmler olsun -popularity
+sec 3de trenddeki filmler
+sec 4-de yeni filmler olsun- 2023 filmleri
+sec 5de en iyi seri filmler
+sec 6 editorun secimi
+
+footer
+
+
+
+
+
+
+
+
+
+https://www.youtube.com/watch?v=p1GmFCGuVjw
