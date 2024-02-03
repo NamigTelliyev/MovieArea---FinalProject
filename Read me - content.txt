@@ -2,7 +2,7 @@ Home\
 Categories\
 3.Istek Listesi\
 4.Sepetteki filmler\
-Hakkımızda\
+Hakkımızda\ ✅
 7.add film daveti
 6.Profilim\
 
@@ -11,7 +11,7 @@ Hakkımızda\
 \site puanlamasi\Seriler
 
 
-mockapi
+Json Server:
 name
 description
 price
@@ -38,7 +38,7 @@ sec 4-de yeni filmler olsun- 2023 filmleri
 sec 5de en iyi seri filmler
 sec 6 editorun secimi
 
-footer
+footer ✅
 
 
 
@@ -49,3 +49,7 @@ footer
 
 
 https://www.youtube.com/watch?v=p1GmFCGuVjw
+
+
+https://www.youtube.com/watch?v=uCyv2RRgA2s - npm json
+https://www.youtube.com/watch?v=Sswl0bTDEFU
