@@ -1,3 +1,6 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Marcellus&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Marcellus&display=swap");
 * {
@@ -43,7 +46,7 @@ header nav .navbarMain .navbarContent {
 }
 
 main {
-  background-color: #1D1D1D;
+  background-color: #1d1d1d;
 }
 main #homeSecMostPopularScroll {
   width: 100%;
@@ -233,9 +236,153 @@ main #homeSecMostPopularScroll .banner::before {
   bottom: 0;
   background: rgba(0, 0, 0, 0.5);
 }
+main .menuBanners {
+  position: relative;
+}
+main .menuBanners #olafBanner {
+  position: fixed;
+  top: -35px;
+  width: 150px;
+}
+main .menuBanners #deadpoolBanner {
+  position: fixed;
+  left: 0;
+  top: 50%;
+  width: 300px;
+}
+main .menuBanners #mitsuhaBanner {
+  position: fixed;
+  right: 0;
+  top: 50%;
+}
 main #homeSecPopular {
+  font-family: "Marcellus", serif;
   width: 100%;
-  height: 1000px;
+  max-width: initial;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 40%, rgba(0, 0, 0, 0.9) 100%);
+}
+main #homeSecPopular .secContent .containerOne {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+main #homeSecPopular .secContent .containerOne .content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+main #homeSecPopular .secContent .containerOne .content h2 {
+  color: white;
+  text-shadow: 1px 1px 2px #0b704e;
+  font-weight: 500;
+}
+main #homeSecPopular .secContent .containerOne .content h2 span {
+  color: #0b704e;
+  text-shadow: 1px 1px 2px white;
+}
+main #homeSecTrend {
+  font-family: "Marcellus", serif;
+  width: 100%;
+  max-width: initial;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 40%, rgba(0, 0, 0, 0.9) 100%);
+}
+main #homeSecTrend .secContent .containerOne {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+main #homeSecTrend .secContent .containerOne .content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+main #homeSecTrend .secContent .containerOne .content h2 {
+  color: white;
+  text-shadow: 1px 1px 2px #0b704e;
+  font-weight: 500;
+}
+main #homeSecTrend .secContent .containerOne .content h2 span {
+  color: #0b704e;
+  text-shadow: 1px 1px 2px white;
+}
+main #homeSecNewFilms {
+  font-family: "Marcellus", serif;
+  width: 100%;
+  max-width: initial;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 40%, rgba(0, 0, 0, 0.9) 100%);
+}
+main #homeSecNewFilms .secContent .containerOne {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+main #homeSecNewFilms .secContent .containerOne .content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+main #homeSecNewFilms .secContent .containerOne .content h2 {
+  color: white;
+  text-shadow: 1px 1px 2px #0b704e;
+  font-weight: 500;
+}
+main #homeSecNewFilms .secContent .containerOne .content h2 span {
+  color: #0b704e;
+  text-shadow: 1px 1px 2px white;
+}
+main #homeSecFilmSeries {
+  font-family: "Marcellus", serif;
+  width: 100%;
+  max-width: initial;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 40%, rgba(0, 0, 0, 0.9) 100%);
+}
+main #homeSecFilmSeries .secContent .containerOne {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+main #homeSecFilmSeries .secContent .containerOne .content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+main #homeSecFilmSeries .secContent .containerOne .content h2 {
+  color: white;
+  text-shadow: 1px 1px 2px #0b704e;
+  font-weight: 500;
+}
+main #homeSecFilmSeries .secContent .containerOne .content h2 span {
+  color: #0b704e;
+  text-shadow: 1px 1px 2px white;
+}
+main #homeSecRecommandedFilms {
+  font-family: "Marcellus", serif;
+  width: 100%;
+  max-width: initial;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 40%, rgba(0, 0, 0, 0.9) 100%);
+}
+main #homeSecRecommandedFilms .secContent .containerOne {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+main #homeSecRecommandedFilms .secContent .containerOne .content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+main #homeSecRecommandedFilms .secContent .containerOne .content h2 {
+  color: white;
+  text-shadow: 1px 1px 2px #0b704e;
+  font-weight: 500;
+}
+main #homeSecRecommandedFilms .secContent .containerOne .content h2 span {
+  color: #0b704e;
+  text-shadow: 1px 1px 2px white;
+}
+main #homeSecRecommandedFilms .secContent .containerTwo {
+  padding: 0 !important;
+  margin: 0 !important;
 }
 
 footer {
@@ -249,12 +396,18 @@ footer #footerSec {
   align-items: center;
 }
 footer #footerSec .footerContent {
+  padding: 0 !important;
+  margin: 0 !important;
+  width: 100%;
+  max-width: initial;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
 footer #footerSec .footerContent .containerOne {
+  padding: 0 !important;
+  margin: 0 !important;
   padding: 60px 0;
   width: 80%;
   display: flex;
@@ -460,8 +613,10 @@ footer #footerSec .footerContent .containerOne .contentThree .textContent .mapCo
   border-bottom: 1px solid rgba(255, 47, 15, 0.6666666667);
 }
 footer #footerSec .footerContent .containerTwo {
+  padding: 0 !important;
+  margin: 0 !important;
   width: 100%;
-  background-color: #0B704E;
+  background-color: #0b704e;
 }
 footer #footerSec .footerContent .containerTwo .content .textContent {
   display: flex;
@@ -475,4 +630,229 @@ footer #footerSec .footerContent .containerTwo .content .textContent p {
   color: white;
   margin: 0;
   padding: 10px;
+}
+
+main #loginsec {
+  width: 100%;
+  max-width: initial;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: url(/assets/Media/Images/Joker_banner.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+  backdrop-filter: blur(20px);
+}
+main #loginsec .secContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main #loginsec .secContent .containerOne .content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main #loginsec .secContent .containerOne .content .formBox {
+  position: relative;
+  width: 420px;
+  height: 500px;
+  background: transparent;
+  border: 2px solid #f5f5f5;
+  border-radius: 20px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border: 2px solid transparent; /* Başlangıçta border'ı şeffaf olarak ayarlayın */
+  animation: color 7s linear infinite; /* Animasyonu formBox sınıfına uygulayın */
+}
+main #loginsec .secContent .containerOne .content .formBox form {
+  position: absolute;
+  padding: 50px 40px;
+  border-radius: 8px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+main #loginsec .secContent .containerOne .content .formBox form h2 {
+  font-size: 48px;
+  color: #f5f5f5;
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  font-family: "Marcellus", serif;
+  text-shadow: 0 0 10px white;
+  transition: 0.4s;
+}
+main #loginsec .secContent .containerOne .content .formBox form .inputBox {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  margin: 30px 0;
+}
+main #loginsec .secContent .containerOne .content .formBox form .inputBox label {
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  font-size: 1em;
+  color: #1d1d1d;
+  font-weight: 500;
+  pointer-events: none;
+  color: transparent;
+  letter-spacing: 0.05em;
+  transition: 0.5s;
+}
+main #loginsec .secContent .containerOne .content .formBox form .inputBox input:focus ~ label,
+main #loginsec .secContent .containerOne .content .formBox form .inputBox input:valid ~ label {
+  top: -5px;
+  color: white;
+  text-shadow: 2px 2px 2px #0b704e;
+  font-size: 0.9em;
+  transition: 0.4s;
+}
+main #loginsec .secContent .containerOne .content .formBox form .inputBox input {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  outline: none;
+  font-weight: 600;
+  color: #f5f5f5;
+  position: relative;
+  width: 100%;
+  font-size: 1em;
+  letter-spacing: 0.05em;
+  transition: 0.5s;
+  z-index: 3;
+  box-shadow: 0px 2px 0px 0px transparent;
+}
+main #loginsec .secContent .containerOne .content .formBox form .inputBox input::placeholder {
+  transition: 1s;
+}
+main #loginsec .secContent .containerOne .content .formBox form .inputBox input:focus {
+  outline: none;
+  box-shadow: 0px 2px 0px 0px #0b704e;
+  border-bottom: 1px solid transparent;
+}
+main #loginsec .secContent .containerOne .content .formBox form .inputBox input:focus::placeholder {
+  color: transparent;
+  transition: 0.4s;
+}
+main #loginsec .secContent .containerOne .content .formBox form .inputBox i {
+  position: absolute;
+  right: 8px;
+  font-size: 1.2em;
+  color: #1d1d1d;
+  line-height: 57px;
+}
+main #loginsec .secContent .containerOne .content .formBox form .inputBox #toggle {
+  position: absolute;
+  top: 70%;
+  right: 35px;
+  transform: translateY(-50%);
+  background: url("/assets/Media/Images/eye_off.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  z-index: 4;
+}
+main #loginsec .secContent .containerOne .content .formBox form .rememberForgot {
+  font-size: 0.9em;
+  color: #1d1d1d;
+  font-weight: 500;
+  margin: -15px 0 15px;
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+}
+main #loginsec .secContent .containerOne .content .formBox form .rememberForgot label {
+  position: relative;
+  color: white;
+  font-weight: 100;
+}
+main #loginsec .secContent .containerOne .content .formBox form .rememberForgot a {
+  font-weight: 500;
+  color: #1a6ed8;
+  text-decoration: none;
+}
+main #loginsec .secContent .containerOne .content .formBox form .rememberForgot a:hover {
+  text-decoration: underline;
+}
+main #loginsec .secContent .containerOne .content .formBox form .btn {
+  margin: 10px 0;
+  width: 50%;
+  height: 40px;
+  background: transparent;
+  border: 1px solid transparent;
+  outline: none;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 1em;
+  color: rgba(245, 245, 245, 0.3);
+  font-weight: 500;
+  transition: 0.4s;
+}
+main #loginsec .secContent .containerOne .content .formBox form .btn:hover {
+  transition: 0.4s;
+  width: 55%;
+  background: rgba(0, 0, 0, 0.3);
+  color: #f5f5f5;
+}
+main #loginsec .secContent .containerOne .content .formBox form .btn:active {
+  transition: 0.4s;
+  background: rgba(11, 112, 78, 0.5);
+}
+main #loginsec .secContent .containerOne .content .formBox form .loginRegister {
+  font-size: 9em;
+  color: #1d1d1d;
+  text-align: center;
+  font-weight: 500;
+  margin: 25px 0 10px;
+}
+main #loginsec .secContent .containerOne .content .formBox form .loginRegister p {
+  font-size: 14px;
+  color: #f5f5f5;
+  text-decoration: none;
+  font-weight: 100;
+  transition: 0.4s;
+}
+main #loginsec .secContent .containerOne .content .formBox form .loginRegister p a {
+  color: #1a6ed8;
+  font-weight: 700;
+}
+main #loginsec .secContent .containerOne .content .formBox form .loginRegister p a:hover {
+  text-decoration: underline;
+}
+main #loginsec .secContent .containerOne .content .formBox form:hover h2 {
+  text-shadow: 1px 1px 10px #0b704e;
+  transition: 0.4s;
+}
+@keyframes color {
+  0% {
+    border-color: white;
+  }
+  20% {
+    border-color: #0b704e;
+  }
+  40% {
+    border-color: white;
+  }
+  60% {
+    border-color: #0b704e;
+  }
+  80% {
+    border-color: white;
+  }
+  100% {
+    border-color: #0b704e;
+  }
 }

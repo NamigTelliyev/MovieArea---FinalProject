@@ -1,0 +1,344 @@
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Marcellus&display=swap");
+// font-family: 'Indie Flower', cursive;
+// font-family: 'Marcellus', serif;
+
+main {
+  //   background-color: rgb(245, 181, 194);
+  // #loginSecEnter{
+  //     display: flex;
+  //     justify-content: center;
+  //     align-items: center;
+  //     .secContent{
+  //         .containerOne{
+  //             .content{
+
+  //                .wrapper{
+  //
+  //                 .closeIcon{
+  //                     position: absolute;
+  //                     top: 0;
+  //                     right: 0;
+  //                     width: 45px;
+  //                     height: 45px;
+  //                     background: #1d1d1d;
+  //                     font-size: 2em;
+  //                     color: #f5f5f5;
+  //                     display: flex;
+  //                     justify-content: center;
+  //                     align-items: center;
+  //                     border-bottom-left-radius: 20px;
+  //                     cursor: pointer;
+  //                     z-index: 1;
+  //                 }
+  //             .formBox{
+  //
+  //
+  //                 form{
+  //
+  //                     .inputBox{
+  //                         position: relative;
+  //                         width: 100%;
+  //                         height: 50px;
+  //                         border-bottom: 2px solid #1d1d1d;
+  //                         margin: 30px 0;
+
+  //
+  //                     }
+  //
+
+  //                     .btn{
+  //                         width: 100%;
+  //                         height: 45px;
+  //                         background: #1d1d1d;
+  //                         border: none;
+  //                         outline: none;
+  //                         cursor: pointer;
+  //                         border-radius: 6px;
+  //                         font-size: 1em;
+  //                         color: #f5f5f5;
+  //                         font-weight: 500;
+  //                     }
+  //                     .loginRegister{
+  //                         font-size: 9em;
+  //                         color: #1d1d1d;
+  //                         text-align: center;
+  //                         font-weight: 500;
+  //                         margin: 25px 0 10px;
+  //                         p{
+  //                             font-size: 14px;
+  //                             color: #1d1d1d;
+  //                             text-decoration: none;
+  //                             font-weight: 600;
+  //                         }
+  //                         p:hover{
+  //                             text-decoration: underline;
+  //                         }
+  //                     }
+
+  //                 }
+  //             }
+  //                }
+  //             }
+  //         }
+  //     }
+  // }
+
+  #loginsec {
+    width: 100%;
+    max-width: initial;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url(/assets/Media/Images/Joker_banner.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    backdrop-filter: blur(20px);
+    .secContent {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .containerOne {
+        .content {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          .formBox {
+            position: relative;
+            width: 420px;
+            height: 500px;
+            background: transparent;
+            border: 2px solid #f5f5f5;
+            border-radius: 20px;
+            backdrop-filter: blur(20px);
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+            // box-shadow: 16px ?14px 20px #0000008c;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            border: 2px solid transparent; /* Başlangıçta border'ı şeffaf olarak ayarlayın */
+            animation: color 7s linear infinite; /* Animasyonu formBox sınıfına uygulayın */
+            // animation: two 10s linear;
+
+            form {
+              position: absolute;
+              //   background: #222;
+              padding: 50px 40px;
+              border-radius: 8px;
+              z-index: 2;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              width: 100%;
+
+              h2 {
+                font-size: 48px;
+                color: #f5f5f5;
+                text-align: center;
+                font-weight: 600;
+                letter-spacing: 0.1em;
+                font-family: "Marcellus", serif;
+                text-shadow: 0 0 10px white;
+                transition: 0.4s;
+              }
+
+              .inputBox {
+                position: relative;
+                width: 100%;
+                height: 50px;
+                margin: 30px 0;
+
+                label {
+                  position: absolute;
+                  top: 50%;
+                  left: 5px;
+                  transform: translateY(-50%);
+                  font-size: 1em;
+                  color: #1d1d1d;
+                  font-weight: 500;
+                  pointer-events: none;
+                  color: transparent;
+                  letter-spacing: 0.05em;
+                  transition: 0.5s;
+                }
+                input:focus ~ label,
+                input:valid ~ label {
+                  top: -5px;
+                  color: white;
+                  text-shadow: 2px 2px 2px #0b704e;
+                  font-size: 0.9em;
+                  transition: 0.4s;
+                }
+                input {
+                  width: 100%;
+                  height: 100%;
+                  background: transparent;
+                  outline: none;
+                  font-weight: 600;
+                  color: #f5f5f5;
+                  position: relative;
+                  width: 100%;
+                  font-size: 1em;
+                  letter-spacing: 0.05em;
+                  transition: 0.5s;
+                  z-index: 3;
+                  box-shadow: 0px 2px 0px 0px transparent;
+                }
+                input::placeholder {
+                  transition: 1s;
+                }
+                input:focus {
+                  outline: none;
+                  box-shadow: 0px 2px 0px 0px #0b704e;
+                  border-bottom: 1px solid transparent;
+                }
+                input:focus::placeholder {
+                  color: transparent;
+                  transition: 0.4s;
+                }
+                i {
+                  position: absolute;
+                  right: 8px;
+                  font-size: 1.2em;
+                  color: #1d1d1d;
+                  line-height: 57px;
+                  // cursor: pointer;
+                }
+                #toggle {
+                  position: absolute;
+                  top: 70%;
+                  right: 35px;
+                  transform: translateY(-50%);
+                  background: url("/assets/Media/Images/eye_off.png");
+                  background-repeat: no-repeat;
+                  background-size: contain;
+                  width: 35px;
+                  height: 35px;
+                  cursor: pointer;
+                  z-index: 4;
+                }
+              }
+              .rememberForgot {
+                font-size: 0.9em;
+                color: #1d1d1d;
+                font-weight: 500;
+                margin: -15px 0 15px;
+                display: flex;
+                gap: 10px;
+                justify-content: space-between;
+
+                label {
+                  position: relative;
+                  color: white;
+                  font-weight: 100;
+                }
+                a {
+                  font-weight: 500;
+                  color: #1a6ed8;
+                  text-decoration: none;
+                }
+                a:hover {
+                  text-decoration: underline;
+                }
+              }
+
+              .btn {
+                margin: 10px 0;
+                width: 50%;
+                height: 40px;
+                background: transparent;
+                border: 1px solid transparent;
+                outline: none;
+                cursor: pointer;
+                border-radius: 6px;
+                font-size: 1em;
+                color: rgb(245, 245, 245, 0.3);
+                font-weight: 500;
+                transition: 0.4s;
+              }
+              .btn:hover {
+                transition: 0.4s;
+                width: 55%;
+                background: rgba(0, 0, 0, 0.3);
+                color: #f5f5f5;
+              }
+              .btn:active {
+                transition: 0.4s;
+                background: rgb(11, 112, 78, 0.5);
+              }
+              .loginRegister {
+                font-size: 9em;
+                color: #1d1d1d;
+                text-align: center;
+                font-weight: 500;
+                margin: 25px 0 10px;
+                p {
+                  font-size: 14px;
+                  color: #f5f5f5;
+                  text-decoration: none;
+                  font-weight: 100;
+                  transition: 0.4s;
+
+                  a {
+                    color: #1a6ed8;
+                    font-weight: 700;
+                  }
+                  a:hover {
+                    text-decoration: underline;
+                  }
+                }
+              }
+            }
+            form:hover {
+              h2 {
+                text-shadow: 1px 1px 10px #0b704e;
+                transition: 0.4s;
+              }
+            }
+          }
+
+          @keyframes color {
+            0% {
+              border-color: white;
+            }
+
+            20% {
+              border-color: #0b704e;
+            }
+
+            40% {
+              border-color: white;
+            }
+
+            60% {
+              border-color: #0b704e;
+            }
+
+            80% {
+              border-color: white;
+            }
+            100% {
+              border-color: #0b704e;
+            }
+          }
+          // @keyframes color {
+          //   0% {
+          //     border-color: white;
+          //   }
+
+          //   50% {
+          //     border-color: #0b704e;
+          //   }
+          //   100% {
+          //     border-color: white;
+          //   }
+          // }
+        }
+      }
+    }
+  }
+}

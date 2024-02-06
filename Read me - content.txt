@@ -6,37 +6,57 @@ Hakkımızda\ ✅
 7.add film daveti
 6.Profilim\
 
+login
 
 2.Trend\en cok izlenen\arsiv\imdp
 \site puanlamasi\Seriler
 
 
 Json Server:
+name✅
+description✅
+price✅
+image✅
+popularity✅
+date✅
+dublaj-altyazi✅
+yerli yabanci- turk-az-hind-amerikan-ispan-other✅s
+janr\categories✅
+y[netmen✅
+trailer✅
+mo✅
+imdb✅
+seri✅
+pegi✅
+
+
+
+{
 name
-description
-price
 image
-popularity
-date
-dublaj-altyazi
-yerli yabanci- turk-az-hind-amerikan-ispan-other
-janr\categories
-y[netmen
-trailer
+dublaj
+altyazi
 imdb
-seri
+mo
+janr
+year
 pegi
-site-puanlamasi
+rejissor
+price
+wish
+goz at
+
+}
 
 
 
-header altindaki skrolda 5dene popular film olsun
+header altindaki skrolda 6dene popular film olsun ✅
 
-sec 2 de populer filmler olsun -popularity
-sec 3de trenddeki filmler
-sec 4-de yeni filmler olsun- 2023 filmleri
-sec 5de en iyi seri filmler
-sec 6 editorun secimi
+sec 2 de populer filmler olsun -popularity ✅
+sec 3de trenddeki filmler ✅
+sec 4-de yeni filmler olsun- 2023 filmleri ✅
+sec 5de en iyi seri filmler ✅
+sec 6 editorun secimi ✅
 
 footer ✅
 
