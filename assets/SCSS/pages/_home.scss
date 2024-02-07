@@ -53,6 +53,8 @@ main {
   background-color: #1d1d1d;
   #homeSecMostPopularScroll {
     width: 100%;
+    max-width: initial;
+
     .banner {
       position: relative;
       width: 100%;
@@ -252,6 +254,7 @@ main {
     }
   }
   .menuBanners{
+    display: none;
     position: relative;
     #olafBanner{
       position: fixed;

@@ -50,6 +50,7 @@ main {
 }
 main #homeSecMostPopularScroll {
   width: 100%;
+  max-width: initial;
 }
 main #homeSecMostPopularScroll .banner {
   position: relative;
@@ -237,6 +238,7 @@ main #homeSecMostPopularScroll .banner::before {
   background: rgba(0, 0, 0, 0.5);
 }
 main .menuBanners {
+  display: none;
   position: relative;
 }
 main .menuBanners #olafBanner {
