@@ -233,7 +233,6 @@
                             <span></span>
                             <form>
                                 <img src="./assets/Media/Images/512x512.png" alt="MO">
-                                <!-- <h2>Sign Up</h2> -->
                                 <div class="user">
                                     <div class="inputBox">
                                         <input placeholder="Name" type="text" required>
@@ -248,14 +247,14 @@
                                 </div>
 
                                 <div class="inputBox">
-                                    <input id="nickname" placeholder="NICKNAME" onkeypress="return event.charCode != 32" type="text"
-                                        required>
+                                    <input id="nickname" placeholder="NICKNAME" onkeypress="return event.charCode != 32"
+                                        type="text" required>
                                     <label>Nickname</label>
                                     <i class="fa-solid fa-pen"></i>
                                 </div>
                                 <div class="inputBox">
-                                    <input id="email" placeholder="Email" onkeypress="return event.charCode != 32" type="email"
-                                        required>
+                                    <input id="email" placeholder="Email" onkeypress="return event.charCode != 32"
+                                        type="email" required>
                                     <label>Email</label>
                                     <i class="fa-regular fa-envelope"></i>
                                 </div>
@@ -274,7 +273,12 @@
                                     <i class="fa-solid fa-lock"></i>
                                 </div>
 
-                                <button id="btn" type="submit" class="btn">Sign up</button>
+                                <button id="btn" type="submit" class="btn">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    Sign up</button>
                                 <div class="signIn">
                                     <p>
                                         Already have an account?
@@ -320,117 +324,117 @@
 
 
 
-        document.addEventListener('DOMContentLoaded', function() {
-    let nicknameInput = document.getElementById('nickname');
+        document.addEventListener('DOMContentLoaded', function () {
+            let nicknameInput = document.getElementById('nickname');
 
-    let maxLength = 15;
+            let maxLength = 15;
 
-    nicknameInput.addEventListener('input', function() {
-        if (nicknameInput.value.length > maxLength) {
-            nicknameInput.value = nicknameInput.value.slice(0, maxLength);
-            alert("Maximum number of characters reached!");
-        }
-    });
-});
-
-
-
-
-document.addEventListener('DOMContentLoaded', function() {
-    const restrictedKeyCode = 32; 
-    const inputElementOne = document.getElementById('nickname');
-    const inputElementTwo = document.getElementById('email');
-    const inputElementThree = document.getElementById('password');
-    const inputElementFour = document.getElementById('passwordTwo');
-
-    inputElementOne.addEventListener('keydown', function(event) {
-        if (event.keyCode === restrictedKeyCode) {
-            event.preventDefault();
-            alert("You cannot press the space key!");
-        }
-    });
-    inputElementTwo.addEventListener('keydown', function(event) {
-        if (event.keyCode === restrictedKeyCode) {
-            event.preventDefault();
-            alert("You cannot press the space key!");
-        }
-    });
-    inputElementThree.addEventListener('keydown', function(event) {
-        if (event.keyCode === restrictedKeyCode) {
-            event.preventDefault();
-            alert("You cannot press the space key!");
-        }
-    });
-    inputElementFour.addEventListener('keydown', function(event) {
-        if (event.keyCode === restrictedKeyCode) {
-            event.preventDefault();
-            alert("You cannot press the space key!");
-        }
-    });
-});
-
-
-document.addEventListener('DOMContentLoaded', function() {
-    let submitButton = document.getElementById('btn'); 
-    let inputElementOne = document.getElementById('password'); 
-
-    submitButton.addEventListener('click', function(event) {
-        var inputValue = inputElementOne.value;
-        var letterRegex = /[a-zA-Z]/;
-        
-        if (inputValue.length < 8 || !letterRegex.test(inputValue)) {
-            event.preventDefault(); 
-            alert("It must be at least 8 characters and contain at least one letter!");
-        }
-    });
-});
-document.addEventListener('DOMContentLoaded', function() {
-    let submitButton = document.getElementById('btn'); 
-    let inputElementTwo = document.getElementById('passwordTwo'); 
-
-    submitButton.addEventListener('click', function(event) {
-        let inputValue = inputElementTwo.value;
-        let letterRegex = /[a-zA-Z]/;
-        
-        if (inputValue.length < 8 || !letterRegex.test(inputValue)) {
-            event.preventDefault(); 
-            alert("It must be at least 8 characters and contain at least one letter!");
-        }
-    });
-});
+            nicknameInput.addEventListener('input', function () {
+                if (nicknameInput.value.length > maxLength) {
+                    nicknameInput.value = nicknameInput.value.slice(0, maxLength);
+                    alert("Maximum number of characters reached!");
+                }
+            });
+        });
 
 
 
 
+        document.addEventListener('DOMContentLoaded', function () {
+            const restrictedKeyCode = 32;
+            const inputElementOne = document.getElementById('nickname');
+            const inputElementTwo = document.getElementById('email');
+            const inputElementThree = document.getElementById('password');
+            const inputElementFour = document.getElementById('passwordTwo');
 
-// Şifrə testiq
-document.addEventListener('DOMContentLoaded', function() {
-    let passwordInput = document.getElementById('password');
-    let confirmPasswordInput = document.getElementById('passwordTwo');
-    let submitButton = document.getElementById('btn');
+            inputElementOne.addEventListener('keydown', function (event) {
+                if (event.keyCode === restrictedKeyCode) {
+                    event.preventDefault();
+                    alert("You cannot press the space key!");
+                }
+            });
+            inputElementTwo.addEventListener('keydown', function (event) {
+                if (event.keyCode === restrictedKeyCode) {
+                    event.preventDefault();
+                    alert("You cannot press the space key!");
+                }
+            });
+            inputElementThree.addEventListener('keydown', function (event) {
+                if (event.keyCode === restrictedKeyCode) {
+                    event.preventDefault();
+                    alert("You cannot press the space key!");
+                }
+            });
+            inputElementFour.addEventListener('keydown', function (event) {
+                if (event.keyCode === restrictedKeyCode) {
+                    event.preventDefault();
+                    alert("You cannot press the space key!");
+                }
+            });
+        });
 
-    confirmPasswordInput.disabled = true;
 
-    passwordInput.addEventListener('input', function(event) {
-        let passwordValue = event.target.value;
+        document.addEventListener('DOMContentLoaded', function () {
+            let submitButton = document.getElementById('btn');
+            let inputElementOne = document.getElementById('password');
 
-        if (passwordValue.length > 7) {
-            confirmPasswordInput.disabled = false;
-        } else {
+            submitButton.addEventListener('click', function (event) {
+                var inputValue = inputElementOne.value;
+                var letterRegex = /[a-zA-Z]/;
+
+                if (inputValue.length < 8 || !letterRegex.test(inputValue)) {
+                    event.preventDefault();
+                    alert("It must be at least 8 characters and contain at least one letter!");
+                }
+            });
+        });
+        document.addEventListener('DOMContentLoaded', function () {
+            let submitButton = document.getElementById('btn');
+            let inputElementTwo = document.getElementById('passwordTwo');
+
+            submitButton.addEventListener('click', function (event) {
+                let inputValue = inputElementTwo.value;
+                let letterRegex = /[a-zA-Z]/;
+
+                if (inputValue.length < 8 || !letterRegex.test(inputValue)) {
+                    event.preventDefault();
+                    alert("It must be at least 8 characters and contain at least one letter!");
+                }
+            });
+        });
+
+
+
+
+
+        // Şifrə testiq
+        document.addEventListener('DOMContentLoaded', function () {
+            let passwordInput = document.getElementById('password');
+            let confirmPasswordInput = document.getElementById('passwordTwo');
+            let submitButton = document.getElementById('btn');
+
             confirmPasswordInput.disabled = true;
-        }
-    });
 
-    submitButton.addEventListener('click', function(event) {
-        let passwordValue = passwordInput.value;
-        let confirmPasswordValue = confirmPasswordInput.value;
+            passwordInput.addEventListener('input', function (event) {
+                let passwordValue = event.target.value;
 
-        if (passwordValue !== confirmPasswordValue) {
-            event.preventDefault(); 
-            alert("Passwords do not match!"); 
-        }
-    });
-});
+                if (passwordValue.length > 7) {
+                    confirmPasswordInput.disabled = false;
+                } else {
+                    confirmPasswordInput.disabled = true;
+                }
+            });
+
+            submitButton.addEventListener('click', function (event) {
+                let passwordValue = passwordInput.value;
+                let confirmPasswordValue = confirmPasswordInput.value;
+
+                if (passwordValue !== confirmPasswordValue) {
+                    event.preventDefault();
+                    alert("Passwords do not match!");
+                }
+            });
+        });
 
 
 
