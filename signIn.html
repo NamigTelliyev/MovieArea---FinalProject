@@ -16,44 +16,6 @@
 <body>
 
     <main>
-        <!-- <section id="loginSecEnter">
-            <div class="container secContent">
-                <div class="row containerOne">
-                    <div class="col content">
-                        <div class="wrapper">
-                            <span class="closeIcon"></span>
-                        <div class="formBox login">
-                            <h2>Login</h2>
-                            <form id="loginForm" action="">
-                                <div class="inputBox">
-                                    <span class="icon"></span>
-                                    <input required type="email">
-                                    <label>Email</label>
-                                </div>
-                                <div class="inputBox">
-                                    <span class="icon"></span>
-                                    <input required type="password">
-                                    <label>Password</label>
-                                </div>
-                                <div class="rememberForgot">
-                                    <label><input type="checkbox">Remember me</label>
-                                    <a href="#">Forgot Password?</a>
-                                </div>
-    
-                                <button type="submit" class="btn">Login</button>
-                                <div class="loginRegister">
-                                    <p>
-                                        Don't have an account?
-                                        <a href="#" class="registerLink">Register</a>
-                                    </p>
-                                </div>
-                            </form>
-                        </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section> -->
         <section id="signInSec">
             <div class="particles">
                 <span style="--i:11;"></span>
@@ -117,8 +79,7 @@
                 <span style="--i:13;"></span>
                 <span style="--i:28;"></span>
             </div>
-            <
-            <div class="particlesThree">
+            <div class="particlesTwo">
                 <span style="--i:18;"></span>
                 <span style="--i:16;"></span>
                 <span style="--i:22;"></span>
@@ -260,7 +221,7 @@
                 <span style="--i:23;"></span>
                 <span style="--i:28;"></span>
 
-                
+
             </div>
             <div class="container secContent">
                 <div class="row containerOne">
@@ -271,9 +232,10 @@
                             <span></span>
                             <span></span>
                             <form>
-                                <h2>Sign In</h2>
+                                <img src="./assets/Media/Images/512x512.png" alt="MO">
+                                <!-- <h2>Sign In</h2> -->
                                 <div class="inputBox">
-                                    <input placeholder="Email" onkeypress="return event.charCode != 32" type="email"
+                                    <input id="email" placeholder="Email" onkeypress="return event.charCode != 32" type="email"
                                         required>
                                     <label>Email</label>
                                     <i class="fa-regular fa-envelope"></i>
@@ -291,7 +253,7 @@
                                     </label>
                                     <a href="#">Forgot Password?</a>
                                 </div>
-                                <button type="submit" class="btn">
+                                <button id="btn" type="submit" class="btn">
                                     <span></span>
                                     <span></span>
                                     <span></span>
@@ -300,7 +262,7 @@
                                 <div class="loginRegister">
                                     <p>
                                         Don't have an account?
-                                        <a href="#" class="registerLink">Sign up</a>
+                                        <a href="./signUp.html" class="registerLink">Sign up</a>
                                     </p>
                                 </div>
 
@@ -325,6 +287,49 @@
                 togglePassword.style.backgroundImage = " url('/assets/Media/Images/eye_off.png')";
             }
         }
+
+
+
+
+        document.addEventListener('DOMContentLoaded', function() {
+    const restrictedKeyCode = 32;
+    const inputElementOne = document.getElementById('email');
+    const inputElementTwo = document.getElementById('password');
+   
+
+    inputElementOne.addEventListener('keydown', function(event) {
+        if (event.keyCode === restrictedKeyCode) {
+            event.preventDefault();
+            alert("You cannot press the space key!");
+        }
+    });
+    inputElementTwo.addEventListener('keydown', function(event) {
+        if (event.keyCode === restrictedKeyCode) {
+            event.preventDefault();
+            alert("You cannot press the space key!");
+        }
+    });
+   
+});
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    let submitButton = document.getElementById('btn'); 
+    let inputElementOne = document.getElementById('password'); 
+
+    submitButton.addEventListener('click', function(event) {
+        var inputValue = inputElementOne.value;
+        var letterRegex = /[a-zA-Z]/;
+        
+        if (inputValue.length < 8 || !letterRegex.test(inputValue)) {
+            event.preventDefault(); 
+            alert("It must be at least 8 characters and contain at least one letter!");
+        }
+    });
+});
+
+
     </script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.7/axios.min.js"

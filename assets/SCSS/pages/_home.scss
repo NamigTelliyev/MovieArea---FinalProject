@@ -253,23 +253,22 @@ main {
       background: rgba(0, 0, 0, 0.5);
     }
   }
-  .menuBanners{
+  .menuBanners {
     display: none;
     position: relative;
-    #olafBanner{
+    #olafBanner {
       position: fixed;
       top: -35px;
       width: 150px;
       // display: none;/
-      
     }
-    #deadpoolBanner{
+    #deadpoolBanner {
       position: fixed;
       left: 0;
       top: 50%;
       width: 300px;
     }
-    #mitsuhaBanner{
+    #mitsuhaBanner {
       position: fixed;
       right: 0;
       top: 50%;
@@ -286,7 +285,6 @@ main {
       rgba(0, 0, 0, 0.9) 100%
     );
     .secContent {
-      
       .containerOne {
         padding: 0 !important;
         margin: 0 !important;
@@ -436,7 +434,7 @@ main {
         }
       }
 
-      .containerTwo{
+      .containerTwo {
         padding: 0 !important;
         margin: 0 !important;
       }
@@ -455,7 +453,7 @@ footer {
     align-items: center;
     .footerContent {
       padding: 0 !important;
-        margin: 0 !important;
+      margin: 0 !important;
       width: 100%;
       max-width: initial;
       display: flex;
@@ -613,18 +611,33 @@ footer {
                 align-items: start;
                 text-align: center;
                 a {
+                  position: relative;
                   transition: 0.4s;
+                  letter-spacing: 0.5px;
+                  padding: 0 2px;
+                  font-size: 18px;
                   text-decoration: none;
                   color: black;
                   font-weight: 500;
-                  border-bottom: 1px solid transparent;
+                }
+                a:after {
+                  content: "";
+                  position: absolute;
+                  background-color: #0b704e;
+                  height: 2px;
+                  width: 0;
+                  left: 0;
+                  bottom: 0;
+                  transition: 0.4s;
+                }
+                a:hover:after {
+                  width: 100%;
                 }
                 a:hover {
                   transition: 0.4s;
-                  text-shadow: 1px 1px 2px #ff2f0faa;
-                  color: #ff2f0f;
+                  text-shadow: 1px 1px 2px #0b704eaa;
+                  color: #0b704e;
                   transition: 0.4s;
-                  border-bottom: 1px solid #ff2f0faa;
                 }
               }
               .partTwo {
@@ -635,17 +648,33 @@ footer {
                 align-items: start;
                 text-align: center;
                 a {
+                  position: relative;
                   transition: 0.4s;
+                  letter-spacing: 0.5px;
+                  padding: 0 2px;
+                  font-size: 18px;
                   text-decoration: none;
                   color: black;
                   font-weight: 500;
-                  border-bottom: 1px solid transparent;
+                }
+                a:after {
+                  content: "";
+                  position: absolute;
+                  background-color: #0b704e;
+                  height: 2px;
+                  width: 0;
+                  left: 0;
+                  bottom: 0;
+                  transition: 0.4s;
+                }
+                a:hover:after {
+                  width: 100%;
                 }
                 a:hover {
                   transition: 0.4s;
-                  text-shadow: 1px 1px 2px #ff2f0faa;
-                  color: #ff2f0f;
-                  border-bottom: 1px solid #ff2f0faa;
+                  text-shadow: 1px 1px 2px #0b704eaa;
+                  color: #0b704e;
+                  transition: 0.4s;
                 }
               }
             }
@@ -676,17 +705,33 @@ footer {
               align-items: start;
               text-align: center;
               a {
+                position: relative;
                 transition: 0.4s;
+                letter-spacing: 0.5px;
+                padding: 0 2px;
+                font-size: 18px;
                 text-decoration: none;
                 color: black;
                 font-weight: 500;
-                border-bottom: 1px solid transparent;
+              }
+              a:after {
+                content: "";
+                position: absolute;
+                background-color: #0b704e;
+                height: 2px;
+                width: 0;
+                left: 0;
+                bottom: 0;
+                transition: 0.4s;
+              }
+              a:hover:after {
+                width: 100%;
               }
               a:hover {
                 transition: 0.4s;
-                text-shadow: 1px 1px 2px #ff2f0faa;
-                color: #ff2f0f;
-                border-bottom: 1px solid #ff2f0faa;
+                text-shadow: 1px 1px 2px #0b704eaa;
+                color: #0b704e;
+                transition: 0.4s;
               }
             }
           }

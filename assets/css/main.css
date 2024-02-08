@@ -1,4 +1,5 @@
-@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Marcellus&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Marcellus&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
@@ -540,18 +541,33 @@ footer #footerSec .footerContent .containerOne .contentTwo .textContent .bestCat
   text-align: center;
 }
 footer #footerSec .footerContent .containerOne .contentTwo .textContent .bestCategories .partOne a {
+  position: relative;
   transition: 0.4s;
+  letter-spacing: 0.5px;
+  padding: 0 2px;
+  font-size: 18px;
   text-decoration: none;
   color: black;
   font-weight: 500;
-  border-bottom: 1px solid transparent;
+}
+footer #footerSec .footerContent .containerOne .contentTwo .textContent .bestCategories .partOne a:after {
+  content: "";
+  position: absolute;
+  background-color: #0b704e;
+  height: 2px;
+  width: 0;
+  left: 0;
+  bottom: 0;
+  transition: 0.4s;
+}
+footer #footerSec .footerContent .containerOne .contentTwo .textContent .bestCategories .partOne a:hover:after {
+  width: 100%;
 }
 footer #footerSec .footerContent .containerOne .contentTwo .textContent .bestCategories .partOne a:hover {
   transition: 0.4s;
-  text-shadow: 1px 1px 2px rgba(255, 47, 15, 0.6666666667);
-  color: #ff2f0f;
+  text-shadow: 1px 1px 2px rgba(11, 112, 78, 0.6666666667);
+  color: #0b704e;
   transition: 0.4s;
-  border-bottom: 1px solid rgba(255, 47, 15, 0.6666666667);
 }
 footer #footerSec .footerContent .containerOne .contentTwo .textContent .bestCategories .partTwo {
   gap: 15px;
@@ -562,17 +578,33 @@ footer #footerSec .footerContent .containerOne .contentTwo .textContent .bestCat
   text-align: center;
 }
 footer #footerSec .footerContent .containerOne .contentTwo .textContent .bestCategories .partTwo a {
+  position: relative;
   transition: 0.4s;
+  letter-spacing: 0.5px;
+  padding: 0 2px;
+  font-size: 18px;
   text-decoration: none;
   color: black;
   font-weight: 500;
-  border-bottom: 1px solid transparent;
+}
+footer #footerSec .footerContent .containerOne .contentTwo .textContent .bestCategories .partTwo a:after {
+  content: "";
+  position: absolute;
+  background-color: #0b704e;
+  height: 2px;
+  width: 0;
+  left: 0;
+  bottom: 0;
+  transition: 0.4s;
+}
+footer #footerSec .footerContent .containerOne .contentTwo .textContent .bestCategories .partTwo a:hover:after {
+  width: 100%;
 }
 footer #footerSec .footerContent .containerOne .contentTwo .textContent .bestCategories .partTwo a:hover {
   transition: 0.4s;
-  text-shadow: 1px 1px 2px rgba(255, 47, 15, 0.6666666667);
-  color: #ff2f0f;
-  border-bottom: 1px solid rgba(255, 47, 15, 0.6666666667);
+  text-shadow: 1px 1px 2px rgba(11, 112, 78, 0.6666666667);
+  color: #0b704e;
+  transition: 0.4s;
 }
 footer #footerSec .footerContent .containerOne .contentThree {
   padding: 50px 0;
@@ -602,17 +634,33 @@ footer #footerSec .footerContent .containerOne .contentThree .textContent .mapCo
   text-align: center;
 }
 footer #footerSec .footerContent .containerOne .contentThree .textContent .mapContent a {
+  position: relative;
   transition: 0.4s;
+  letter-spacing: 0.5px;
+  padding: 0 2px;
+  font-size: 18px;
   text-decoration: none;
   color: black;
   font-weight: 500;
-  border-bottom: 1px solid transparent;
+}
+footer #footerSec .footerContent .containerOne .contentThree .textContent .mapContent a:after {
+  content: "";
+  position: absolute;
+  background-color: #0b704e;
+  height: 2px;
+  width: 0;
+  left: 0;
+  bottom: 0;
+  transition: 0.4s;
+}
+footer #footerSec .footerContent .containerOne .contentThree .textContent .mapContent a:hover:after {
+  width: 100%;
 }
 footer #footerSec .footerContent .containerOne .contentThree .textContent .mapContent a:hover {
   transition: 0.4s;
-  text-shadow: 1px 1px 2px rgba(255, 47, 15, 0.6666666667);
-  color: #ff2f0f;
-  border-bottom: 1px solid rgba(255, 47, 15, 0.6666666667);
+  text-shadow: 1px 1px 2px rgba(11, 112, 78, 0.6666666667);
+  color: #0b704e;
+  transition: 0.4s;
 }
 footer #footerSec .footerContent .containerTwo {
   padding: 0 !important;
@@ -634,34 +682,103 @@ footer #footerSec .footerContent .containerTwo .content .textContent p {
   padding: 10px;
 }
 
-main #loginsec {
+main #signInSec {
   width: 100%;
   max-width: initial;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: url(/assets/Media/Images/Joker_banner.jpg) no-repeat;
+  background: #1d1d1d no-repeat;
   background-size: cover;
   background-position: center;
   backdrop-filter: blur(20px);
+  overflow: hidden;
 }
-main #loginsec .secContent {
+main #signInSec .particles {
+  position: relative;
+  display: flex;
+  z-index: 1;
+  padding: 0 20px;
+}
+main #signInSec .particles span {
+  position: relative;
+  bottom: 30px;
+  width: 20px;
+  height: 20px;
+  background: #0b704e;
+  box-shadow: 0 0 0 10px rgba(11, 112, 78, 0.2666666667), 0 0 50px #0b704e, -100px 0 rgba(11, 112, 78, 0.6), 100px 0 rgba(255, 47, 15, 0.6);
+  margin: 0 4px;
+  border-radius: 50%;
+  animation: circleAni 15s ease-in-out infinite;
+  animation-duration: calc(425s / var(--i));
+  animation-delay: -4s;
+}
+main #signInSec .particles span:nth-child(even) {
+  background: #ff2f0f;
+  box-shadow: 0 0 0 10px rgba(255, 47, 15, 0.2666666667), 0 0 50px #ff2f0f, 100px 0 rgba(11, 112, 78, 0.6), 100px 0 rgba(11, 112, 78, 0.6);
+}
+@keyframes circleAni {
+  0% {
+    transform: translateY(100vh) scale(0) rotate(0deg);
+  }
+  20% {
+    transform: translateY(100vh) scale(1) rotate(0deg);
+  }
+  100% {
+    transform: translateY(-50vh) scale(0.5) rotate(360deg);
+  }
+}
+main #signInSec .particlesTwo {
+  position: relative;
+  display: flex;
+  z-index: 1;
+  padding: 0 20px;
+}
+main #signInSec .particlesTwo span {
+  position: relative;
+  bottom: 30px;
+  width: 7px;
+  height: 7px;
+  background: rgba(245, 245, 245, 0.2666666667);
+  box-shadow: 0 0 0 7px rgba(245, 245, 245, 0.0666666667), 0 0 50px rgba(245, 245, 245, 0.6666666667), -100px 0 rgba(245, 245, 245, 0.2666666667), 100px 0 rgba(255, 47, 15, 0.2666666667);
+  margin: 0 4px;
+  border-radius: 50%;
+  animation: circleAni 15s ease-in-out infinite;
+  animation-duration: calc(725s / var(--i));
+  animation-delay: -7s;
+}
+main #signInSec .particlesTwo span:nth-child(even) {
+  background: rgba(245, 245, 245, 0.3333333333);
+  box-shadow: 0 0 0 5px rgba(255, 47, 15, 0.0666666667), 0 0 50px rgba(255, 47, 15, 0.6666666667), 100px 0 rgba(11, 112, 78, 0.2666666667), 100px 0 rgba(11, 112, 78, 0.2666666667);
+}
+@keyframes circleAni {
+  0% {
+    transform: translateY(100vh) scale(0) rotate(0deg);
+  }
+  20% {
+    transform: translateY(100vh) scale(1) rotate(0deg);
+  }
+  100% {
+    transform: translateY(-50vh) scale(0.5) rotate(360deg);
+  }
+}
+main #signInSec .secContent {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-main #loginsec .secContent .containerOne .content {
+main #signInSec .secContent .containerOne .content {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-main #loginsec .secContent .containerOne .content .formBox {
+main #signInSec .secContent .containerOne .content .formBox {
   position: relative;
   width: 420px;
-  height: 500px;
+  height: 600px;
   background: transparent;
-  border: 2px solid #f5f5f5;
   border-radius: 20px;
   backdrop-filter: blur(20px);
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
@@ -669,10 +786,80 @@ main #loginsec .secContent .containerOne .content .formBox {
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  border: 2px solid transparent; /* Başlangıçta border'ı şeffaf olarak ayarlayın */
-  animation: color 7s linear infinite; /* Animasyonu formBox sınıfına uygulayın */
+  z-index: 3;
+  border: 2px solid transparent;
 }
-main #loginsec .secContent .containerOne .content .formBox form {
+main #signInSec .secContent .containerOne .content .formBox span:nth-child(1) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(to right, transparent, #0b704e);
+  animation: animateOne 2s linear infinite;
+}
+@keyframes animateOne {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+main #signInSec .secContent .containerOne .content .formBox span:nth-child(2) {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent, #0b704e);
+  animation: animateTwo 2s linear infinite;
+  animation-delay: 1s;
+}
+@keyframes animateTwo {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+main #signInSec .secContent .containerOne .content .formBox span:nth-child(3) {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(to left, transparent, #0b704e);
+  animation: animateThree 2s linear infinite;
+}
+@keyframes animateThree {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+main #signInSec .secContent .containerOne .content .formBox span:nth-child(4) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(to top, transparent, #0b704e);
+  animation: animateFour 2s linear infinite;
+  animation-delay: 1s;
+}
+@keyframes animateFour {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+main #signInSec .secContent .containerOne .content .formBox form {
   position: absolute;
   padding: 50px 40px;
   border-radius: 8px;
@@ -683,7 +870,11 @@ main #loginsec .secContent .containerOne .content .formBox form {
   align-items: center;
   width: 100%;
 }
-main #loginsec .secContent .containerOne .content .formBox form h2 {
+main #signInSec .secContent .containerOne .content .formBox form img {
+  padding-top: 20px;
+  width: 80px;
+}
+main #signInSec .secContent .containerOne .content .formBox form h2 {
   font-size: 48px;
   color: #f5f5f5;
   text-align: center;
@@ -693,13 +884,13 @@ main #loginsec .secContent .containerOne .content .formBox form h2 {
   text-shadow: 0 0 10px white;
   transition: 0.4s;
 }
-main #loginsec .secContent .containerOne .content .formBox form .inputBox {
+main #signInSec .secContent .containerOne .content .formBox form .inputBox {
   position: relative;
   width: 100%;
   height: 50px;
   margin: 30px 0;
 }
-main #loginsec .secContent .containerOne .content .formBox form .inputBox label {
+main #signInSec .secContent .containerOne .content .formBox form .inputBox label {
   position: absolute;
   top: 50%;
   left: 5px;
@@ -712,62 +903,62 @@ main #loginsec .secContent .containerOne .content .formBox form .inputBox label 
   letter-spacing: 0.05em;
   transition: 0.5s;
 }
-main #loginsec .secContent .containerOne .content .formBox form .inputBox input:focus ~ label,
-main #loginsec .secContent .containerOne .content .formBox form .inputBox input:valid ~ label {
+main #signInSec .secContent .containerOne .content .formBox form .inputBox input:focus ~ label,
+main #signInSec .secContent .containerOne .content .formBox form .inputBox input:valid ~ label {
   top: -5px;
   color: white;
   text-shadow: 2px 2px 2px #0b704e;
   font-size: 0.9em;
   transition: 0.4s;
 }
-main #loginsec .secContent .containerOne .content .formBox form .inputBox input {
-  width: 100%;
+main #signInSec .secContent .containerOne .content .formBox form .inputBox input {
+  width: 75%;
   height: 100%;
+  padding-right: 25%;
   background: transparent;
   outline: none;
   font-weight: 600;
   color: #f5f5f5;
   position: relative;
-  width: 100%;
   font-size: 1em;
   letter-spacing: 0.05em;
   transition: 0.5s;
   z-index: 3;
   box-shadow: 0px 2px 0px 0px transparent;
 }
-main #loginsec .secContent .containerOne .content .formBox form .inputBox input::placeholder {
+main #signInSec .secContent .containerOne .content .formBox form .inputBox input::placeholder {
   transition: 1s;
 }
-main #loginsec .secContent .containerOne .content .formBox form .inputBox input:focus {
+main #signInSec .secContent .containerOne .content .formBox form .inputBox input:focus {
   outline: none;
   box-shadow: 0px 2px 0px 0px #0b704e;
   border-bottom: 1px solid transparent;
 }
-main #loginsec .secContent .containerOne .content .formBox form .inputBox input:focus::placeholder {
+main #signInSec .secContent .containerOne .content .formBox form .inputBox input:focus::placeholder {
   color: transparent;
   transition: 0.4s;
 }
-main #loginsec .secContent .containerOne .content .formBox form .inputBox i {
+main #signInSec .secContent .containerOne .content .formBox form .inputBox i {
   position: absolute;
   right: 8px;
   font-size: 1.2em;
-  color: #1d1d1d;
+  color: rgba(245, 245, 245, 0.6);
   line-height: 57px;
 }
-main #loginsec .secContent .containerOne .content .formBox form .inputBox #toggle {
+main #signInSec .secContent .containerOne .content .formBox form .inputBox #toggle {
   position: absolute;
-  top: 70%;
+  top: 71%;
   right: 35px;
   transform: translateY(-50%);
   background: url("/assets/Media/Images/eye_off.png");
   background-repeat: no-repeat;
   background-size: contain;
-  width: 35px;
-  height: 35px;
+  width: 30px;
+  height: 30px;
   cursor: pointer;
   z-index: 4;
 }
-main #loginsec .secContent .containerOne .content .formBox form .rememberForgot {
+main #signInSec .secContent .containerOne .content .formBox form .rememberForgot {
   font-size: 0.9em;
   color: #1d1d1d;
   font-weight: 500;
@@ -776,25 +967,30 @@ main #loginsec .secContent .containerOne .content .formBox form .rememberForgot 
   gap: 10px;
   justify-content: space-between;
 }
-main #loginsec .secContent .containerOne .content .formBox form .rememberForgot label {
+main #signInSec .secContent .containerOne .content .formBox form .rememberForgot label {
   position: relative;
   color: white;
   font-weight: 100;
+  text-align: center;
 }
-main #loginsec .secContent .containerOne .content .formBox form .rememberForgot a {
+main #signInSec .secContent .containerOne .content .formBox form .rememberForgot a {
+  text-align: center;
   font-weight: 500;
   color: #1a6ed8;
   text-decoration: none;
 }
-main #loginsec .secContent .containerOne .content .formBox form .rememberForgot a:hover {
+main #signInSec .secContent .containerOne .content .formBox form .rememberForgot a:hover {
   text-decoration: underline;
 }
-main #loginsec .secContent .containerOne .content .formBox form .btn {
+main #signInSec .secContent .containerOne .content .formBox form .btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 10px 0;
   width: 50%;
-  height: 40px;
+  height: 50px;
   background: transparent;
-  border: 1px solid transparent;
+  border: 2px solid transparent;
   outline: none;
   cursor: pointer;
   border-radius: 6px;
@@ -802,59 +998,794 @@ main #loginsec .secContent .containerOne .content .formBox form .btn {
   color: rgba(245, 245, 245, 0.3);
   font-weight: 500;
   transition: 0.4s;
+  position: relative;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
 }
-main #loginsec .secContent .containerOne .content .formBox form .btn:hover {
+main #signInSec .secContent .containerOne .content .formBox form .btn span:nth-child(1) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(to right, transparent, #0b704e);
+  animation: animateOne 2s linear infinite;
+}
+@keyframes animateOne {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+main #signInSec .secContent .containerOne .content .formBox form .btn span:nth-child(2) {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent, #0b704e);
+  animation: animateTwo 2s linear infinite;
+  animation-delay: 1s;
+}
+@keyframes animateTwo {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+main #signInSec .secContent .containerOne .content .formBox form .btn span:nth-child(3) {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(to left, transparent, #0b704e);
+  animation: animateThree 2s linear infinite;
+}
+@keyframes animateThree {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+main #signInSec .secContent .containerOne .content .formBox form .btn span:nth-child(4) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(to top, transparent, #0b704e);
+  animation: animateFour 2s linear infinite;
+  animation-delay: 1s;
+}
+@keyframes animateFour {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+main #signInSec .secContent .containerOne .content .formBox form .btn:hover {
   transition: 0.4s;
   width: 55%;
   background: rgba(0, 0, 0, 0.3);
   color: #f5f5f5;
+  box-shadow: 0 0 30px rgba(11, 112, 78, 0.5);
+  border: 2px solid #0b704e;
 }
-main #loginsec .secContent .containerOne .content .formBox form .btn:active {
+main #signInSec .secContent .containerOne .content .formBox form .btn:hover span {
+  transition: 0.4s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  background: linear-gradient(to right, transparent, #0b704e);
+}
+main #signInSec .secContent .containerOne .content .formBox form .btn:active {
   transition: 0.4s;
   background: rgba(11, 112, 78, 0.5);
 }
-main #loginsec .secContent .containerOne .content .formBox form .loginRegister {
+main #signInSec .secContent .containerOne .content .formBox form .loginRegister {
   font-size: 9em;
   color: #1d1d1d;
   text-align: center;
   font-weight: 500;
   margin: 25px 0 10px;
 }
-main #loginsec .secContent .containerOne .content .formBox form .loginRegister p {
+main #signInSec .secContent .containerOne .content .formBox form .loginRegister p {
   font-size: 14px;
   color: #f5f5f5;
   text-decoration: none;
   font-weight: 100;
   transition: 0.4s;
 }
-main #loginsec .secContent .containerOne .content .formBox form .loginRegister p a {
+main #signInSec .secContent .containerOne .content .formBox form .loginRegister p a {
   color: #1a6ed8;
   font-weight: 700;
 }
-main #loginsec .secContent .containerOne .content .formBox form .loginRegister p a:hover {
+main #signInSec .secContent .containerOne .content .formBox form .loginRegister p a:hover {
   text-decoration: underline;
 }
-main #loginsec .secContent .containerOne .content .formBox form:hover h2 {
+main #signInSec .secContent .containerOne .content .formBox form:hover h2 {
   text-shadow: 1px 1px 10px #0b704e;
   transition: 0.4s;
 }
-@keyframes color {
+
+@media screen and (min-width: 300px) and (max-width: 600px) {
+  main #signInSec .secContent .containerOne .content .formBox {
+    width: 290px;
+    height: 600px;
+  }
+  main #signInSec .secContent .containerOne .content .formBox form h2 {
+    font-size: 32px;
+  }
+  main #signInSec .secContent .containerOne .content .formBox form .inputBox input {
+    font-size: 12px;
+    width: 65%;
+    padding-right: 35%;
+  }
+  main #signInSec .secContent .containerOne .content .formBox form .btn {
+    width: 70%;
+  }
+  main #signInSec .secContent .containerOne .content .formBox form .btn:active {
+    width: 75%;
+  }
+  main #signInSec .secContent .containerOne .content .formBox form .btn:hover {
+    width: 75%;
+  }
+}
+@media screen and (min-width: 200px) and (max-width: 300px) {
+  main #signInSec .secContent .containerOne .content .formBox {
+    width: 250px;
+    height: 600px;
+  }
+  main #signInSec .secContent .containerOne .content .formBox form h2 {
+    font-size: 32px;
+  }
+  main #signInSec .secContent .containerOne .content .formBox form .inputBox input {
+    font-size: 10px;
+    width: 55%;
+    padding-right: 45%;
+  }
+  main #signInSec .secContent .containerOne .content .formBox form .btn {
+    width: 70%;
+  }
+  main #signInSec .secContent .containerOne .content .formBox form .btn:active {
+    width: 75%;
+  }
+  main #signInSec .secContent .containerOne .content .formBox form .btn:hover {
+    width: 75%;
+  }
+}
+main #signUpSec {
+  width: 100%;
+  max-width: initial;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #1d1d1d no-repeat;
+  background-size: cover;
+  background-position: center;
+  backdrop-filter: blur(20px);
+  overflow: hidden;
+}
+main #signUpSec .particles {
+  position: relative;
+  display: flex;
+  z-index: 1;
+  padding: 0 20px;
+}
+main #signUpSec .particles span {
+  position: relative;
+  bottom: 30px;
+  width: 20px;
+  height: 20px;
+  background: #0b704e;
+  box-shadow: 0 0 0 10px rgba(11, 112, 78, 0.2666666667), 0 0 50px #0b704e, -100px 0 rgba(11, 112, 78, 0.6), 100px 0 rgba(255, 47, 15, 0.6);
+  margin: 0 4px;
+  border-radius: 50%;
+  animation: circleAni 15s ease-in-out infinite;
+  animation-duration: calc(425s / var(--i));
+  animation-delay: -4s;
+}
+main #signUpSec .particles span:nth-child(even) {
+  background: #ff2f0f;
+  box-shadow: 0 0 0 10px rgba(255, 47, 15, 0.2666666667), 0 0 50px #ff2f0f, 100px 0 rgba(11, 112, 78, 0.6), 100px 0 rgba(11, 112, 78, 0.6);
+}
+@keyframes circleAni {
   0% {
-    border-color: white;
+    transform: translateY(100vh) scale(0) rotate(0deg);
   }
   20% {
-    border-color: #0b704e;
-  }
-  40% {
-    border-color: white;
-  }
-  60% {
-    border-color: #0b704e;
-  }
-  80% {
-    border-color: white;
+    transform: translateY(100vh) scale(1) rotate(0deg);
   }
   100% {
-    border-color: #0b704e;
+    transform: translateY(-50vh) scale(0.5) rotate(360deg);
+  }
+}
+main #signUpSec .particlesTwo {
+  position: relative;
+  display: flex;
+  z-index: 1;
+  padding: 0 20px;
+}
+main #signUpSec .particlesTwo span {
+  position: relative;
+  bottom: 30px;
+  width: 7px;
+  height: 7px;
+  background: rgba(245, 245, 245, 0.2666666667);
+  box-shadow: 0 0 0 7px rgba(245, 245, 245, 0.0666666667), 0 0 50px rgba(245, 245, 245, 0.6666666667), -100px 0 rgba(245, 245, 245, 0.2666666667), 100px 0 rgba(255, 47, 15, 0.2666666667);
+  margin: 0 4px;
+  border-radius: 50%;
+  animation: circleAni 15s ease-in-out infinite;
+  animation-duration: calc(725s / var(--i));
+  animation-delay: -7s;
+}
+main #signUpSec .particlesTwo span:nth-child(even) {
+  background: rgba(245, 245, 245, 0.3333333333);
+  box-shadow: 0 0 0 5px rgba(255, 47, 15, 0.0666666667), 0 0 50px rgba(255, 47, 15, 0.6666666667), 100px 0 rgba(11, 112, 78, 0.2666666667), 100px 0 rgba(11, 112, 78, 0.2666666667);
+}
+@keyframes circleAni {
+  0% {
+    transform: translateY(100vh) scale(0) rotate(0deg);
+  }
+  20% {
+    transform: translateY(100vh) scale(1) rotate(0deg);
+  }
+  100% {
+    transform: translateY(-50vh) scale(0.5) rotate(360deg);
+  }
+}
+main #signUpSec .secContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main #signUpSec .secContent .containerOne .content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main #signUpSec .secContent .containerOne .content .formBox {
+  position: relative;
+  width: 620px;
+  height: 800px;
+  background: transparent;
+  border-radius: 20px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  z-index: 3;
+  border: 2px solid transparent;
+}
+main #signUpSec .secContent .containerOne .content .formBox span:nth-child(1) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(to right, transparent, #0b704e);
+  animation: animateOne 2s linear infinite;
+}
+@keyframes animateOne {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+main #signUpSec .secContent .containerOne .content .formBox span:nth-child(2) {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent, #0b704e);
+  animation: animateTwo 2s linear infinite;
+  animation-delay: 1s;
+}
+@keyframes animateTwo {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+main #signUpSec .secContent .containerOne .content .formBox span:nth-child(3) {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(to left, transparent, #0b704e);
+  animation: animateThree 2s linear infinite;
+}
+@keyframes animateThree {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+main #signUpSec .secContent .containerOne .content .formBox span:nth-child(4) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(to top, transparent, #0b704e);
+  animation: animateFour 2s linear infinite;
+  animation-delay: 1s;
+}
+@keyframes animateFour {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+main #signUpSec .secContent .containerOne .content .formBox form {
+  position: absolute;
+  padding: 50px 40px;
+  border-radius: 8px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+main #signUpSec .secContent .containerOne .content .formBox form img {
+  width: 100px;
+}
+main #signUpSec .secContent .containerOne .content .formBox form h2 {
+  font-size: 48px;
+  color: #f5f5f5;
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  font-family: "Marcellus", serif;
+  text-shadow: 0 0 10px white;
+  transition: 0.4s;
+  margin: 0;
+}
+main #signUpSec .secContent .containerOne .content .formBox form .user {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 20px;
+}
+main #signUpSec .secContent .containerOne .content .formBox form .user .inputBox {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  margin: 30px 0;
+}
+main #signUpSec .secContent .containerOne .content .formBox form .user .inputBox label {
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  font-size: 1em;
+  color: #1d1d1d;
+  font-weight: 500;
+  pointer-events: none;
+  color: transparent;
+  letter-spacing: 0.05em;
+  transition: 0.5s;
+}
+main #signUpSec .secContent .containerOne .content .formBox form .user .inputBox input:focus ~ label,
+main #signUpSec .secContent .containerOne .content .formBox form .user .inputBox input:valid ~ label {
+  top: -5px;
+  color: white;
+  text-shadow: 2px 2px 2px #0b704e;
+  font-size: 0.9em;
+  transition: 0.4s;
+}
+main #signUpSec .secContent .containerOne .content .formBox form .user .inputBox input {
+  width: 75%;
+  height: 100%;
+  padding-right: 25%;
+  background: transparent;
+  outline: none;
+  font-weight: 600;
+  color: #f5f5f5;
+  position: relative;
+  font-size: 1em;
+  letter-spacing: 0.05em;
+  transition: 0.5s;
+  z-index: 3;
+  box-shadow: 0px 2px 0px 0px transparent;
+}
+main #signUpSec .secContent .containerOne .content .formBox form .user .inputBox input::placeholder {
+  transition: 1s;
+}
+main #signUpSec .secContent .containerOne .content .formBox form .user .inputBox input:focus {
+  outline: none;
+  box-shadow: 0px 2px 0px 0px #0b704e;
+  border-bottom: 1px solid transparent;
+}
+main #signUpSec .secContent .containerOne .content .formBox form .user .inputBox input:focus::placeholder {
+  color: transparent;
+  transition: 0.4s;
+}
+main #signUpSec .secContent .containerOne .content .formBox form .user .inputBox i {
+  position: absolute;
+  right: 8px;
+  font-size: 1.2em;
+  color: rgba(245, 245, 245, 0.6);
+  line-height: 57px;
+}
+main #signUpSec .secContent .containerOne .content .formBox form .inputBox {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  margin: 30px 0;
+}
+main #signUpSec .secContent .containerOne .content .formBox form .inputBox label {
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  font-size: 1em;
+  color: #1d1d1d;
+  font-weight: 500;
+  pointer-events: none;
+  color: transparent;
+  letter-spacing: 0.05em;
+  transition: 0.5s;
+}
+main #signUpSec .secContent .containerOne .content .formBox form .inputBox input:focus ~ label,
+main #signUpSec .secContent .containerOne .content .formBox form .inputBox input:valid ~ label {
+  top: -5px;
+  color: white;
+  text-shadow: 2px 2px 2px #0b704e;
+  font-size: 0.9em;
+  transition: 0.4s;
+}
+main #signUpSec .secContent .containerOne .content .formBox form .inputBox input {
+  width: 85%;
+  height: 100%;
+  padding-right: 5%;
+  background: transparent;
+  outline: none;
+  font-weight: 600;
+  color: #f5f5f5;
+  position: relative;
+  font-size: 1em;
+  letter-spacing: 0.05em;
+  transition: 0.5s;
+  z-index: 3;
+  box-shadow: 0px 2px 0px 0px transparent;
+}
+main #signUpSec .secContent .containerOne .content .formBox form .inputBox input::placeholder {
+  transition: 1s;
+}
+main #signUpSec .secContent .containerOne .content .formBox form .inputBox input:focus {
+  outline: none;
+  box-shadow: 0px 2px 0px 0px #0b704e;
+  border-bottom: 1px solid transparent;
+}
+main #signUpSec .secContent .containerOne .content .formBox form .inputBox input:focus::placeholder {
+  color: transparent;
+  transition: 0.4s;
+}
+main #signUpSec .secContent .containerOne .content .formBox form .inputBox i {
+  position: absolute;
+  right: 8px;
+  font-size: 1.2em;
+  color: rgba(245, 245, 245, 0.6);
+  line-height: 57px;
+}
+main #signUpSec .secContent .containerOne .content .formBox form .inputBox #toggle {
+  position: absolute;
+  top: 71%;
+  right: 35px;
+  transform: translateY(-50%);
+  background: url("/assets/Media/Images/eye_off.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  z-index: 4;
+}
+main #signUpSec .secContent .containerOne .content .formBox form .inputBox #toggleTwo {
+  position: absolute;
+  top: 71%;
+  right: 35px;
+  transform: translateY(-50%);
+  background: url("/assets/Media/Images/eye_off.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  z-index: 4;
+}
+main #signUpSec .secContent .containerOne .content .formBox form .rememberForgot {
+  font-size: 0.9em;
+  color: #1d1d1d;
+  font-weight: 500;
+  margin: -15px 0 15px;
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+}
+main #signUpSec .secContent .containerOne .content .formBox form .rememberForgot label {
+  position: relative;
+  color: white;
+  font-weight: 100;
+  text-align: center;
+}
+main #signUpSec .secContent .containerOne .content .formBox form .rememberForgot a {
+  text-align: center;
+  font-weight: 500;
+  color: #1a6ed8;
+  text-decoration: none;
+}
+main #signUpSec .secContent .containerOne .content .formBox form .rememberForgot a:hover {
+  text-decoration: underline;
+}
+main #signUpSec .secContent .containerOne .content .formBox form .btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+  width: 50%;
+  height: 50px;
+  background: transparent;
+  border: 2px solid transparent;
+  outline: none;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 1em;
+  color: rgba(245, 245, 245, 0.3);
+  font-weight: 500;
+  transition: 0.4s;
+  position: relative;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+main #signUpSec .secContent .containerOne .content .formBox form .btn span:nth-child(1) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(to right, transparent, #0b704e);
+  animation: animateOne 2s linear infinite;
+}
+@keyframes animateOne {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+main #signUpSec .secContent .containerOne .content .formBox form .btn span:nth-child(2) {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent, #0b704e);
+  animation: animateTwo 2s linear infinite;
+  animation-delay: 1s;
+}
+@keyframes animateTwo {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+main #signUpSec .secContent .containerOne .content .formBox form .btn span:nth-child(3) {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(to left, transparent, #0b704e);
+  animation: animateThree 2s linear infinite;
+}
+@keyframes animateThree {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+main #signUpSec .secContent .containerOne .content .formBox form .btn span:nth-child(4) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(to top, transparent, #0b704e);
+  animation: animateFour 2s linear infinite;
+  animation-delay: 1s;
+}
+@keyframes animateFour {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+main #signUpSec .secContent .containerOne .content .formBox form .btn:hover {
+  transition: 0.4s;
+  width: 55%;
+  background: rgba(0, 0, 0, 0.3);
+  color: #f5f5f5;
+  box-shadow: 0 0 30px rgba(11, 112, 78, 0.5);
+  border: 2px solid #0b704e;
+}
+main #signUpSec .secContent .containerOne .content .formBox form .btn:hover span {
+  transition: 0.4s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  background: linear-gradient(to right, transparent, #0b704e);
+}
+main #signUpSec .secContent .containerOne .content .formBox form .btn:active {
+  transition: 0.4s;
+  background: rgba(11, 112, 78, 0.5);
+}
+main #signUpSec .secContent .containerOne .content .formBox form .signIn {
+  font-size: 9em;
+  color: #1d1d1d;
+  text-align: center;
+  font-weight: 500;
+  margin: 25px 0 10px;
+}
+main #signUpSec .secContent .containerOne .content .formBox form .signIn p {
+  font-size: 14px;
+  color: #f5f5f5;
+  text-decoration: none;
+  font-weight: 100;
+  transition: 0.4s;
+}
+main #signUpSec .secContent .containerOne .content .formBox form .signIn p a {
+  color: #1a6ed8;
+  font-weight: 700;
+}
+main #signUpSec .secContent .containerOne .content .formBox form .signIn p a:hover {
+  text-decoration: underline;
+}
+main #signUpSec .secContent .containerOne .content .formBox form:hover h2 {
+  text-shadow: 1px 1px 10px #0b704e;
+  transition: 0.4s;
+}
+
+@media screen and (min-width: 601px) and (max-width: 991px) {
+  main #signUpSec .secContent .containerOne .content .formBox {
+    width: 500px;
+    height: 800px;
+  }
+  main #signUpSec .secContent .containerOne .content .formBox form h2 {
+    margin: 0;
+    font-size: 32px;
+  }
+  main #signUpSec .secContent .containerOne .content .formBox form .user .inputBox {
+    margin: 10px 0;
+  }
+  main #signUpSec .secContent .containerOne .content .formBox form .user .inputBox input {
+    font-size: 10px;
+  }
+  main #signUpSec .secContent .containerOne .content .formBox form .inputBox {
+    margin: 20px 0;
+  }
+  main #signUpSec .secContent .containerOne .content .formBox form .inputBox input {
+    font-size: 10px;
+    width: 65%;
+    padding-right: 35%;
+  }
+  main #signUpSec .secContent .containerOne .content .formBox form .btn {
+    width: 70%;
+  }
+  main #signUpSec .secContent .containerOne .content .formBox form .btn:active {
+    width: 75%;
+  }
+  main #signUpSec .secContent .containerOne .content .formBox form .btn:hover {
+    width: 75%;
+  }
+}
+@media screen and (min-width: 300px) and (max-width: 600px) {
+  main #signUpSec .secContent .containerOne .content .formBox {
+    width: 290px;
+    height: 800px;
+  }
+  main #signUpSec .secContent .containerOne .content .formBox form h2 {
+    margin: 0;
+    font-size: 32px;
+  }
+  main #signUpSec .secContent .containerOne .content .formBox form .user .inputBox {
+    margin: 10px 0;
+  }
+  main #signUpSec .secContent .containerOne .content .formBox form .user .inputBox input {
+    font-size: 10px;
+  }
+  main #signUpSec .secContent .containerOne .content .formBox form .inputBox {
+    margin: 20px 0;
+  }
+  main #signUpSec .secContent .containerOne .content .formBox form .inputBox input {
+    font-size: 10px;
+    width: 65%;
+    padding-right: 35%;
+  }
+  main #signUpSec .secContent .containerOne .content .formBox form .btn {
+    width: 70%;
+  }
+  main #signUpSec .secContent .containerOne .content .formBox form .btn:active {
+    width: 75%;
+  }
+  main #signUpSec .secContent .containerOne .content .formBox form .btn:hover {
+    width: 75%;
+  }
+}
+@media screen and (min-width: 200px) and (max-width: 299px) {
+  main #signUpSec .secContent .containerOne .content .formBox {
+    width: 250px;
+    height: 800px;
+  }
+  main #signUpSec .secContent .containerOne .content .formBox form img {
+    width: 60px;
+  }
+  main #signUpSec .secContent .containerOne .content .formBox form h2 {
+    margin: 0;
+    font-size: 22px;
+  }
+  main #signUpSec .secContent .containerOne .content .formBox form .user {
+    gap: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  main #signUpSec .secContent .containerOne .content .formBox form .user .inputBox {
+    margin: 20px;
+  }
+  main #signUpSec .secContent .containerOne .content .formBox form .inputBox {
+    margin: 20px;
+  }
+  main #signUpSec .secContent .containerOne .content .formBox form .inputBox input {
+    font-size: 10px;
+    width: 55%;
+    padding-right: 45%;
+  }
+  main #signUpSec .secContent .containerOne .content .formBox form .btn {
+    width: 70%;
+  }
+  main #signUpSec .secContent .containerOne .content .formBox form .btn:active {
+    width: 75%;
+  }
+  main #signUpSec .secContent .containerOne .content .formBox form .btn:hover {
+    width: 75%;
   }
 }
