@@ -77,3 +77,9 @@ https://www.youtube.com/watch?v=p1GmFCGuVjw
 
 https://www.youtube.com/watch?v=uCyv2RRgA2s - npm json
 https://www.youtube.com/watch?v=Sswl0bTDEFU
+
+
+git init
+git add .
+git commit -m ""
+git push -u origin main
