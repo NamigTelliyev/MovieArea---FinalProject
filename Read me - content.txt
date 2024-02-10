@@ -2,15 +2,16 @@
 Categories\
 3.Istek Listesi\ @@@
 4.Sepetteki filmler\ @@@
-Hakkımızda\ ✅
 7.add film daveti @@@
+contact
 navbar
 6.Profilim\
 
 login
 
-2.Trend\en cok izlenen\arsiv\imdp
-\site puanlamasi\Seriler
+2.Trend\
+\site puanlamasi\
+Seriler/year   search
 
 altmenu
 hamburger menu

@@ -3094,3 +3094,692 @@ main #passwordResetSec .secContent .containerOne .content .notificationBox .noti
     margin: 0;
   }
 }
+main #contactSec {
+  width: 100%;
+  max-width: initial;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+main #contactSec .secContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+main #contactSec .secContent .containerOne .content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main #contactSec .secContent .containerOne .content .imageDiv {
+  z-index: 10;
+}
+main #contactSec .secContent .containerOne .content .imageDiv img {
+  width: 500px;
+  -webkit-filter: drop-shadow(1px 1px 0 white) drop-shadow(-1px -1px 0 white);
+  filter: drop-shadow(1px 0px 1px white);
+}
+main #contactSec .secContent .containerTwo {
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+main #contactSec .secContent .containerTwo .contentOne {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main #contactSec .secContent .containerTwo .contentOne .formBox {
+  position: relative;
+  width: 720px;
+  height: 800px;
+  background: transparent;
+  border-radius: 20px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  display: block;
+  overflow: hidden;
+  z-index: 3;
+  border: 2px solid transparent;
+}
+main #contactSec .secContent .containerTwo .contentOne .formBox span:nth-child(1) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(to right, transparent, #0b704e);
+  animation: animateOne 2s linear infinite;
+}
+@keyframes animateOne {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+main #contactSec .secContent .containerTwo .contentOne .formBox span:nth-child(2) {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent, #0b704e);
+  animation: animateTwo 2s linear infinite;
+  animation-delay: 1s;
+}
+@keyframes animateTwo {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+main #contactSec .secContent .containerTwo .contentOne .formBox span:nth-child(3) {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(to left, transparent, #0b704e);
+  animation: animateThree 2s linear infinite;
+}
+@keyframes animateThree {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+main #contactSec .secContent .containerTwo .contentOne .formBox span:nth-child(4) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(to top, transparent, #0b704e);
+  animation: animateFour 2s linear infinite;
+  animation-delay: 1s;
+}
+@keyframes animateFour {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+main #contactSec .secContent .containerTwo .contentOne .formBox form {
+  position: absolute;
+  padding: 50px 40px;
+  border-radius: 8px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+main #contactSec .secContent .containerTwo .contentOne .formBox form h2 {
+  color: #0b704e;
+  text-shadow: 0px 1px 1px #f5f5f5;
+  font-weight: 500;
+  font-size: 38px;
+  margin: 0;
+}
+main #contactSec .secContent .containerTwo .contentOne .formBox form .contactArea {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  margin: 30px 0;
+}
+main #contactSec .secContent .containerTwo .contentOne .formBox form .contactArea h3 {
+  color: #0b704e;
+  text-shadow: 0px 1px 1px #f5f5f5;
+  font-weight: 500;
+  font-size: 28px;
+}
+main #contactSec .secContent .containerTwo .contentOne .formBox form .contactArea p {
+  color: #0b704e;
+  text-shadow: 0px 1px 1px #f5f5f5;
+  font-weight: 500;
+  font-size: 18px;
+}
+main #contactSec .secContent .containerTwo .contentOne .formBox form .contactArea p a {
+  position: relative;
+  text-decoration: none;
+  color: #f5f5f5;
+  text-shadow: 0px 0px 1px #f5f5f5;
+  font-weight: 100;
+}
+main #contactSec .secContent .containerTwo .contentOne .formBox form .contactArea textarea {
+  width: 100%;
+  height: 100px;
+  padding-right: 5%;
+  margin-top: 20px;
+  background: transparent;
+  outline: none;
+  font-weight: 600;
+  color: #f5f5f5;
+  position: relative;
+  font-size: 1em;
+  letter-spacing: 0.05em;
+  transition: 0.5s;
+  z-index: 3;
+  box-shadow: 0px 2px 0px 0px transparent;
+}
+main #contactSec .secContent .containerTwo .contentOne .formBox form .contactArea textarea:focus {
+  border: 1px solid #0b704e;
+}
+main #contactSec .secContent .containerTwo .contentOne .formBox form .contactArea .inputBox {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  margin: 30px 0;
+}
+main #contactSec .secContent .containerTwo .contentOne .formBox form .contactArea .inputBox label {
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  font-size: 1em;
+  color: #1d1d1d;
+  font-weight: 500;
+  pointer-events: none;
+  color: transparent;
+  letter-spacing: 0.05em;
+  transition: 0.5s;
+}
+main #contactSec .secContent .containerTwo .contentOne .formBox form .contactArea .inputBox input:focus ~ label,
+main #contactSec .secContent .containerTwo .contentOne .formBox form .contactArea .inputBox input:valid ~ label {
+  top: -5px;
+  color: white;
+  text-shadow: 2px 2px 2px #0b704e;
+  font-size: 0.9em;
+  transition: 0.4s;
+}
+main #contactSec .secContent .containerTwo .contentOne .formBox form .contactArea .inputBox input {
+  width: 95%;
+  height: 100%;
+  padding-right: 5%;
+  background: transparent;
+  outline: none;
+  font-weight: 600;
+  color: #f5f5f5;
+  position: relative;
+  font-size: 1em;
+  letter-spacing: 0.05em;
+  transition: 0.5s;
+  z-index: 3;
+  box-shadow: 0px 2px 0px 0px transparent;
+}
+main #contactSec .secContent .containerTwo .contentOne .formBox form .contactArea .inputBox input::placeholder {
+  transition: 1s;
+}
+main #contactSec .secContent .containerTwo .contentOne .formBox form .contactArea .inputBox input:focus {
+  outline: none;
+  box-shadow: 0px 2px 0px 0px #0b704e;
+  border-bottom: 1px solid transparent;
+}
+main #contactSec .secContent .containerTwo .contentOne .formBox form .contactArea .inputBox input:focus::placeholder {
+  color: transparent;
+  transition: 0.4s;
+}
+main #contactSec .secContent .containerTwo .contentOne .formBox form .contactArea .inputBox i {
+  position: absolute;
+  right: 8px;
+  font-size: 1.2em;
+  color: rgba(245, 245, 245, 0.6);
+  line-height: 57px;
+}
+main #contactSec .secContent .containerTwo .contentOne .formBox form .contactArea .buttonBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main #contactSec .secContent .containerTwo .contentOne .formBox form .contactArea .buttonBox .btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+  width: 38%;
+  height: 50px;
+  background: transparent;
+  border: 2px solid transparent;
+  outline: none;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 1em;
+  color: rgba(245, 245, 245, 0.3);
+  font-weight: 500;
+  transition: 0.4s;
+  position: relative;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+main #contactSec .secContent .containerTwo .contentOne .formBox form .contactArea .buttonBox .btn span:nth-child(1) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(to right, transparent, #0b704e);
+  animation: animateOne 2s linear infinite;
+}
+@keyframes animateOne {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+main #contactSec .secContent .containerTwo .contentOne .formBox form .contactArea .buttonBox .btn span:nth-child(2) {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent, #0b704e);
+  animation: animateTwo 2s linear infinite;
+  animation-delay: 1s;
+}
+@keyframes animateTwo {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+main #contactSec .secContent .containerTwo .contentOne .formBox form .contactArea .buttonBox .btn span:nth-child(3) {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(to left, transparent, #0b704e);
+  animation: animateThree 2s linear infinite;
+}
+@keyframes animateThree {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+main #contactSec .secContent .containerTwo .contentOne .formBox form .contactArea .buttonBox .btn span:nth-child(4) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(to top, transparent, #0b704e);
+  animation: animateFour 2s linear infinite;
+  animation-delay: 1s;
+}
+@keyframes animateFour {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+main #contactSec .secContent .containerTwo .contentOne .formBox form .contactArea .buttonBox .btn:hover {
+  transition: 0.4s;
+  width: 41%;
+  background: rgba(0, 0, 0, 0.3);
+  color: #f5f5f5;
+  box-shadow: 0 0 30px rgba(11, 112, 78, 0.5);
+  border: 2px solid #0b704e;
+}
+main #contactSec .secContent .containerTwo .contentOne .formBox form .contactArea .buttonBox .btn:hover span {
+  transition: 0.4s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  background: linear-gradient(to right, transparent, #0b704e);
+}
+main #contactSec .secContent .containerTwo .contentOne .formBox form .contactArea .buttonBox .btn:active {
+  transition: 0.4s;
+  background: rgba(11, 112, 78, 0.5);
+}
+main #contactSec .secContent .containerTwo .contentOne .formBox form .signIn {
+  font-size: 9em;
+  color: #1d1d1d;
+  text-align: center;
+  font-weight: 500;
+  margin: 25px 0 10px;
+  padding-bottom: 50px;
+}
+main #contactSec .secContent .containerTwo .contentOne .formBox form .signIn p {
+  font-size: 14px;
+  color: #f5f5f5;
+  text-decoration: none;
+  font-weight: 100;
+  transition: 0.4s;
+}
+main #contactSec .secContent .containerTwo .contentOne .formBox form .signIn p a {
+  color: #1a6ed8;
+  font-weight: 700;
+}
+main #contactSec .secContent .containerTwo .contentOne .formBox form .signIn p a:hover {
+  text-decoration: underline;
+}
+main #contactSec .secContent .containerTwo .contentOne .formSend {
+  display: none;
+  position: relative;
+  width: 720px;
+  height: 800px;
+  background: transparent;
+  border-radius: 20px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  z-index: 3;
+  border: 2px solid transparent;
+}
+main #contactSec .secContent .containerTwo .contentOne .formSend span:nth-child(1) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(to right, transparent, #0b704e);
+  animation: animateOne 2s linear infinite;
+}
+@keyframes animateOne {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+main #contactSec .secContent .containerTwo .contentOne .formSend span:nth-child(2) {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent, #0b704e);
+  animation: animateTwo 2s linear infinite;
+  animation-delay: 1s;
+}
+@keyframes animateTwo {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+main #contactSec .secContent .containerTwo .contentOne .formSend span:nth-child(3) {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(to left, transparent, #0b704e);
+  animation: animateThree 2s linear infinite;
+}
+@keyframes animateThree {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+main #contactSec .secContent .containerTwo .contentOne .formSend span:nth-child(4) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(to top, transparent, #0b704e);
+  animation: animateFour 2s linear infinite;
+  animation-delay: 1s;
+}
+@keyframes animateFour {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+main #contactSec .secContent .containerTwo .contentTwo .communication {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+main #contactSec .secContent .containerTwo .contentTwo .communication .address {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+main #contactSec .secContent .containerTwo .contentTwo .communication .address i {
+  color: red;
+  font-size: 20px;
+}
+main #contactSec .secContent .containerTwo .contentTwo .communication .address .textContent h2 {
+  color: #0b704e;
+  text-shadow: 0px 1px 1px #f5f5f5;
+  font-weight: 500;
+  font-size: 24px;
+  margin: 0;
+}
+main #contactSec .secContent .containerTwo .contentTwo .communication .address .textContent p {
+  color: #f5f5f5;
+  text-shadow: 0px 1px 1px #0b704e;
+  font-weight: 500;
+  font-size: 14px;
+  margin: 0;
+}
+main #contactSec .secContent .containerTwo .contentTwo .communication .mailSupport {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+main #contactSec .secContent .containerTwo .contentTwo .communication .mailSupport i {
+  color: #1a6ed8;
+  font-size: 20px;
+}
+main #contactSec .secContent .containerTwo .contentTwo .communication .mailSupport .textContent h2 {
+  color: #0b704e;
+  text-shadow: 0px 1px 1px #f5f5f5;
+  font-weight: 500;
+  font-size: 24px;
+  margin: 0;
+}
+main #contactSec .secContent .containerTwo .contentTwo .communication .mailSupport .textContent h2 a {
+  transition: 0.4s;
+  color: #0b704e;
+  text-shadow: 0px 1px 1px #f5f5f5;
+  font-weight: 500;
+  font-size: 24px;
+  margin: 0;
+}
+main #contactSec .secContent .containerTwo .contentTwo .communication .mailSupport .textContent h2 a:hover {
+  transition: 0.4s;
+  color: #1a6ed8;
+}
+main #contactSec .secContent .containerTwo .contentTwo .communication .mailSupport .textContent p {
+  color: #f5f5f5;
+  text-shadow: 0px 1px 1px #0b704e;
+  font-weight: 500;
+  font-size: 14px;
+  margin: 0;
+}
+main #contactSec .secContent .containerTwo .contentTwo .communication .socialMedia {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+main #contactSec .secContent .containerTwo .contentTwo .communication .socialMedia a i {
+  transition: 0.4s;
+  color: gray;
+}
+main #contactSec .secContent .containerTwo .contentTwo .communication .socialMedia a:hover i {
+  transition: 0.4s;
+  color: white;
+}
+main #contactSec .secContent .containerTwo .contentTwo .communication .socialMedia img {
+  transition: 0.3s;
+  position: absolute;
+  width: 300px;
+  top: 40px;
+  left: 300px;
+}
+main #contactSec .secContent .containerTwo .contentTwo .communication .socialMedia img:hover {
+  transition: 0.3s;
+  width: 333px;
+  top: 30px;
+}
+
+@media screen and (min-width: 601px) and (max-width: 991px) {
+  main #signUpSec .secContent .containerOne .content .formBox {
+    width: 500px;
+    height: 700px;
+  }
+  main #signUpSec .secContent .containerOne .content .formBox form {
+    padding: 5px 40px;
+  }
+  main #signUpSec .secContent .containerOne .content .formBox form img {
+    padding-top: 5px;
+    width: 100px;
+    -webkit-filter: drop-shadow(1px 1px 0 white) drop-shadow(-1px -1px 0 white);
+    filter: drop-shadow(1px 0px 1px white);
+  }
+  main #signUpSec .secContent .containerOne .content .formBox form .user .inputBox {
+    margin: 10px 0;
+  }
+  main #signUpSec .secContent .containerOne .content .formBox form .user .inputBox input {
+    font-size: 10px;
+  }
+  main #signUpSec .secContent .containerOne .content .formBox form .inputBox {
+    margin: 20px 0;
+  }
+  main #signUpSec .secContent .containerOne .content .formBox form .inputBox input {
+    font-size: 10px;
+    width: 65%;
+    padding-right: 35%;
+  }
+  main #signUpSec .secContent .containerOne .content .formBox form .btn {
+    width: 70%;
+  }
+  main #signUpSec .secContent .containerOne .content .formBox form .btn:active {
+    width: 75%;
+  }
+  main #signUpSec .secContent .containerOne .content .formBox form .btn:hover {
+    width: 75%;
+  }
+  main #signUpSec .secContent .containerOne .content .formBox form .signIn {
+    padding-bottom: 0px;
+  }
+}
+@media screen and (min-width: 300px) and (max-width: 600px) {
+  main #signUpSec .secContent .containerOne .content .formBox {
+    width: 290px;
+    height: 700px;
+  }
+  main #signUpSec .secContent .containerOne .content .formBox form img {
+    padding-top: 0px;
+    width: 80px;
+    -webkit-filter: drop-shadow(1px 1px 0 white) drop-shadow(-1px -1px 0 white);
+    filter: drop-shadow(1px 0px 1px white);
+  }
+  main #signUpSec .secContent .containerOne .content .formBox form .user .inputBox {
+    margin: 10px 0;
+  }
+  main #signUpSec .secContent .containerOne .content .formBox form .user .inputBox input {
+    font-size: 10px;
+  }
+  main #signUpSec .secContent .containerOne .content .formBox form .inputBox {
+    margin: 20px 0;
+  }
+  main #signUpSec .secContent .containerOne .content .formBox form .inputBox input {
+    font-size: 10px;
+    width: 65%;
+    padding-right: 35%;
+  }
+  main #signUpSec .secContent .containerOne .content .formBox form .btn {
+    width: 70%;
+  }
+  main #signUpSec .secContent .containerOne .content .formBox form .btn:active {
+    width: 75%;
+  }
+  main #signUpSec .secContent .containerOne .content .formBox form .btn:hover {
+    width: 75%;
+  }
+  main #signUpSec .secContent .containerOne .content .formBox form .signIn {
+    padding-top: 30px;
+    margin: 0;
+  }
+}
+@media screen and (min-width: 200px) and (max-width: 299px) {
+  main #signUpSec .secContent .containerOne .content .formBox {
+    width: 250px;
+    height: 750px;
+  }
+  main #signUpSec .secContent .containerOne .content .formBox form img {
+    padding-top: 0px;
+    width: 70px;
+    -webkit-filter: drop-shadow(1px 1px 0 white) drop-shadow(-1px -1px 0 white);
+    filter: drop-shadow(1px 0px 1px white);
+  }
+  main #signUpSec .secContent .containerOne .content .formBox form .user {
+    gap: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  main #signUpSec .secContent .containerOne .content .formBox form .user .inputBox {
+    margin: 20px;
+  }
+  main #signUpSec .secContent .containerOne .content .formBox form .user .inputBox input {
+    margin: 0;
+  }
+  main #signUpSec .secContent .containerOne .content .formBox form .inputBox {
+    margin: 20px;
+  }
+  main #signUpSec .secContent .containerOne .content .formBox form .inputBox input {
+    margin: 0;
+    font-size: 10px;
+    width: 55%;
+    padding-right: 45%;
+  }
+  main #signUpSec .secContent .containerOne .content .formBox form .btn {
+    width: 70%;
+  }
+  main #signUpSec .secContent .containerOne .content .formBox form .btn:active {
+    width: 75%;
+  }
+  main #signUpSec .secContent .containerOne .content .formBox form .btn:hover {
+    width: 75%;
+  }
+  main #signUpSec .secContent .containerOne .content .formBox form .signIn {
+    padding: 0px;
+    margin: 0;
+  }
+}
