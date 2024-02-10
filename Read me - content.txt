@@ -1,9 +1,10 @@
-Home\
+6Home\
 Categories\
-3.Istek Listesi\
-4.Sepetteki filmler\
+3.Istek Listesi\ @@@
+4.Sepetteki filmler\ @@@
 Hakkımızda\ ✅
-7.add film daveti
+7.add film daveti @@@
+navbar
 6.Profilim\
 
 login
@@ -11,6 +12,8 @@ login
 2.Trend\en cok izlenen\arsiv\imdp
 \site puanlamasi\Seriler
 
+altmenu
+hamburger menu
 
 Json Server:
 name✅

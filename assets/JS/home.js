@@ -40,3 +40,17 @@ function changeBg(bg, title) {
         });
     });
 }
+
+
+
+
+$(document).ready(function() {
+    $(window).scroll(function() {
+      if ($(this).scrollTop() > 900) { // Sayfa belirli bir scroll değerinden sonra
+        $('.header').addClass('scrollHeader'); // 'scroll' sınıfını ekle
+      } else {
+        $('.header').removeClass('scrollHeader'); // 'scroll' sınıfını kaldır
+      }
+    });
+  });
+
