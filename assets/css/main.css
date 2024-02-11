@@ -13,6 +13,10 @@
   margin: 0;
   box-sizing: border-box;
 }
+* ::selection {
+  background-color: #0b704e;
+  color: white;
+}
 
 .header {
   position: fixed;
@@ -23,40 +27,49 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   background-color: transparent;
   transition: top 0.3s ease;
 }
 .header .headerContent {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   border-radius: 10px;
   box-shadow: 0px 0px 10px 1px rgba(245, 245, 245, 0.2666666667);
   width: 90%;
-  padding: 0 2%;
+  padding: 0 5%;
   transition: background-color 0.3s ease;
 }
-.header .headerContent img {
+.header .headerContent a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+.header .headerContent a img {
   width: 80px;
   -webkit-filter: drop-shadow(1px 1px 0 black) drop-shadow(-1px -1px 0 white);
   filter: drop-shadow(1px 1px 0 white);
 }
-.header .headerContent nav {
-  background: transparent;
-  box-shadow: 0 0 0 0;
+.header .headerContent .navbar {
+  display: block;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 15px;
+}
+.header .headerContent .navbar .navbarMain {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-.header .headerContent nav ul {
-  display: flex;
   gap: 20px;
 }
-.header .headerContent nav ul li {
+.header .headerContent .navbar .navbarMain li {
   list-style-type: none;
   display: inline-block;
 }
-.header .headerContent nav ul li a {
+.header .headerContent .navbar .navbarMain li a {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -64,7 +77,7 @@
   transition: 0.4s;
   letter-spacing: 0.5px;
   padding: 10px 2px;
-  font-size: 14px;
+  font-size: 12px;
   text-decoration: none;
   gap: 5px;
   height: 100%;
@@ -72,14 +85,14 @@
   font-weight: 500;
   text-shadow: 1px 1px 1px rgba(29, 29, 29, 0.6666666667);
 }
-.header .headerContent nav ul li a i {
+.header .headerContent .navbar .navbarMain li a i {
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 18px;
   transition: 0.4s;
 }
-.header .headerContent nav ul li a:after {
+.header .headerContent .navbar .navbarMain li a:after {
   content: "";
   position: absolute;
   background-color: #f5f5f5;
@@ -89,36 +102,36 @@
   bottom: 0;
   transition: 0.4s;
 }
-.header .headerContent nav ul li a:hover:after {
+.header .headerContent .navbar .navbarMain li a:hover:after {
   width: 100%;
 }
-.header .headerContent nav ul li a:hover {
+.header .headerContent .navbar .navbarMain li a:hover {
   transition: 0.4s;
   text-shadow: 1px 1px 1px rgba(245, 245, 245, 0.6666666667);
   color: #f5f5f5;
   transition: 0.4s;
 }
-.header .headerContent nav ul li a:hover .categoriesIcon {
+.header .headerContent .navbar .navbarMain li a:hover .categoriesIcon {
   transition: 0.4s;
   color: darkgray;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6666666667);
 }
-.header .headerContent nav ul li a:hover .popularIcon {
+.header .headerContent .navbar .navbarMain li a:hover .popularIcon {
   transition: 0.4s;
   color: red;
   text-shadow: 1px 1px 1px rgba(255, 0, 0, 0.6666666667);
 }
-.header .headerContent nav ul li a:hover .imdbIcon {
+.header .headerContent .navbar .navbarMain li a:hover .imdbIcon {
   transition: 0.4s;
   color: orange;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6666666667);
 }
-.header .headerContent nav ul li a:hover .infoIcon {
+.header .headerContent .navbar .navbarMain li a:hover .infoIcon {
   transition: 0.4s;
   color: #515196;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6666666667);
 }
-.header .headerContent nav ul li a:hover .sendIcon {
+.header .headerContent .navbar .navbarMain li a:hover .sendIcon {
   transition: 0.4s;
   color: darkcyan;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6666666667);
@@ -128,6 +141,7 @@
   justify-content: center;
   align-items: center;
   gap: 15px;
+  margin: 0;
   width: 200px;
   height: 85px;
 }
@@ -139,6 +153,7 @@
   height: 100%;
 }
 .header .headerContent .navbarRight li a {
+  text-decoration: none;
   transition: 0.4s;
   display: flex;
   justify-content: center;
@@ -166,9 +181,11 @@
   text-shadow: 1px 1px 1px rgba(11, 112, 78, 0.6666666667);
 }
 .header .headerContent .navbarRight .profile {
+  text-decoration: none;
   display: none;
 }
 .header .headerContent .navbarRight .signIn {
+  text-decoration: none;
   padding-left: 10px;
   display: block;
 }
@@ -198,6 +215,332 @@
 .header .headerContent .navbarRight .signIn button:active {
   color: #9b9b9b;
 }
+.header .headerContent .hamburgerMenu {
+  display: none;
+}
+.header .headerContent .hamburgerMenu nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.header .headerContent .hamburgerMenu nav .navbarHamburger {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 70px;
+  right: -130px;
+  width: 280px;
+  height: 280px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+}
+.header .headerContent .hamburgerMenu nav .navbarHamburger .toggleHamburger {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background: transparent;
+  backdrop-filter: blur(10px);
+  border: 2px solid #f5f5f5;
+  border-radius: 50%;
+  color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 30;
+  font-size: 2em;
+  transition: transform 1.25s;
+}
+.header .headerContent .hamburgerMenu nav .navbarHamburger li {
+  position: absolute;
+  left: 0;
+  list-style: none;
+  transition: 0.4s;
+  transition-delay: calc(0.1s * var(--i));
+  transform-origin: 140px;
+  transform: rotate(0deg) translate(110px);
+}
+.header .headerContent .hamburgerMenu nav .navbarHamburger li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  color: var(--clr);
+  border: 2px solid var(--clr);
+  border-radius: 50%;
+  font-size: 1.5em;
+  transition: 1s;
+  transform: rotate(calc(-36deg * var(--i)));
+}
+.header .headerContent .hamburgerMenu nav .navbarHamburger li a:hover {
+  transition: 1s;
+  background: var(--clr);
+  color: #333;
+  box-shadow: 0 0 10px var(--clr), 0 0 30px var(--clr), 0 0 50px var(--clr);
+}
+.header .headerContent .hamburgerMenu nav .active {
+  transition: 0.5s;
+  top: 100px;
+  right: -100px;
+}
+.header .headerContent .hamburgerMenu nav .active li {
+  transform: rotate(calc(36deg * var(--i))) translate(0px);
+}
+.header .headerContent .hamburgerMenu nav .active .toggleHamburger {
+  transform: rotate(315deg);
+}
+.header .searchBar {
+  z-index: 15;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  border-radius: 10px;
+  width: 100%;
+  padding: 0 5%;
+  transition: background-color 0.3s ease;
+}
+.header .searchBar nav {
+  box-shadow: 0px 0px 10px 1px rgba(245, 245, 245, 0.2666666667);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 15px;
+}
+.header .searchBar nav .navbarSearch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 49px;
+}
+.header .searchBar nav .navbarSearch li {
+  list-style-type: none;
+  display: inline-block;
+}
+.header .searchBar nav .navbarSearch li #maHover {
+  height: 41px;
+}
+.header .searchBar nav .navbarSearch li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transition: 0.4s;
+  letter-spacing: 0.5px;
+  padding: 10px 2px;
+  font-size: 12px;
+  text-decoration: none;
+  gap: 5px;
+  height: 100%;
+  color: #f5f5f5;
+  font-weight: 500;
+  text-shadow: 1px 1px 1px rgba(29, 29, 29, 0.6666666667);
+}
+.header .searchBar nav .navbarSearch li a img {
+  width: 40px;
+  -webkit-filter: drop-shadow(1px 1px 0 black) drop-shadow(-1px -1px 0 rgba(255, 255, 255, 0.308));
+  filter: drop-shadow(1px 1px 0 rgba(255, 255, 255, 0.596));
+}
+.header .searchBar nav .navbarSearch li a i {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  transition: 0.4s;
+}
+.header .searchBar nav .navbarSearch li a:after {
+  content: "";
+  position: absolute;
+  background-color: #f5f5f5;
+  height: 2px;
+  width: 0;
+  left: 0;
+  bottom: 0;
+  transition: 0.4s;
+}
+.header .searchBar nav .navbarSearch li a:hover:after {
+  width: 100%;
+}
+.header .searchBar nav .navbarSearch li a:hover {
+  transition: 0.4s;
+  text-shadow: 1px 1px 1px rgba(245, 245, 245, 0.6666666667);
+  color: #f5f5f5;
+  transition: 0.4s;
+}
+.header .searchBar nav .navbarSearch li a:hover .trendIcon {
+  transition: 0.4s;
+  color: red;
+  text-shadow: 1px 1px 1px rgba(255, 0, 0, 0.6666666667);
+}
+.header .searchBar nav .navbarSearch li a:hover .dateIcon {
+  transition: 0.4s;
+  color: #515196;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6666666667);
+}
+.header .searchBar nav .navbarSearch li a:hover .seriesIcon {
+  transition: 0.4s;
+  color: darkcyan;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6666666667);
+}
+.header .searchBar nav .navbarSearch .search {
+  width: 90%;
+  margin-left: 10px;
+}
+.header .searchBar nav .navbarSearch .search .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.header .searchBar nav .navbarSearch .search .content form {
+  display: flex;
+  box-shadow: 0 0 5px 0 rgba(245, 245, 245, 0.5333333333);
+}
+.header .searchBar nav .navbarSearch .search .content form i {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 15px;
+  color: rgba(245, 245, 245, 0.6666666667);
+  font-size: 18px;
+}
+.header .searchBar nav .navbarSearch .search .content form input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  width: 150px;
+  height: 40px;
+  outline: none;
+  padding-left: 5px;
+  color: #f5f5f5;
+  border: none;
+  font-weight: 600;
+  transition: 0.4s;
+  padding-left: 15px;
+  caret-color: rgba(245, 245, 245, 0.6666666667);
+}
+.header .searchBar nav .navbarSearch .search .content form input:focus {
+  width: 300px;
+  transition: 0.4s;
+}
+.header .searchBar nav .navbarSearch .search .content form input::placeholder {
+  font-weight: 400;
+}
+.header .searchBar nav .navbarSearch .search .content form .btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100%;
+  background: transparent;
+  border: 2px solid transparent;
+  outline: none;
+  cursor: pointer;
+  font-size: 1em;
+  color: rgba(245, 245, 245, 0.3);
+  font-weight: 500;
+  transition: 0.4s;
+  position: relative;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+.header .searchBar nav .navbarSearch .search .content form .btn span:nth-child(1) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(to right, transparent, rgba(245, 245, 245, 0.3333333333));
+  animation: animateOne 2s linear infinite;
+}
+@keyframes animateOne {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+.header .searchBar nav .navbarSearch .search .content form .btn span:nth-child(2) {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent, rgba(245, 245, 245, 0.3333333333));
+  animation: animateTwo 2s linear infinite;
+  animation-delay: 1s;
+}
+@keyframes animateTwo {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+.header .searchBar nav .navbarSearch .search .content form .btn span:nth-child(3) {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(to left, transparent, rgba(245, 245, 245, 0.3333333333));
+  animation: animateThree 2s linear infinite;
+}
+@keyframes animateThree {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+.header .searchBar nav .navbarSearch .search .content form .btn span:nth-child(4) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(to top, transparent, rgba(245, 245, 245, 0.3333333333));
+  animation: animateFour 2s linear infinite;
+  animation-delay: 1s;
+}
+@keyframes animateFour {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+.header .searchBar nav .navbarSearch .search .content form .btn:hover {
+  transition: 0.4s;
+  width: 100px;
+  background: rgba(0, 0, 0, 0.3);
+  color: rgba(245, 245, 245, 0.6666666667);
+  box-shadow: 0 0 5px rgba(245, 245, 245, 0.2666666667);
+  border: 2px solid rgba(245, 245, 245, 0.3333333333);
+}
+.header .searchBar nav .navbarSearch .search .content form .btn:hover span {
+  transition: 0.4s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  background: linear-gradient(to right, transparent, rgba(245, 245, 245, 0.3333333333));
+}
+.header .searchBar nav .navbarSearch .search .content form .btn:active {
+  transition: 0.4s;
+  background: rgba(245, 245, 245, 0.3333333333);
+}
 
 .scrollHeader {
   position: fixed;
@@ -212,30 +555,35 @@
   transition: top 0.3s ease;
 }
 .scrollHeader .headerContent {
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 1px rgba(245, 245, 245, 0.2666666667);
+  width: 90%;
+  padding: 0 5%;
+  transition: background-color 0.3s ease;
+}
+.scrollHeader .headerContent a {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 10px;
-  background-color: #f5f5f5;
-  box-shadow: 0px 0px 10px 1px rgba(245, 245, 245, 0.2666666667);
-  width: 90%;
-  padding: 0 2%;
-  transition: background-color 0.3s ease;
+  text-decoration: none;
 }
-.scrollHeader .headerContent img {
+.scrollHeader .headerContent a img {
   width: 80px;
   -webkit-filter: drop-shadow(1px 1px 0 white) drop-shadow(-1px -1px 0 black);
   filter: drop-shadow(1px 1px 0 black);
 }
 .scrollHeader .headerContent nav {
-  background: transparent;
-  box-shadow: 0 0 0 0;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 86px;
+  padding-top: 15px;
 }
-.scrollHeader .headerContent nav ul {
+.scrollHeader .headerContent nav .navbarMain {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -243,13 +591,13 @@
   width: 100%;
   height: 100%;
 }
-.scrollHeader .headerContent nav ul li {
+.scrollHeader .headerContent nav .navbarMain li {
   list-style-type: none;
   display: inline-block;
   width: auto;
   height: 100%;
 }
-.scrollHeader .headerContent nav ul li a {
+.scrollHeader .headerContent nav .navbarMain li a {
   width: 100%;
   height: 100%;
   display: flex;
@@ -267,7 +615,7 @@
   font-weight: 500;
   text-shadow: 1px 1px 1px #9b9b9b;
 }
-.scrollHeader .headerContent nav ul li a i {
+.scrollHeader .headerContent nav .navbarMain li a i {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -275,7 +623,7 @@
   transition: 0.4s;
   color: #1d1d1d;
 }
-.scrollHeader .headerContent nav ul li a:after {
+.scrollHeader .headerContent nav .navbarMain li a:after {
   content: "";
   position: absolute;
   background-color: #0b704e;
@@ -285,36 +633,36 @@
   bottom: 0px;
   transition: 0.4s;
 }
-.scrollHeader .headerContent nav ul li a:hover:after {
+.scrollHeader .headerContent nav .navbarMain li a:hover:after {
   width: 100%;
 }
-.scrollHeader .headerContent nav ul li a:hover {
+.scrollHeader .headerContent nav .navbarMain li a:hover {
   transition: 0.4s;
   text-shadow: 1px 1px 2px rgba(11, 112, 78, 0.6666666667);
   color: #0b704e;
   transition: 0.4s;
 }
-.scrollHeader .headerContent nav ul li a:hover .categoriesIcon {
+.scrollHeader .headerContent nav .navbarMain li a:hover .categoriesIcon {
   transition: 0.4s;
   color: darkgray;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6666666667);
 }
-.scrollHeader .headerContent nav ul li a:hover .popularIcon {
+.scrollHeader .headerContent nav .navbarMain li a:hover .popularIcon {
   transition: 0.4s;
   color: red;
   text-shadow: 1px 1px 1px rgba(255, 0, 0, 0.6666666667);
 }
-.scrollHeader .headerContent nav ul li a:hover .imdbIcon {
+.scrollHeader .headerContent nav .navbarMain li a:hover .imdbIcon {
   transition: 0.4s;
   text-shadow: 0 0 0 0 white;
   color: black;
 }
-.scrollHeader .headerContent nav ul li a:hover .infoIcon {
+.scrollHeader .headerContent nav .navbarMain li a:hover .infoIcon {
   transition: 0.4s;
   color: #3b3bd3;
   text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.6666666667);
 }
-.scrollHeader .headerContent nav ul li a:hover .sendIcon {
+.scrollHeader .headerContent nav .navbarMain li a:hover .sendIcon {
   transition: 0.4s;
   color: darkcyan;
   text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.6666666667);
@@ -397,10 +745,6 @@
 
 main {
   background-color: #1d1d1d;
-}
-main #homeSecMostPopularScroll {
-  width: 100%;
-  max-width: initial;
 }
 main #homeSecMostPopularScroll .banner {
   position: relative;
@@ -609,13 +953,7 @@ main .menuBanners #mitsuhaBanner {
 }
 main #homeSecPopular {
   font-family: "Marcellus", serif;
-  width: 100%;
-  max-width: initial;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0) 40%, rgba(0, 0, 0, 0.9) 100%);
-}
-main #homeSecPopular .secContent .containerOne {
-  padding: 0 !important;
-  margin: 0 !important;
 }
 main #homeSecPopular .secContent .containerOne .content {
   display: flex;
@@ -634,13 +972,7 @@ main #homeSecPopular .secContent .containerOne .content h2 span {
 }
 main #homeSecTrend {
   font-family: "Marcellus", serif;
-  width: 100%;
-  max-width: initial;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0) 40%, rgba(0, 0, 0, 0.9) 100%);
-}
-main #homeSecTrend .secContent .containerOne {
-  padding: 0 !important;
-  margin: 0 !important;
 }
 main #homeSecTrend .secContent .containerOne .content {
   display: flex;
@@ -659,13 +991,7 @@ main #homeSecTrend .secContent .containerOne .content h2 span {
 }
 main #homeSecNewFilms {
   font-family: "Marcellus", serif;
-  width: 100%;
-  max-width: initial;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0) 40%, rgba(0, 0, 0, 0.9) 100%);
-}
-main #homeSecNewFilms .secContent .containerOne {
-  padding: 0 !important;
-  margin: 0 !important;
 }
 main #homeSecNewFilms .secContent .containerOne .content {
   display: flex;
@@ -684,13 +1010,7 @@ main #homeSecNewFilms .secContent .containerOne .content h2 span {
 }
 main #homeSecFilmSeries {
   font-family: "Marcellus", serif;
-  width: 100%;
-  max-width: initial;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0) 40%, rgba(0, 0, 0, 0.9) 100%);
-}
-main #homeSecFilmSeries .secContent .containerOne {
-  padding: 0 !important;
-  margin: 0 !important;
 }
 main #homeSecFilmSeries .secContent .containerOne .content {
   display: flex;
@@ -709,13 +1029,7 @@ main #homeSecFilmSeries .secContent .containerOne .content h2 span {
 }
 main #homeSecRecommandedFilms {
   font-family: "Marcellus", serif;
-  width: 100%;
-  max-width: initial;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0) 40%, rgba(0, 0, 0, 0.9) 100%);
-}
-main #homeSecRecommandedFilms .secContent .containerOne {
-  padding: 0 !important;
-  margin: 0 !important;
 }
 main #homeSecRecommandedFilms .secContent .containerOne .content {
   display: flex;
@@ -748,18 +1062,12 @@ footer #footerSec {
   align-items: center;
 }
 footer #footerSec .footerContent {
-  padding: 0 !important;
-  margin: 0 !important;
-  width: 100%;
-  max-width: initial;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
 footer #footerSec .footerContent .containerOne {
-  padding: 0 !important;
-  margin: 0 !important;
   padding: 60px 0;
   width: 80%;
   display: flex;
@@ -1009,8 +1317,6 @@ footer #footerSec .footerContent .containerOne .contentThree .textContent .mapCo
   transition: 0.4s;
 }
 footer #footerSec .footerContent .containerTwo {
-  padding: 0 !important;
-  margin: 0 !important;
   width: 100%;
   background-color: #0b704e;
 }
@@ -1028,6 +1334,14 @@ footer #footerSec .footerContent .containerTwo .content .textContent p {
   padding: 10px;
 }
 
+@media screen and (min-width: 600px) and (max-width: 991px) {
+  .header .headerContent .navbar {
+    display: none;
+  }
+  .header .headerContent .hamburgerMenu {
+    display: block;
+  }
+}
 main #signInSec {
   width: 100%;
   max-width: initial;
@@ -3106,51 +3420,56 @@ main #contactSec {
   background-position: center;
   overflow: hidden;
 }
-main #contactSec .secContent {
+main #contactSec .secContentOne {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
-main #contactSec .secContent .containerOne .content {
+main #contactSec .secContentOne .containerOne .content {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-main #contactSec .secContent .containerOne .content .imageDiv {
+main #contactSec .secContentOne .containerOne .content .imageDiv {
   z-index: 10;
 }
-main #contactSec .secContent .containerOne .content .imageDiv img {
+main #contactSec .secContentOne .containerOne .content .imageDiv img {
   width: 500px;
   -webkit-filter: drop-shadow(1px 1px 0 white) drop-shadow(-1px -1px 0 white);
   filter: drop-shadow(1px 0px 1px white);
 }
-main #contactSec .secContent .containerTwo {
+main #contactSec .secContentTwo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main #contactSec .secContentTwo .containerTwo {
   z-index: 10;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 50px;
 }
-main #contactSec .secContent .containerTwo .contentOne {
+main #contactSec .secContentTwo .containerTwo .contentOne {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-main #contactSec .secContent .containerTwo .contentOne .formBox {
+main #contactSec .secContentTwo .containerTwo .contentOne .formBox {
   position: relative;
   width: 720px;
   height: 800px;
   background: transparent;
   border-radius: 20px;
   backdrop-filter: blur(20px);
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
   display: block;
   overflow: hidden;
   z-index: 3;
   border: 2px solid transparent;
 }
-main #contactSec .secContent .containerTwo .contentOne .formBox span:nth-child(1) {
+main #contactSec .secContentTwo .containerTwo .contentOne .formBox span:nth-child(1) {
   position: absolute;
   top: 0;
   left: 0;
@@ -3167,7 +3486,7 @@ main #contactSec .secContent .containerTwo .contentOne .formBox span:nth-child(1
     transform: translateX(100%);
   }
 }
-main #contactSec .secContent .containerTwo .contentOne .formBox span:nth-child(2) {
+main #contactSec .secContentTwo .containerTwo .contentOne .formBox span:nth-child(2) {
   position: absolute;
   top: 0;
   right: 0;
@@ -3185,7 +3504,7 @@ main #contactSec .secContent .containerTwo .contentOne .formBox span:nth-child(2
     transform: translateY(100%);
   }
 }
-main #contactSec .secContent .containerTwo .contentOne .formBox span:nth-child(3) {
+main #contactSec .secContentTwo .containerTwo .contentOne .formBox span:nth-child(3) {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -3202,7 +3521,7 @@ main #contactSec .secContent .containerTwo .contentOne .formBox span:nth-child(3
     transform: translateX(-100%);
   }
 }
-main #contactSec .secContent .containerTwo .contentOne .formBox span:nth-child(4) {
+main #contactSec .secContentTwo .containerTwo .contentOne .formBox span:nth-child(4) {
   position: absolute;
   top: 0;
   left: 0;
@@ -3220,7 +3539,7 @@ main #contactSec .secContent .containerTwo .contentOne .formBox span:nth-child(4
     transform: translateY(-100%);
   }
 }
-main #contactSec .secContent .containerTwo .contentOne .formBox form {
+main #contactSec .secContentTwo .containerTwo .contentOne .formBox form {
   position: absolute;
   padding: 50px 40px;
   border-radius: 8px;
@@ -3231,39 +3550,39 @@ main #contactSec .secContent .containerTwo .contentOne .formBox form {
   align-items: center;
   width: 100%;
 }
-main #contactSec .secContent .containerTwo .contentOne .formBox form h2 {
+main #contactSec .secContentTwo .containerTwo .contentOne .formBox form h2 {
   color: #0b704e;
   text-shadow: 0px 1px 1px #f5f5f5;
   font-weight: 500;
   font-size: 38px;
   margin: 0;
 }
-main #contactSec .secContent .containerTwo .contentOne .formBox form .contactArea {
+main #contactSec .secContentTwo .containerTwo .contentOne .formBox form .contactArea {
   position: relative;
   width: 100%;
   height: 50px;
   margin: 30px 0;
 }
-main #contactSec .secContent .containerTwo .contentOne .formBox form .contactArea h3 {
+main #contactSec .secContentTwo .containerTwo .contentOne .formBox form .contactArea h3 {
   color: #0b704e;
   text-shadow: 0px 1px 1px #f5f5f5;
   font-weight: 500;
   font-size: 28px;
 }
-main #contactSec .secContent .containerTwo .contentOne .formBox form .contactArea p {
+main #contactSec .secContentTwo .containerTwo .contentOne .formBox form .contactArea p {
   color: #0b704e;
   text-shadow: 0px 1px 1px #f5f5f5;
   font-weight: 500;
   font-size: 18px;
 }
-main #contactSec .secContent .containerTwo .contentOne .formBox form .contactArea p a {
+main #contactSec .secContentTwo .containerTwo .contentOne .formBox form .contactArea p a {
   position: relative;
   text-decoration: none;
   color: #f5f5f5;
   text-shadow: 0px 0px 1px #f5f5f5;
   font-weight: 100;
 }
-main #contactSec .secContent .containerTwo .contentOne .formBox form .contactArea textarea {
+main #contactSec .secContentTwo .containerTwo .contentOne .formBox form .contactArea textarea {
   width: 100%;
   height: 100px;
   padding-right: 5%;
@@ -3279,16 +3598,16 @@ main #contactSec .secContent .containerTwo .contentOne .formBox form .contactAre
   z-index: 3;
   box-shadow: 0px 2px 0px 0px transparent;
 }
-main #contactSec .secContent .containerTwo .contentOne .formBox form .contactArea textarea:focus {
+main #contactSec .secContentTwo .containerTwo .contentOne .formBox form .contactArea textarea:focus {
   border: 1px solid #0b704e;
 }
-main #contactSec .secContent .containerTwo .contentOne .formBox form .contactArea .inputBox {
+main #contactSec .secContentTwo .containerTwo .contentOne .formBox form .contactArea .inputBox {
   position: relative;
   width: 100%;
   height: 50px;
   margin: 30px 0;
 }
-main #contactSec .secContent .containerTwo .contentOne .formBox form .contactArea .inputBox label {
+main #contactSec .secContentTwo .containerTwo .contentOne .formBox form .contactArea .inputBox label {
   position: absolute;
   top: 50%;
   left: 5px;
@@ -3301,15 +3620,15 @@ main #contactSec .secContent .containerTwo .contentOne .formBox form .contactAre
   letter-spacing: 0.05em;
   transition: 0.5s;
 }
-main #contactSec .secContent .containerTwo .contentOne .formBox form .contactArea .inputBox input:focus ~ label,
-main #contactSec .secContent .containerTwo .contentOne .formBox form .contactArea .inputBox input:valid ~ label {
+main #contactSec .secContentTwo .containerTwo .contentOne .formBox form .contactArea .inputBox input:focus ~ label,
+main #contactSec .secContentTwo .containerTwo .contentOne .formBox form .contactArea .inputBox input:valid ~ label {
   top: -5px;
   color: white;
   text-shadow: 2px 2px 2px #0b704e;
   font-size: 0.9em;
   transition: 0.4s;
 }
-main #contactSec .secContent .containerTwo .contentOne .formBox form .contactArea .inputBox input {
+main #contactSec .secContentTwo .containerTwo .contentOne .formBox form .contactArea .inputBox input {
   width: 95%;
   height: 100%;
   padding-right: 5%;
@@ -3324,31 +3643,31 @@ main #contactSec .secContent .containerTwo .contentOne .formBox form .contactAre
   z-index: 3;
   box-shadow: 0px 2px 0px 0px transparent;
 }
-main #contactSec .secContent .containerTwo .contentOne .formBox form .contactArea .inputBox input::placeholder {
+main #contactSec .secContentTwo .containerTwo .contentOne .formBox form .contactArea .inputBox input::placeholder {
   transition: 1s;
 }
-main #contactSec .secContent .containerTwo .contentOne .formBox form .contactArea .inputBox input:focus {
+main #contactSec .secContentTwo .containerTwo .contentOne .formBox form .contactArea .inputBox input:focus {
   outline: none;
   box-shadow: 0px 2px 0px 0px #0b704e;
   border-bottom: 1px solid transparent;
 }
-main #contactSec .secContent .containerTwo .contentOne .formBox form .contactArea .inputBox input:focus::placeholder {
+main #contactSec .secContentTwo .containerTwo .contentOne .formBox form .contactArea .inputBox input:focus::placeholder {
   color: transparent;
   transition: 0.4s;
 }
-main #contactSec .secContent .containerTwo .contentOne .formBox form .contactArea .inputBox i {
+main #contactSec .secContentTwo .containerTwo .contentOne .formBox form .contactArea .inputBox i {
   position: absolute;
   right: 8px;
   font-size: 1.2em;
   color: rgba(245, 245, 245, 0.6);
   line-height: 57px;
 }
-main #contactSec .secContent .containerTwo .contentOne .formBox form .contactArea .buttonBox {
+main #contactSec .secContentTwo .containerTwo .contentOne .formBox form .contactArea .buttonBox {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-main #contactSec .secContent .containerTwo .contentOne .formBox form .contactArea .buttonBox .btn {
+main #contactSec .secContentTwo .containerTwo .contentOne .formBox form .contactArea .buttonBox .btn {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -3366,10 +3685,10 @@ main #contactSec .secContent .containerTwo .contentOne .formBox form .contactAre
   transition: 0.4s;
   position: relative;
   backdrop-filter: blur(20px);
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
   overflow: hidden;
 }
-main #contactSec .secContent .containerTwo .contentOne .formBox form .contactArea .buttonBox .btn span:nth-child(1) {
+main #contactSec .secContentTwo .containerTwo .contentOne .formBox form .contactArea .buttonBox .btn span:nth-child(1) {
   position: absolute;
   top: 0;
   left: 0;
@@ -3386,7 +3705,7 @@ main #contactSec .secContent .containerTwo .contentOne .formBox form .contactAre
     transform: translateX(100%);
   }
 }
-main #contactSec .secContent .containerTwo .contentOne .formBox form .contactArea .buttonBox .btn span:nth-child(2) {
+main #contactSec .secContentTwo .containerTwo .contentOne .formBox form .contactArea .buttonBox .btn span:nth-child(2) {
   position: absolute;
   top: 0;
   right: 0;
@@ -3404,7 +3723,7 @@ main #contactSec .secContent .containerTwo .contentOne .formBox form .contactAre
     transform: translateY(100%);
   }
 }
-main #contactSec .secContent .containerTwo .contentOne .formBox form .contactArea .buttonBox .btn span:nth-child(3) {
+main #contactSec .secContentTwo .containerTwo .contentOne .formBox form .contactArea .buttonBox .btn span:nth-child(3) {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -3421,7 +3740,7 @@ main #contactSec .secContent .containerTwo .contentOne .formBox form .contactAre
     transform: translateX(-100%);
   }
 }
-main #contactSec .secContent .containerTwo .contentOne .formBox form .contactArea .buttonBox .btn span:nth-child(4) {
+main #contactSec .secContentTwo .containerTwo .contentOne .formBox form .contactArea .buttonBox .btn span:nth-child(4) {
   position: absolute;
   top: 0;
   left: 0;
@@ -3439,7 +3758,7 @@ main #contactSec .secContent .containerTwo .contentOne .formBox form .contactAre
     transform: translateY(-100%);
   }
 }
-main #contactSec .secContent .containerTwo .contentOne .formBox form .contactArea .buttonBox .btn:hover {
+main #contactSec .secContentTwo .containerTwo .contentOne .formBox form .contactArea .buttonBox .btn:hover {
   transition: 0.4s;
   width: 41%;
   background: rgba(0, 0, 0, 0.3);
@@ -3447,7 +3766,7 @@ main #contactSec .secContent .containerTwo .contentOne .formBox form .contactAre
   box-shadow: 0 0 30px rgba(11, 112, 78, 0.5);
   border: 2px solid #0b704e;
 }
-main #contactSec .secContent .containerTwo .contentOne .formBox form .contactArea .buttonBox .btn:hover span {
+main #contactSec .secContentTwo .containerTwo .contentOne .formBox form .contactArea .buttonBox .btn:hover span {
   transition: 0.4s;
   position: absolute;
   top: 0;
@@ -3456,11 +3775,11 @@ main #contactSec .secContent .containerTwo .contentOne .formBox form .contactAre
   height: 0;
   background: linear-gradient(to right, transparent, #0b704e);
 }
-main #contactSec .secContent .containerTwo .contentOne .formBox form .contactArea .buttonBox .btn:active {
+main #contactSec .secContentTwo .containerTwo .contentOne .formBox form .contactArea .buttonBox .btn:active {
   transition: 0.4s;
   background: rgba(11, 112, 78, 0.5);
 }
-main #contactSec .secContent .containerTwo .contentOne .formBox form .signIn {
+main #contactSec .secContentTwo .containerTwo .contentOne .formBox form .signIn {
   font-size: 9em;
   color: #1d1d1d;
   text-align: center;
@@ -3468,21 +3787,21 @@ main #contactSec .secContent .containerTwo .contentOne .formBox form .signIn {
   margin: 25px 0 10px;
   padding-bottom: 50px;
 }
-main #contactSec .secContent .containerTwo .contentOne .formBox form .signIn p {
+main #contactSec .secContentTwo .containerTwo .contentOne .formBox form .signIn p {
   font-size: 14px;
   color: #f5f5f5;
   text-decoration: none;
   font-weight: 100;
   transition: 0.4s;
 }
-main #contactSec .secContent .containerTwo .contentOne .formBox form .signIn p a {
+main #contactSec .secContentTwo .containerTwo .contentOne .formBox form .signIn p a {
   color: #1a6ed8;
   font-weight: 700;
 }
-main #contactSec .secContent .containerTwo .contentOne .formBox form .signIn p a:hover {
+main #contactSec .secContentTwo .containerTwo .contentOne .formBox form .signIn p a:hover {
   text-decoration: underline;
 }
-main #contactSec .secContent .containerTwo .contentOne .formSend {
+main #contactSec .secContentTwo .containerTwo .contentOne .formSend {
   display: none;
   position: relative;
   width: 720px;
@@ -3495,7 +3814,7 @@ main #contactSec .secContent .containerTwo .contentOne .formSend {
   z-index: 3;
   border: 2px solid transparent;
 }
-main #contactSec .secContent .containerTwo .contentOne .formSend span:nth-child(1) {
+main #contactSec .secContentTwo .containerTwo .contentOne .formSend span:nth-child(1) {
   position: absolute;
   top: 0;
   left: 0;
@@ -3512,7 +3831,7 @@ main #contactSec .secContent .containerTwo .contentOne .formSend span:nth-child(
     transform: translateX(100%);
   }
 }
-main #contactSec .secContent .containerTwo .contentOne .formSend span:nth-child(2) {
+main #contactSec .secContentTwo .containerTwo .contentOne .formSend span:nth-child(2) {
   position: absolute;
   top: 0;
   right: 0;
@@ -3530,7 +3849,7 @@ main #contactSec .secContent .containerTwo .contentOne .formSend span:nth-child(
     transform: translateY(100%);
   }
 }
-main #contactSec .secContent .containerTwo .contentOne .formSend span:nth-child(3) {
+main #contactSec .secContentTwo .containerTwo .contentOne .formSend span:nth-child(3) {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -3547,7 +3866,7 @@ main #contactSec .secContent .containerTwo .contentOne .formSend span:nth-child(
     transform: translateX(-100%);
   }
 }
-main #contactSec .secContent .containerTwo .contentOne .formSend span:nth-child(4) {
+main #contactSec .secContentTwo .containerTwo .contentOne .formSend span:nth-child(4) {
   position: absolute;
   top: 0;
   left: 0;
@@ -3565,53 +3884,53 @@ main #contactSec .secContent .containerTwo .contentOne .formSend span:nth-child(
     transform: translateY(-100%);
   }
 }
-main #contactSec .secContent .containerTwo .contentTwo .communication {
+main #contactSec .secContentTwo .containerTwo .contentTwo .communication {
   display: flex;
   flex-direction: column;
   gap: 50px;
 }
-main #contactSec .secContent .containerTwo .contentTwo .communication .address {
+main #contactSec .secContentTwo .containerTwo .contentTwo .communication .address {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   gap: 10px;
 }
-main #contactSec .secContent .containerTwo .contentTwo .communication .address i {
+main #contactSec .secContentTwo .containerTwo .contentTwo .communication .address i {
   color: red;
   font-size: 20px;
 }
-main #contactSec .secContent .containerTwo .contentTwo .communication .address .textContent h2 {
+main #contactSec .secContentTwo .containerTwo .contentTwo .communication .address .textContent h2 {
   color: #0b704e;
   text-shadow: 0px 1px 1px #f5f5f5;
   font-weight: 500;
   font-size: 24px;
   margin: 0;
 }
-main #contactSec .secContent .containerTwo .contentTwo .communication .address .textContent p {
+main #contactSec .secContentTwo .containerTwo .contentTwo .communication .address .textContent p {
   color: #f5f5f5;
   text-shadow: 0px 1px 1px #0b704e;
   font-weight: 500;
   font-size: 14px;
   margin: 0;
 }
-main #contactSec .secContent .containerTwo .contentTwo .communication .mailSupport {
+main #contactSec .secContentTwo .containerTwo .contentTwo .communication .mailSupport {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   gap: 10px;
 }
-main #contactSec .secContent .containerTwo .contentTwo .communication .mailSupport i {
+main #contactSec .secContentTwo .containerTwo .contentTwo .communication .mailSupport i {
   color: #1a6ed8;
   font-size: 20px;
 }
-main #contactSec .secContent .containerTwo .contentTwo .communication .mailSupport .textContent h2 {
+main #contactSec .secContentTwo .containerTwo .contentTwo .communication .mailSupport .textContent h2 {
   color: #0b704e;
   text-shadow: 0px 1px 1px #f5f5f5;
   font-weight: 500;
   font-size: 24px;
   margin: 0;
 }
-main #contactSec .secContent .containerTwo .contentTwo .communication .mailSupport .textContent h2 a {
+main #contactSec .secContentTwo .containerTwo .contentTwo .communication .mailSupport .textContent h2 a {
   transition: 0.4s;
   color: #0b704e;
   text-shadow: 0px 1px 1px #f5f5f5;
@@ -3619,167 +3938,41 @@ main #contactSec .secContent .containerTwo .contentTwo .communication .mailSuppo
   font-size: 24px;
   margin: 0;
 }
-main #contactSec .secContent .containerTwo .contentTwo .communication .mailSupport .textContent h2 a:hover {
+main #contactSec .secContentTwo .containerTwo .contentTwo .communication .mailSupport .textContent h2 a:hover {
   transition: 0.4s;
   color: #1a6ed8;
 }
-main #contactSec .secContent .containerTwo .contentTwo .communication .mailSupport .textContent p {
+main #contactSec .secContentTwo .containerTwo .contentTwo .communication .mailSupport .textContent p {
   color: #f5f5f5;
   text-shadow: 0px 1px 1px #0b704e;
   font-weight: 500;
   font-size: 14px;
   margin: 0;
 }
-main #contactSec .secContent .containerTwo .contentTwo .communication .socialMedia {
+main #contactSec .secContentTwo .containerTwo .contentTwo .communication .socialMedia {
   position: relative;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   gap: 10px;
 }
-main #contactSec .secContent .containerTwo .contentTwo .communication .socialMedia a i {
+main #contactSec .secContentTwo .containerTwo .contentTwo .communication .socialMedia a i {
   transition: 0.4s;
   color: gray;
 }
-main #contactSec .secContent .containerTwo .contentTwo .communication .socialMedia a:hover i {
+main #contactSec .secContentTwo .containerTwo .contentTwo .communication .socialMedia a:hover i {
   transition: 0.4s;
   color: white;
 }
-main #contactSec .secContent .containerTwo .contentTwo .communication .socialMedia img {
+main #contactSec .secContentTwo .containerTwo .contentTwo .communication .socialMedia img {
   transition: 0.3s;
   position: absolute;
   width: 300px;
   top: 40px;
   left: 300px;
 }
-main #contactSec .secContent .containerTwo .contentTwo .communication .socialMedia img:hover {
+main #contactSec .secContentTwo .containerTwo .contentTwo .communication .socialMedia img:hover {
   transition: 0.3s;
   width: 333px;
   top: 30px;
-}
-
-@media screen and (min-width: 601px) and (max-width: 991px) {
-  main #signUpSec .secContent .containerOne .content .formBox {
-    width: 500px;
-    height: 700px;
-  }
-  main #signUpSec .secContent .containerOne .content .formBox form {
-    padding: 5px 40px;
-  }
-  main #signUpSec .secContent .containerOne .content .formBox form img {
-    padding-top: 5px;
-    width: 100px;
-    -webkit-filter: drop-shadow(1px 1px 0 white) drop-shadow(-1px -1px 0 white);
-    filter: drop-shadow(1px 0px 1px white);
-  }
-  main #signUpSec .secContent .containerOne .content .formBox form .user .inputBox {
-    margin: 10px 0;
-  }
-  main #signUpSec .secContent .containerOne .content .formBox form .user .inputBox input {
-    font-size: 10px;
-  }
-  main #signUpSec .secContent .containerOne .content .formBox form .inputBox {
-    margin: 20px 0;
-  }
-  main #signUpSec .secContent .containerOne .content .formBox form .inputBox input {
-    font-size: 10px;
-    width: 65%;
-    padding-right: 35%;
-  }
-  main #signUpSec .secContent .containerOne .content .formBox form .btn {
-    width: 70%;
-  }
-  main #signUpSec .secContent .containerOne .content .formBox form .btn:active {
-    width: 75%;
-  }
-  main #signUpSec .secContent .containerOne .content .formBox form .btn:hover {
-    width: 75%;
-  }
-  main #signUpSec .secContent .containerOne .content .formBox form .signIn {
-    padding-bottom: 0px;
-  }
-}
-@media screen and (min-width: 300px) and (max-width: 600px) {
-  main #signUpSec .secContent .containerOne .content .formBox {
-    width: 290px;
-    height: 700px;
-  }
-  main #signUpSec .secContent .containerOne .content .formBox form img {
-    padding-top: 0px;
-    width: 80px;
-    -webkit-filter: drop-shadow(1px 1px 0 white) drop-shadow(-1px -1px 0 white);
-    filter: drop-shadow(1px 0px 1px white);
-  }
-  main #signUpSec .secContent .containerOne .content .formBox form .user .inputBox {
-    margin: 10px 0;
-  }
-  main #signUpSec .secContent .containerOne .content .formBox form .user .inputBox input {
-    font-size: 10px;
-  }
-  main #signUpSec .secContent .containerOne .content .formBox form .inputBox {
-    margin: 20px 0;
-  }
-  main #signUpSec .secContent .containerOne .content .formBox form .inputBox input {
-    font-size: 10px;
-    width: 65%;
-    padding-right: 35%;
-  }
-  main #signUpSec .secContent .containerOne .content .formBox form .btn {
-    width: 70%;
-  }
-  main #signUpSec .secContent .containerOne .content .formBox form .btn:active {
-    width: 75%;
-  }
-  main #signUpSec .secContent .containerOne .content .formBox form .btn:hover {
-    width: 75%;
-  }
-  main #signUpSec .secContent .containerOne .content .formBox form .signIn {
-    padding-top: 30px;
-    margin: 0;
-  }
-}
-@media screen and (min-width: 200px) and (max-width: 299px) {
-  main #signUpSec .secContent .containerOne .content .formBox {
-    width: 250px;
-    height: 750px;
-  }
-  main #signUpSec .secContent .containerOne .content .formBox form img {
-    padding-top: 0px;
-    width: 70px;
-    -webkit-filter: drop-shadow(1px 1px 0 white) drop-shadow(-1px -1px 0 white);
-    filter: drop-shadow(1px 0px 1px white);
-  }
-  main #signUpSec .secContent .containerOne .content .formBox form .user {
-    gap: 0;
-    display: flex;
-    flex-direction: column;
-  }
-  main #signUpSec .secContent .containerOne .content .formBox form .user .inputBox {
-    margin: 20px;
-  }
-  main #signUpSec .secContent .containerOne .content .formBox form .user .inputBox input {
-    margin: 0;
-  }
-  main #signUpSec .secContent .containerOne .content .formBox form .inputBox {
-    margin: 20px;
-  }
-  main #signUpSec .secContent .containerOne .content .formBox form .inputBox input {
-    margin: 0;
-    font-size: 10px;
-    width: 55%;
-    padding-right: 45%;
-  }
-  main #signUpSec .secContent .containerOne .content .formBox form .btn {
-    width: 70%;
-  }
-  main #signUpSec .secContent .containerOne .content .formBox form .btn:active {
-    width: 75%;
-  }
-  main #signUpSec .secContent .containerOne .content .formBox form .btn:hover {
-    width: 75%;
-  }
-  main #signUpSec .secContent .containerOne .content .formBox form .signIn {
-    padding: 0px;
-    margin: 0;
-  }
 }
