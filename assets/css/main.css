@@ -74,7 +74,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
   position: relative;
+  flex-wrap: wrap;
   transition: 0.4s;
   letter-spacing: 0.5px;
   padding: 10px 2px;
@@ -219,6 +221,44 @@
 .header .headerContent .hamburgerMenu {
   display: none;
 }
+.header .headerContent .hamburgerMenu .signInDisplay {
+  display: none;
+}
+.header .headerContent .hamburgerMenu .signInDisplay .profile {
+  text-decoration: none;
+  display: none;
+}
+.header .headerContent .hamburgerMenu .signInDisplay .signIn {
+  text-decoration: none;
+  padding-left: 10px;
+  display: block;
+}
+.header .headerContent .hamburgerMenu .signInDisplay .signIn button {
+  width: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: transparent;
+  border: none;
+  color: rgba(245, 245, 245, 0.8);
+  font-size: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  outline: none;
+  transition: 0.2s;
+}
+.header .headerContent .hamburgerMenu .signInDisplay .signIn button i {
+  font-size: 20px;
+}
+.header .headerContent .hamburgerMenu .signInDisplay .signIn button:hover {
+  transition: 0.2s;
+  color: snow;
+}
+.header .headerContent .hamburgerMenu .signInDisplay .signIn button:active {
+  color: #9b9b9b;
+}
 .header .headerContent .hamburgerMenu nav {
   display: flex;
   justify-content: center;
@@ -282,9 +322,10 @@
 }
 .header .headerContent .hamburgerMenu nav .navbarHamburger li a:hover {
   transition: 1s;
-  color: #333;
+  color: transparent;
 }
 .header .headerContent .hamburgerMenu nav .active {
+  z-index: 6;
   transition: 1s;
   color: #3b3bd3;
   top: 200px;
@@ -306,17 +347,133 @@
 .header .headerContent .hamburgerMenu nav .active li a:hover {
   box-shadow: 0 0 10px var(--clr), 0 0 30px var(--clr), 0 0 50px var(--clr);
   background: var(--clr);
+  color: white;
+  text-shadow: 1px 1px 5px black, 1px 1px 5px black;
 }
 .header .headerContent .hamburgerMenu nav .active .toggleHamburger {
   transform: rotate(315deg);
   width: 90px;
   height: 90px;
 }
+.header .headerContent .categoriesBurger {
+  display: none;
+  position: fixed;
+  right: 265px;
+  z-index: 5;
+}
+.header .headerContent .categoriesBurger nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.header .headerContent .categoriesBurger nav .navbarCategories {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: -62px;
+  right: -330px;
+  width: 280px;
+  height: 280px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 1s;
+}
+.header .headerContent .categoriesBurger nav .navbarCategories .toggleCategories {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  backdrop-filter: blur(10px);
+  border: 2px solid #f5f5f5;
+  border-radius: 50%;
+  color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 30;
+  font-size: 2em;
+  transition: transform 1s;
+}
+.header .headerContent .categoriesBurger nav .navbarCategories li {
+  position: absolute;
+  left: 0;
+  list-style: none;
+  transition: 0.4s;
+  transition-delay: calc(0.1s * var(--i));
+  transform-origin: 140px;
+  transform: rotate(0deg) translate(110px);
+}
+.header .headerContent .categoriesBurger nav .navbarCategories li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90px;
+  height: 90px;
+  color: transparent;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  transition: 1s;
+  transform: rotate(calc(-20deg * var(--i)));
+}
+.header .headerContent .categoriesBurger nav .navbarCategories li a::selection {
+  color: transparent !important;
+  background-color: transparent !important;
+}
+.header .headerContent .categoriesBurger nav .navbarCategories li a:hover {
+  transition: 1s;
+  color: transparent;
+}
+.header .headerContent .categoriesBurger nav .navbarCategories i {
+  transition: 0.4s;
+  font-size: 16px;
+}
+.header .headerContent .categoriesBurger nav .active {
+  transition: 1s;
+  color: #3b3bd3;
+  top: 250px;
+  right: -100px;
+}
+.header .headerContent .categoriesBurger nav .active li {
+  z-index: 1;
+  width: 60px;
+  height: 60px;
+  transform: rotate(calc(20deg * var(--i))) translate(-120px);
+  transition: z-index 0.5s ease, transform 1.25s ease;
+}
+.header .headerContent .categoriesBurger nav .active li a {
+  text-align: center;
+  font-size: 12px;
+  font-weight: 800;
+  backdrop-filter: blur(5px);
+  border: 2px solid var(--clr);
+  color: var(--clr);
+}
+.header .headerContent .categoriesBurger nav .active li a:hover {
+  box-shadow: 0 0 10px var(--clr), 0 0 30px var(--clr), 0 0 50px var(--clr);
+  background: var(--clr);
+  color: white;
+  text-shadow: 1px 1px 5px black, 1px 1px 5px black;
+}
+.header .headerContent .categoriesBurger nav .active li:hover {
+  z-index: 2;
+  transition: 0.2s ease;
+}
+.header .headerContent .categoriesBurger nav .active .toggleCategories {
+  transform: rotate(315deg);
+  width: 90px;
+  height: 90px;
+}
+.header .headerContent .categoriesBurger nav .active i {
+  font-size: 22px;
+}
 .header .navSearch {
   display: none;
   position: absolute;
-  top: 110px;
-  right: 40px;
+  top: 100px;
+  right: 100px;
 }
 .header .navSearch .search {
   width: 90%;
@@ -364,6 +521,7 @@
   font-weight: 400;
 }
 .header .navSearch .search .content form .btn {
+  z-index: 6;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -737,6 +895,7 @@
   transition: top 0.3s ease;
 }
 .scrollHeader .headerContent {
+  position: relative;
   background-color: #f5f5f5;
   display: flex;
   justify-content: space-between;
@@ -926,6 +1085,44 @@
 }
 .scrollHeader .headerContent .hamburgerMenu {
   display: none;
+}
+.scrollHeader .headerContent .hamburgerMenu .signInDisplay {
+  display: none;
+}
+.scrollHeader .headerContent .hamburgerMenu .signInDisplay .profile {
+  text-decoration: none;
+  display: none;
+}
+.scrollHeader .headerContent .hamburgerMenu .signInDisplay .signIn {
+  text-decoration: none;
+  padding-left: 10px;
+  display: block;
+}
+.scrollHeader .headerContent .hamburgerMenu .signInDisplay .signIn button {
+  width: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: transparent;
+  border: none;
+  color: black;
+  font-size: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  outline: none;
+  transition: 0.2s;
+}
+.scrollHeader .headerContent .hamburgerMenu .signInDisplay .signIn button i {
+  font-size: 20px;
+}
+.scrollHeader .headerContent .hamburgerMenu .signInDisplay .signIn button:hover {
+  transition: 0.2s;
+  color: gray;
+}
+.scrollHeader .headerContent .hamburgerMenu .signInDisplay .signIn button:active {
+  color: green;
 }
 .scrollHeader .headerContent .hamburgerMenu nav {
   display: flex;
@@ -1621,6 +1818,9 @@ footer #footerSec .footerContent .containerTwo .content .textContent p {
   .header .headerContent .hamburgerMenu {
     display: block;
   }
+  .header .headerContent .categoriesBurger {
+    display: block;
+  }
   .header .navSearch {
     display: block;
   }
@@ -1632,11 +1832,275 @@ footer #footerSec .footerContent .containerTwo .content .textContent p {
   .header .headerContent .navbar {
     display: none;
   }
+  .header .headerContent .navbarRight {
+    display: none;
+  }
   .header .headerContent .hamburgerMenu {
     display: block;
   }
+  .header .headerContent .hamburgerMenu .signInDisplay {
+    position: relative;
+    display: block;
+  }
+  .header .headerContent .hamburgerMenu .signInDisplay .signIn {
+    position: absolute;
+    top: -15px;
+    right: 50px;
+  }
+  .header .headerContent .hamburgerMenu nav .navbarHamburger .toggleHamburger {
+    width: 50px;
+    height: 50px;
+  }
+  .header .headerContent .hamburgerMenu nav .navbarHamburger li a {
+    width: 50px;
+    height: 50px;
+    transform: rotate(calc(-32.7272727273deg * var(--i)));
+  }
+  .header .headerContent .hamburgerMenu nav .navbarHamburger i {
+    font-size: 14px;
+  }
+  .header .headerContent .hamburgerMenu nav .active {
+    top: 200px;
+    right: -20px;
+  }
+  .header .headerContent .hamburgerMenu nav .active li {
+    width: 50px;
+    height: 50px;
+    transform: rotate(calc(32.7272727273deg * var(--i))) translate(0px);
+  }
+  .header .headerContent .hamburgerMenu nav .active li a {
+    font-size: 8px;
+  }
+  .header .headerContent .hamburgerMenu nav .active .toggleHamburger {
+    width: 50px;
+    height: 50px;
+  }
+  .header .headerContent .categoriesBurger {
+    display: block;
+    position: fixed;
+    right: 240px;
+    z-index: 5;
+  }
+  .header .headerContent .categoriesBurger nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  .header .headerContent .categoriesBurger nav .navbarCategories {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: -62px;
+    right: -330px;
+    width: 280px;
+    height: 280px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 1s;
+  }
+  .header .headerContent .categoriesBurger nav .navbarCategories .toggleCategories {
+    width: 45px;
+    height: 45px;
+  }
+  .header .headerContent .categoriesBurger nav .navbarCategories li a {
+    font-size: 8px;
+    width: 50px;
+    height: 50px;
+  }
+  .header .headerContent .categoriesBurger nav .navbarCategories i {
+    font-size: 12px;
+  }
+  .header .headerContent .categoriesBurger nav .active {
+    transition: 1s;
+    color: #3b3bd3;
+    top: 250px;
+    right: -225px;
+  }
+  .header .headerContent .categoriesBurger nav .active li {
+    z-index: 1;
+    width: 40px;
+    height: 40px;
+    transform: rotate(calc(20deg * var(--i))) translate(10px);
+    transition: z-index 0.5s ease, transform 1.25s ease;
+  }
+  .header .headerContent .categoriesBurger nav .active li a {
+    font-size: 8px;
+  }
+  .header .headerContent .categoriesBurger nav .active .toggleCategories {
+    width: 50px;
+    height: 50px;
+  }
+  .header .headerContent .categoriesBurger nav .active i {
+    font-size: 12px;
+  }
+  .header .navSearch {
+    z-index: 7;
+    display: block;
+    position: absolute;
+    top: 100px;
+    right: 80px;
+  }
+  .header .navSearch .search {
+    width: 90%;
+    margin-left: 10px;
+  }
+  .header .navSearch .search .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .header .navSearch .search .content form input {
+    width: 80px;
+    height: 40px;
+  }
+  .header .navSearch .search .content form input:focus {
+    width: 115px;
+    transition: 0.4s;
+  }
+  .header .navSearch .search .content form .btn {
+    width: 50px;
+    height: 40px;
+    font-size: 12px;
+  }
+  .header .navSearch .search .content form .btn:hover {
+    width: 50px;
+  }
+  .header .searchBar {
+    display: none;
+  }
+}
+@media screen and (min-width: 250px) and (max-width: 299px) {
+  .header .headerContent .navbar {
+    display: none;
+  }
+  .header .headerContent .navbarRight {
+    display: none;
+  }
+  .header .headerContent .hamburgerMenu {
+    display: block;
+  }
+  .header .headerContent .hamburgerMenu .signInDisplay {
+    position: relative;
+    display: block;
+  }
+  .header .headerContent .hamburgerMenu .signInDisplay .signIn {
+    position: absolute;
+    top: -15px;
+    right: 50px;
+  }
+  .header .headerContent .hamburgerMenu nav .navbarHamburger {
+    right: -120px;
+  }
+  .header .headerContent .hamburgerMenu nav .navbarHamburger .toggleHamburger {
+    width: 40px;
+    height: 40px;
+  }
+  .header .headerContent .hamburgerMenu nav .navbarHamburger li a {
+    width: 50px;
+    height: 50px;
+    transform: rotate(calc(-32.7272727273deg * var(--i)));
+  }
+  .header .headerContent .hamburgerMenu nav .navbarHamburger i {
+    font-size: 14px;
+  }
+  .header .headerContent .hamburgerMenu nav .active {
+    top: 200px;
+    right: -25px;
+  }
+  .header .headerContent .hamburgerMenu nav .active li {
+    width: 50px;
+    height: 50px;
+    transform: rotate(calc(32.7272727273deg * var(--i))) translate(25px);
+  }
+  .header .headerContent .hamburgerMenu nav .active li a {
+    font-size: 8px;
+  }
+  .header .headerContent .hamburgerMenu nav .active .toggleHamburger {
+    width: 50px;
+    height: 50px;
+  }
+  .header .headerContent .categoriesBurger {
+    display: block;
+    position: fixed;
+    right: 240px;
+    z-index: 5;
+  }
+  .header .headerContent .categoriesBurger nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  .header .headerContent .categoriesBurger nav .navbarCategories {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: -62px;
+    right: -330px;
+    width: 280px;
+    height: 280px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 1s;
+  }
+  .header .headerContent .categoriesBurger nav .navbarCategories .toggleCategories {
+    width: 45px;
+    height: 45px;
+  }
+  .header .headerContent .categoriesBurger nav .navbarCategories li a {
+    font-size: 10px;
+    width: 45px;
+    height: 45px;
+  }
+  .header .headerContent .categoriesBurger nav .navbarCategories i {
+    font-size: 12px;
+  }
+  .header .headerContent .categoriesBurger nav .active {
+    transition: 1s;
+    color: #3b3bd3;
+    top: 250px;
+    right: -235px;
+  }
+  .header .headerContent .categoriesBurger nav .active li {
+    z-index: 1;
+    width: 40px;
+    height: 40px;
+    transform: rotate(calc(20deg * var(--i))) translate(20px);
+    transition: z-index 0.5s ease, transform 1.25s ease;
+  }
+  .header .headerContent .categoriesBurger nav .active li a {
+    font-size: 8px;
+  }
+  .header .headerContent .categoriesBurger nav .active .toggleCategories {
+    width: 50px;
+    height: 50px;
+  }
+  .header .headerContent .categoriesBurger nav .active i {
+    font-size: 12px;
+  }
   .header .navSearch {
     display: block;
+    z-index: 7;
+    right: 80px;
+  }
+  .header .navSearch .search .content form input {
+    width: 85px;
+    height: 40px;
+  }
+  .header .navSearch .search .content form input:focus {
+    width: 85px;
+  }
+  .header .navSearch .search .content form .btn {
+    width: 50px;
+    height: 40px;
+    font-size: 12px;
+  }
+  .header .navSearch .search .content form .btn:hover {
+    width: 50px;
   }
   .header .searchBar {
     display: none;
@@ -2708,7 +3172,7 @@ main #signUpSec .secContent .containerOne .content .formBox form .signIn p a:hov
     margin: 0;
   }
 }
-@media screen and (min-width: 200px) and (max-width: 299px) {
+@media screen and (min-width: 250px) and (max-width: 299px) {
   main #signUpSec .secContent .containerOne .content .formBox {
     width: 250px;
     height: 750px;
@@ -4275,4 +4739,42 @@ main #contactSec .secContentTwo .containerTwo .contentTwo .communication .social
   transition: 0.3s;
   width: 333px;
   top: 30px;
+}
+
+main #shopSecMain {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+main #shopSecMain .secContent .containerOne .content .textContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+main #shopSecMain .secContent .containerOne .content .textContent h2 {
+  color: white;
+  text-shadow: 1px 1px 2px #0b704e;
+  font-weight: 500;
+  width: 65%;
+}
+
+main #wishSecMain {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+main #wishSecMain .secContent .containerOne .content .textContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+main #wishSecMain .secContent .containerOne .content .textContent h2 {
+  color: white;
+  text-shadow: 1px 1px 2px #0b704e;
+  font-weight: 500;
+  width: 65%;
 }

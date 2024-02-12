@@ -1,0 +1,27 @@
+main{
+    #wishSecMain{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        .secContent{
+            .containerOne{
+                .content{
+                    .textContent{
+                        display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    text-align: center;
+                    h2{
+                        
+                        color: white;
+            text-shadow: 1px 1px 2px #0b704e;
+            font-weight: 500;
+            width: 65%;
+                    }
+                    }
+                }
+            }
+        }
+    }
+}

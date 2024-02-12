@@ -67,7 +67,9 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            text-align: center;
             position: relative;
+            flex-wrap: wrap;
             transition: 0.4s;
             letter-spacing: 0.5px;
             padding: 10px 2px;
@@ -214,10 +216,47 @@
         }
       }
     }
-
+    
     .hamburgerMenu {
       display: none;
-
+.signInDisplay {
+      display: none;
+      .profile {
+        text-decoration: none;
+        display: none;
+      }
+      .signIn {
+        text-decoration: none;
+        padding-left: 10px;
+        display: block;
+        button {
+          width: 50px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          background: transparent;
+          border: none;
+          color: #f5f5f5cc;
+          font-size: 10px;
+          font-weight: 700;
+          cursor: pointer;
+          outline: none;
+          transition: 0.2s;
+          i {
+            font-size: 20px;
+          }
+        }
+        button:hover {
+          transition: 0.2s;
+          color: snow;
+        }
+        button:active {
+          color: #9b9b9b;
+        }
+      }
+    }
       nav {
         display: flex;
         justify-content: center;
@@ -280,12 +319,13 @@
             a:hover {
               transition: 1s;
               // background: var(--clr);
-              color: #333;
+              color: transparent;
               // box-shadow: 0 0 10px var(--clr), 0 0 30px var(--clr),0 0 50px var(--clr);
             }
           }
         }
         .active {
+          z-index: 6;
           transition: 1s;
           color: #3b3bd3;
           top: 200px;
@@ -306,6 +346,8 @@
               box-shadow: 0 0 10px var(--clr), 0 0 30px var(--clr),
                 0 0 50px var(--clr);
               background: var(--clr);
+              color: white;
+              text-shadow: 1px 1px 5px black, 1px 1px 5px black;
             }
           }
           .toggleHamburger {
@@ -316,12 +358,134 @@
         }
       }
     }
+    .categoriesBurger {
+      display: none;
+      position: fixed;
+      // top: -62px;
+      right: 265px;
+      z-index: 5;
+
+      nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        .navbarCategories {
+          margin: 0;
+          padding: 0;
+          position: absolute;
+          top: -62px;
+          right: -330px;
+          width: 280px;
+          height: 280px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          transition: 1s;
+          .toggleCategories {
+            position: absolute;
+            // left: 0;
+            width: 40px;
+            height: 40px;
+            background: transparent;
+            backdrop-filter: blur(10px);
+            border: 2px solid #f5f5f5;
+            border-radius: 50%;
+            color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            z-index: 30;
+            font-size: 2em;
+            transition: transform 1s;
+          }
+          li {
+            position: absolute;
+            left: 0;
+            list-style: none;
+            transition: 0.4s;
+            transition-delay: calc(0.1s * var(--i));
+            transform-origin: 140px;
+            transform: rotate(0deg) translate(110px);
+            a {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              width: 90px;
+              height: 90px;
+              color: transparent;
+              border: 2px solid transparent;
+              border-radius: 50%;
+              transition: 1s;
+              transform: rotate(calc(360deg / -18 * var(--i)));
+            }
+            a::selection {
+              color: transparent !important;
+              background-color: transparent !important;
+            }
+            a:hover {
+              transition: 1s;
+              // background: var(--clr);
+              color: transparent;
+              // box-shadow: 0 0 10px var(--clr), 0 0 30px var(--clr),0 0 50px var(--clr);
+            }
+          }
+          i {
+            transition: 0.4s;
+
+            font-size: 16px;
+          }
+        }
+        .active {
+          transition: 1s;
+          color: #3b3bd3;
+          top: 250px;
+          right: -100px;
+          li {
+            z-index: 1;
+            width: 60px;
+            height: 60px;
+            transform: rotate(calc(360deg / 18 * var(--i))) translate(-120px);
+            transition: z-index 0.5s ease, transform 1.25s ease;
+
+            a {
+              text-align: center;
+              font-size: 12px;
+              font-weight: 800;
+              backdrop-filter: blur(5px);
+              border: 2px solid var(--clr);
+              color: var(--clr);
+            }
+            a:hover {
+              box-shadow: 0 0 10px var(--clr), 0 0 30px var(--clr),
+                0 0 50px var(--clr);
+              background: var(--clr);
+              color: white;
+              text-shadow: 1px 1px 5px black, 1px 1px 5px black;
+            }
+          }
+          li:hover {
+            z-index: 2;
+            transition: 0.2s ease;
+          }
+          .toggleCategories {
+            transform: rotate(315deg);
+            width: 90px;
+            height: 90px;
+          }
+          i {
+            font-size: 22px;
+          }
+        }
+      }
+    }
   }
   .navSearch {
     display: none;
     position: absolute;
-    top: 110px;
-    right: 40px;
+    top: 100px;
+    right: 100px;
     .search {
       width: 90%;
       margin-left: 10px;
@@ -369,6 +533,7 @@
           }
 
           .btn {
+            z-index: 6;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -763,6 +928,7 @@
   transition: top 0.3s ease;
 
   .headerContent {
+    position: relative;
     background-color: #f5f5f5;
     display: flex;
     justify-content: space-between;
@@ -957,7 +1123,44 @@
     }
     .hamburgerMenu {
       display: none;
-
+      .signInDisplay {
+        display: none;
+        .profile {
+          text-decoration: none;
+          display: none;
+        }
+        .signIn {
+          text-decoration: none;
+          padding-left: 10px;
+          display: block;
+          button {
+            width: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: transparent;
+            border: none;
+            color: black;
+            font-size: 10px;
+            font-weight: 700;
+            cursor: pointer;
+            outline: none;
+            transition: 0.2s;
+            i {
+              font-size: 20px;
+            }
+          }
+          button:hover {
+            transition: 0.2s;
+            color: gray;
+          }
+          button:active {
+            color: green;
+          }
+        }
+      }
       nav {
         display: flex;
         justify-content: center;
@@ -1754,6 +1957,9 @@ footer {
       .hamburgerMenu {
         display: block;
       }
+      .categoriesBurger {
+        display: block;
+      }
     }
     .navSearch {
       display: block;
@@ -1769,12 +1975,321 @@ footer {
       .navbar {
         display: none;
       }
+      .navbarRight {
+        display: none;
+      }
+
       .hamburgerMenu {
         display: block;
+        .signInDisplay {
+          position: relative;
+          display: block;
+          .profile {
+          }
+          .signIn {
+            position: absolute;
+            top: -15px;
+            right: 50px;
+          }
+        }
+        nav {
+          .navbarHamburger {
+            .toggleHamburger {
+              width: 50px;
+              height: 50px;
+            }
+            li {
+              a {
+                width: 50px;
+                height: 50px;
+                transform: rotate(calc(360deg / -11 * var(--i)));
+              }
+            }
+            i {
+              font-size: 14px;
+            }
+          }
+          .active {
+            top: 200px;
+            right: -20px;
+            li {
+              width: 50px;
+              height: 50px;
+              transform: rotate(calc(360deg / 11 * var(--i))) translate(0px);
+              a {
+                font-size: 8px;
+              }
+            }
+            .toggleHamburger {
+              width: 50px;
+              height: 50px;
+            }
+          }
+        }
+      }
+      .categoriesBurger {
+        display: block;
+        position: fixed;
+        // top: -62px;
+        right: 240px;
+        z-index: 5;
+
+        nav {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: relative;
+          .navbarCategories {
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            top: -62px;
+            right: -330px;
+            width: 280px;
+            height: 280px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: 1s;
+            .toggleCategories {
+              width: 45px;
+              height: 45px;
+            }
+            li {
+              a {
+                font-size: 8px;
+
+                width: 50px;
+                height: 50px;
+              }
+            }
+            i {
+              font-size: 12px;
+            }
+          }
+          .active {
+            transition: 1s;
+            color: #3b3bd3;
+            top: 250px;
+            right: -225px;
+            li {
+              z-index: 1;
+              width: 40px;
+              height: 40px;
+              transform: rotate(calc(360deg / 18 * var(--i))) translate(10px);
+              transition: z-index 0.5s ease, transform 1.25s ease;
+
+              a {
+                font-size: 8px;
+              }
+            }
+
+            .toggleCategories {
+              width: 50px;
+              height: 50px;
+            }
+            i {
+              font-size: 12px;
+            }
+          }
+        }
+      }
+    }
+    .navSearch {
+      z-index: 7;
+      display: block;
+      position: absolute;
+      top: 100px;
+      right: 80px;
+      .search {
+        width: 90%;
+        margin-left: 10px;
+
+        .content {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+
+          form {
+            input {
+              width: 80px;
+              height: 40px;
+            }
+            input:focus {
+              width: 115px;
+              transition: 0.4s;
+            }
+
+            .btn {
+              width: 50px;
+              height: 40px;
+              font-size: 12px;
+            }
+            .btn:hover {
+              width: 50px;
+            }
+          }
+        }
+      }
+    }
+    .searchBar {
+      display: none;
+    }
+  }
+}
+@media screen and (min-width: 250px) and (max-width: 299px) {
+  .header {
+    .headerContent {
+      .navbar {
+        display: none;
+      }
+      .navbarRight {
+        display: none;
+      }
+      .hamburgerMenu {
+        display: block;
+        .signInDisplay {
+          position: relative;
+          display: block;
+          .profile {
+          }
+          .signIn {
+            position: absolute;
+            top: -15px;
+            right: 50px;
+          }
+        }
+        nav {
+          .navbarHamburger {
+            right: -120px;
+            .toggleHamburger {
+              width: 40px;
+              height: 40px;
+            }
+            li {
+              a {
+                width: 50px;
+                height: 50px;
+                transform: rotate(calc(360deg / -11 * var(--i)));
+              }
+            }
+            i {
+              font-size: 14px;
+            }
+          }
+          .active {
+            top: 200px;
+            right: -25px;
+            li {
+              width: 50px;
+              height: 50px;
+              transform: rotate(calc(360deg / 11 * var(--i))) translate(25px);
+              a {
+                font-size: 8px;
+              }
+            }
+            .toggleHamburger {
+              width: 50px;
+              height: 50px;
+            }
+          }
+        }
+      }
+      .categoriesBurger {
+        display: block;
+        position: fixed;
+        right: 240px;
+        z-index: 5;
+
+        nav {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: relative;
+          .navbarCategories {
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            top: -62px;
+            right: -330px;
+            width: 280px;
+            height: 280px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: 1s;
+            .toggleCategories {
+              width: 45px;
+              height: 45px;
+            }
+            li {
+              a {
+                font-size: 10px;
+
+                width: 45px;
+                height: 45px;
+              }
+            }
+            i {
+              font-size: 12px;
+            }
+          }
+          .active {
+            transition: 1s;
+            color: #3b3bd3;
+            top: 250px;
+            right: -235px;
+            li {
+              z-index: 1;
+              width: 40px;
+              height: 40px;
+              transform: rotate(calc(360deg / 18 * var(--i))) translate(20px);
+              transition: z-index 0.5s ease, transform 1.25s ease;
+
+              a {
+                font-size: 8px;
+              }
+            }
+
+            .toggleCategories {
+              width: 50px;
+              height: 50px;
+            }
+            i {
+              font-size: 12px;
+            }
+          }
+        }
       }
     }
     .navSearch {
       display: block;
+      z-index: 7;
+
+      right: 80px;
+      .search {
+        .content {
+          form {
+            input {
+              width: 85px;
+              height: 40px;
+            }
+            input:focus {
+              width: 85px;
+            }
+
+            .btn {
+              width: 50px;
+              height: 40px;
+              font-size: 12px;
+            }
+            .btn:hover {
+              width: 50px;
+            }
+          }
+        }
+      }
     }
     .searchBar {
       display: none;
