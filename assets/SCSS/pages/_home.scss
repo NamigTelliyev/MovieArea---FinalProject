@@ -32,8 +32,8 @@
     align-items: center;
     border-radius: 10px;
     box-shadow: 0px 0px 10px 1px #f5f5f544;
-    width: 90%;
-    padding: 0 5%;
+    width: 95%;
+    padding: 0 20px;
     transition: background-color 0.3s ease;
 
     a {
@@ -55,21 +55,74 @@
       align-items: center;
       flex-direction: column;
       padding-top: 15px;
+      padding-bottom: 0px;
       .navbarMain {
         display: flex;
         justify-content: center;
         align-items: center;
         gap: 20px;
+
         li {
           list-style-type: none;
           display: inline-block;
+          button {
+            outline: none;
+            cursor: pointer;
+            background: transparent;
+            border: 1px solid transparent;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            transition: 0.4s;
+            letter-spacing: 0.5px;
+            padding: 10px 2px;
+            font-size: 12px;
+            gap: 5px;
+            height: 100%;
+            color: #f5f5f5;
+            font-weight: 500;
+            text-shadow: 1px 1px 1px #1d1d1daa;
+            i {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              font-size: 18px;
+              transition: 0.4s;
+            }
+          }
+          button:after {
+            content: "";
+            position: absolute;
+            background-color: #f5f5f5;
+            height: 2px;
+            width: 0;
+            left: 0;
+            bottom: 0;
+            transition: 0.4s;
+          }
+          button:hover:after {
+            width: 100%;
+          }
+          button:hover {
+            transition: 0.4s;
+            text-shadow: 1px 1px 1px #f5f5f5aa;
+            color: #f5f5f5;
+            transition: 0.4s;
+            .categoriesIcon {
+              transition: 0.4s;
+              color: darkgray;
+              text-shadow: 1px 1px 1px #000000aa;
+            }
+          }
+
           a {
             display: flex;
             justify-content: center;
             align-items: center;
             text-align: center;
             position: relative;
-            flex-wrap: wrap;
             transition: 0.4s;
             letter-spacing: 0.5px;
             padding: 10px 2px;
@@ -139,16 +192,17 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 15px;
-      margin: 0;
       width: 200px;
       height: 85px;
+      margin-right: 15px;
+      margin-bottom: 0px;
+      padding: 0;
       li {
         display: flex;
         justify-content: center;
         align-items: center;
 
-        width: 100%;
+        width: 40px;
         height: 100%;
         a {
           text-decoration: none;
@@ -216,47 +270,46 @@
         }
       }
     }
-    
     .hamburgerMenu {
       display: none;
-.signInDisplay {
-      display: none;
-      .profile {
-        text-decoration: none;
+      .signInDisplay {
         display: none;
-      }
-      .signIn {
-        text-decoration: none;
-        padding-left: 10px;
-        display: block;
-        button {
-          width: 50px;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          text-align: center;
-          background: transparent;
-          border: none;
-          color: #f5f5f5cc;
-          font-size: 10px;
-          font-weight: 700;
-          cursor: pointer;
-          outline: none;
-          transition: 0.2s;
-          i {
-            font-size: 20px;
+        .profile {
+          text-decoration: none;
+          display: none;
+        }
+        .signIn {
+          text-decoration: none;
+          padding-left: 10px;
+          display: block;
+          button {
+            width: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: transparent;
+            border: none;
+            color: #f5f5f5cc;
+            font-size: 10px;
+            font-weight: 700;
+            cursor: pointer;
+            outline: none;
+            transition: 0.2s;
+            i {
+              font-size: 20px;
+            }
+          }
+          button:hover {
+            transition: 0.2s;
+            color: snow;
+          }
+          button:active {
+            color: #9b9b9b;
           }
         }
-        button:hover {
-          transition: 0.2s;
-          color: snow;
-        }
-        button:active {
-          color: #9b9b9b;
-        }
       }
-    }
       nav {
         display: flex;
         justify-content: center;
@@ -267,7 +320,7 @@
           padding: 0;
           position: absolute;
           top: -140px;
-          right: -130px;
+          right: -110px;
           width: 280px;
           height: 280px;
           display: flex;
@@ -277,8 +330,8 @@
           .toggleHamburger {
             position: absolute;
             // left: 0;
-            width: 60px;
-            height: 60px;
+            width: 50px;
+            height: 50px;
             background: transparent;
             backdrop-filter: blur(10px);
             border: 2px solid #f5f5f5;
@@ -310,7 +363,7 @@
               border: 2px solid transparent;
               border-radius: 50%;
               transition: 1s;
-              transform: rotate(calc(360deg / -9 * var(--i)));
+              transform: rotate(calc(360deg / -8 * var(--i)));
             }
             a::selection {
               color: transparent !important;
@@ -323,6 +376,9 @@
               // box-shadow: 0 0 10px var(--clr), 0 0 30px var(--clr),0 0 50px var(--clr);
             }
           }
+          i {
+            font-size: 16px;
+          }
         }
         .active {
           z-index: 6;
@@ -333,7 +389,7 @@
           li {
             width: 60px;
             height: 60px;
-            transform: rotate(calc(360deg / 9 * var(--i))) translate(-70px);
+            transform: rotate(calc(360deg / 8 * var(--i))) translate(-70px);
             a {
               text-align: center;
               font-size: 12px;
@@ -935,8 +991,8 @@
     align-items: center;
     border-radius: 10px;
     box-shadow: 0px 0px 10px 1px #f5f5f544;
-    width: 90%;
-    padding: 0 5%;
+    width: 95%;
+    padding: 0 20px;
     transition: background-color 0.3s ease;
 
     a {
@@ -971,6 +1027,58 @@
           display: inline-block;
           width: auto;
           height: 100%;
+          button {
+            outline: none;
+            cursor: pointer;
+            background: transparent;
+            border: 1px solid transparent;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            transition: 0.4s;
+            letter-spacing: 0.5px;
+            padding: 10px 2px;
+            font-size: 12px;
+            gap: 5px;
+            color: #1d1d1d;
+            font-weight: 500;
+            text-shadow: 1px 1px 1px #9b9b9b;
+            i {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              font-size: 18px;
+              transition: 0.4s;
+              color: #1d1d1d;
+            }
+          }
+          button:after {
+            content: "";
+            position: absolute;
+            background-color: #0b704e;
+            height: 3px;
+            width: 0;
+            left: 0;
+            bottom: 0px;
+            transition: 0.4s;
+          }
+          button:hover:after {
+            width: 100%;
+          }
+          button:hover {
+            transition: 0.4s;
+            text-shadow: 1px 1px 2px #0b704eaa;
+            color: #0b704e;
+            transition: 0.4s;
+            .categoriesIcon {
+              transition: 0.4s;
+              color: darkgray;
+              text-shadow: 1px 1px 1px #000000aa;
+            }
+          }
           a {
             width: 100%;
             height: 100%;
@@ -981,10 +1089,9 @@
             transition: 0.4s;
             letter-spacing: 0.5px;
             padding: 10px 2px;
-            font-size: 14px;
+            font-size: 12px;
             text-decoration: none;
             gap: 5px;
-            height: 100%;
             color: #1d1d1d;
             font-weight: 500;
             text-shadow: 1px 1px 1px #9b9b9b;
@@ -1048,15 +1155,17 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 15px;
       width: 200px;
       height: 85px;
+      margin-right: 15px;
+      margin-bottom: 0px;
+      padding: 0;
       li {
         display: flex;
         justify-content: center;
         align-items: center;
 
-        width: 100%;
+        width: 40px;
         height: 100%;
         a {
           transition: 0.4s;
@@ -1171,7 +1280,7 @@
           padding: 0;
           position: absolute;
           top: -140px;
-          right: -130px;
+          right: -110px;
           width: 280px;
           height: 280px;
           display: flex;
@@ -1181,8 +1290,8 @@
           .toggleHamburger {
             position: absolute;
             // left: 0;
-            width: 60px;
-            height: 60px;
+            width: 50px;
+            height: 50px;
             background: transparent;
             backdrop-filter: blur(10px);
             border: 2px solid #1d1d1d;
@@ -1226,6 +1335,9 @@
               color: #333;
               // box-shadow: 0 0 10px var(--clr), 0 0 30px var(--clr),0 0 50px var(--clr);
             }
+          }
+          i {
+            font-size: 16px;
           }
         }
         .active {
@@ -1465,6 +1577,83 @@ main {
       bottom: 0;
       background: rgba(0, 0, 0, 0.5);
     }
+    .allCategories {
+
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 50;
+      display: none;
+   
+
+      ul {
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 150px;
+        height: 100vh;
+        background: #f5f5f5;
+        gap: 50px;
+
+        .list {
+          display: flex;
+          flex-direction: column;
+          gap: 25px;
+          li {
+            width: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            list-style: none;
+            a {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              width: 100%;
+              padding: 1px 0;
+              font-size: 14px;
+              text-decoration: none;
+              color: #0b704e;
+              text-shadow: 1px 1px 2px #0b704e;
+              font-weight: 500;
+              border-top: 1px solid #0b704e;
+              border-bottom: 1px solid #0b704e;
+              transition: 0.4s;
+            }
+            a:hover{
+              transition: 0.4s;
+              color: #ff4f2f;
+              text-shadow: 1px 1px 2px #ff4f2f;  
+              border-top: 1px solid #ff4f2f;
+              border-bottom: 1px solid #ff4f2f;            
+            }
+          }
+        }
+        
+       
+      }
+    }
+    @keyframes slideInOut {
+      from {
+        transform: translateX(-100%);
+      }
+      to {
+        transform: translateX(0%);
+      }
+    }
+    
+    @keyframes slideOutReverse {
+      from {
+        transform: translateX(0%);
+      }
+      to {
+        transform: translateX(-100%);
+      }
+    }
+    
+    
+  
   }
   .menuBanners {
     display: none;
@@ -1984,8 +2173,7 @@ footer {
         .signInDisplay {
           position: relative;
           display: block;
-          .profile {
-          }
+
           .signIn {
             position: absolute;
             top: -15px;
@@ -2002,7 +2190,7 @@ footer {
               a {
                 width: 50px;
                 height: 50px;
-                transform: rotate(calc(360deg / -11 * var(--i)));
+                transform: rotate(calc(360deg / -10 * var(--i)));
               }
             }
             i {
@@ -2015,7 +2203,7 @@ footer {
             li {
               width: 50px;
               height: 50px;
-              transform: rotate(calc(360deg / 11 * var(--i))) translate(0px);
+              transform: rotate(calc(360deg / 10 * var(--i))) translate(0px);
               a {
                 font-size: 8px;
               }
@@ -2152,8 +2340,7 @@ footer {
         .signInDisplay {
           position: relative;
           display: block;
-          .profile {
-          }
+
           .signIn {
             position: absolute;
             top: -15px;
@@ -2171,7 +2358,7 @@ footer {
               a {
                 width: 50px;
                 height: 50px;
-                transform: rotate(calc(360deg / -11 * var(--i)));
+                transform: rotate(calc(360deg / -10 * var(--i)));
               }
             }
             i {
@@ -2184,7 +2371,7 @@ footer {
             li {
               width: 50px;
               height: 50px;
-              transform: rotate(calc(360deg / 11 * var(--i))) translate(25px);
+              transform: rotate(calc(360deg / 10 * var(--i))) translate(25px);
               a {
                 font-size: 8px;
               }

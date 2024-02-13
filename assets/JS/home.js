@@ -115,10 +115,10 @@ $(document).ready(function() {
     if ($(window).width() >= 250 && $(window).width() <= 599) {
       if (!isExtraItemsAdded) {
         $(".navbarHamburger").append(`
-          <li style="--i:9;--clr:goldenrod;">
+          <li style="--i:8;--clr:goldenrod;">
             <a href="#">Shop</a>
           </li>
-          <li style="--i:10;--clr:limegreen;">
+          <li style="--i:9;--clr:limegreen;">
             <a href="#">WishList</a>
           </li>
         `);
@@ -230,3 +230,35 @@ $(document).ready(function () {
     }
   });
 });
+
+//!
+document.addEventListener("DOMContentLoaded", function() {
+  var categoriesBtn = document.getElementById("categoriesBtn");
+  var allCategories = document.querySelector(".allCategories");
+
+  categoriesBtn.addEventListener("click", function() {
+      // "allCategories" bölümünün görünürlüğünü değiştir
+      if (allCategories.style.display === "none" || allCategories.style.display === "") {
+          // "show" sınıfını ekle
+          allCategories.classList.add("show");
+          // "slideInOut" animasyonunu uygula
+          allCategories.style.animation = "slideInOut 0.5s forwards";
+          // Animasyon bitince görünürlüğü değiştir
+          setTimeout(function() {
+              allCategories.style.display = "block";
+          }, 100); // Animasyon süresi (0.5 saniye) kadar beklet
+      } else {
+          // "slideOutReverse" animasyonunu uygula
+          allCategories.style.animation = "slideOutReverse 0.5s forwards";
+          // Animasyon bitince görünürlüğü değiştir
+          setTimeout(function() {
+              allCategories.style.display = "none";
+              // "show" sınıfını kaldır
+              allCategories.classList.remove("show");
+          }, 500); // Animasyon süresi (0.5 saniye) kadar beklet
+      }
+  });
+});
+
+
+

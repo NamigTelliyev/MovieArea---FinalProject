@@ -3,10 +3,7 @@
       { "id": "1", "title": "a title", "views": 100 },
       { "id": "2", "title": "another title", "views": 200 }
     ],
-    "comments": [
-      { "id": "1", "text": "a comment about post 1", "postId": "1" },
-      { "id": "2", "text": "another comment about post 1", "postId": "1" }
-    ],
+    
     "profile": {
       "name": "",
       "surname":"",
@@ -20,7 +17,7 @@
        "id":"1",
        "name":"Luck",
        "description":"Luck, which is a movie that met with the audience on August 5, 2022 and which we presented in 4k movie format , tells the story of Sam's unlucky life, who tried to cope with some misfortunes throughout his life; It is about his transformation after he finds a lucky coin on the ground one day. The film is directed by Peggy Holmes and written by Kiel Murray, Jonathan Aibel and Glenn Berger. Film, animation, co-production between Spain and the USA; It appears in adventure and comedy genres. The voice cast of the movie, which received 6.4 points from IMDB, includes names such as Eva Noblezada, Simon Pegg, Jane Fonda, Whoopi Goldberg, Flula Borg, Lil Rel Howery and Colin O'Donoghue.Sam, an 18-year-old orphan girl who has encountered many unfortunate events throughout her life, decides one day to give a lucky coin to her friend Hazel, who will be adopted soon, so that she can bring luck in her next life. After a while, Sam realizes that this lucky coin actually increases his luck and decides to use it to change his own misfortune. But here too, Sam's bad luck continues to haunt him, and the young girl accidentally drops the money into the toilet bowl and flushes it. Sam, who blames himself for this mistake, encounters a black cat he met before and is scolded by the cat for losing the coin. Shocked by this strange event, Sam sees the cat passing through a portal and decides to follow it. After a while, Sam finds himself in a place called the Land of Fortune, where he talks again with this cat named Bob. The young girl learns that she needs a coin to return to her own world, and also learns that if it is heard that she lost the coin in the country, she may be exiled. Sam, who plans to buy another coin from Hazel's coin collection, finds himself encountering strange creatures; He will find himself in an extreme adventure where he will travel with a dragon and try to put an end to his bad luck. ",
-       "image":"",
+       "image":"./assets/Media/Images/Ford vs Ferrari.jpg",
        "year":"2022",
        "price":"",
        "series":"none",

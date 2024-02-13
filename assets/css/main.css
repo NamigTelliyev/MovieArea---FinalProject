@@ -1,13 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Marcellus&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Marcellus&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Marcellus&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Marcellus&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Marcellus&display=swap");
 * {
   padding: 0;
   margin: 0;
@@ -38,8 +30,8 @@
   align-items: center;
   border-radius: 10px;
   box-shadow: 0px 0px 10px 1px rgba(245, 245, 245, 0.2666666667);
-  width: 90%;
-  padding: 0 5%;
+  width: 95%;
+  padding: 0 20px;
   transition: background-color 0.3s ease;
 }
 .header .headerContent a {
@@ -59,6 +51,7 @@
   align-items: center;
   flex-direction: column;
   padding-top: 15px;
+  padding-bottom: 0px;
 }
 .header .headerContent .navbar .navbarMain {
   display: flex;
@@ -70,13 +63,63 @@
   list-style-type: none;
   display: inline-block;
 }
+.header .headerContent .navbar .navbarMain li button {
+  outline: none;
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  transition: 0.4s;
+  letter-spacing: 0.5px;
+  padding: 10px 2px;
+  font-size: 12px;
+  gap: 5px;
+  height: 100%;
+  color: #f5f5f5;
+  font-weight: 500;
+  text-shadow: 1px 1px 1px rgba(29, 29, 29, 0.6666666667);
+}
+.header .headerContent .navbar .navbarMain li button i {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  transition: 0.4s;
+}
+.header .headerContent .navbar .navbarMain li button:after {
+  content: "";
+  position: absolute;
+  background-color: #f5f5f5;
+  height: 2px;
+  width: 0;
+  left: 0;
+  bottom: 0;
+  transition: 0.4s;
+}
+.header .headerContent .navbar .navbarMain li button:hover:after {
+  width: 100%;
+}
+.header .headerContent .navbar .navbarMain li button:hover {
+  transition: 0.4s;
+  text-shadow: 1px 1px 1px rgba(245, 245, 245, 0.6666666667);
+  color: #f5f5f5;
+  transition: 0.4s;
+}
+.header .headerContent .navbar .navbarMain li button:hover .categoriesIcon {
+  transition: 0.4s;
+  color: darkgray;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6666666667);
+}
 .header .headerContent .navbar .navbarMain li a {
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   position: relative;
-  flex-wrap: wrap;
   transition: 0.4s;
   letter-spacing: 0.5px;
   padding: 10px 2px;
@@ -143,16 +186,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 15px;
-  margin: 0;
   width: 200px;
   height: 85px;
+  margin-right: 15px;
+  margin-bottom: 0px;
+  padding: 0;
 }
 .header .headerContent .navbarRight li {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 40px;
   height: 100%;
 }
 .header .headerContent .navbarRight li a {
@@ -270,7 +314,7 @@
   padding: 0;
   position: absolute;
   top: -140px;
-  right: -130px;
+  right: -110px;
   width: 280px;
   height: 280px;
   display: flex;
@@ -280,8 +324,8 @@
 }
 .header .headerContent .hamburgerMenu nav .navbarHamburger .toggleHamburger {
   position: absolute;
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   background: transparent;
   backdrop-filter: blur(10px);
   border: 2px solid #f5f5f5;
@@ -314,7 +358,7 @@
   border: 2px solid transparent;
   border-radius: 50%;
   transition: 1s;
-  transform: rotate(calc(-40deg * var(--i)));
+  transform: rotate(calc(-45deg * var(--i)));
 }
 .header .headerContent .hamburgerMenu nav .navbarHamburger li a::selection {
   color: transparent !important;
@@ -323,6 +367,9 @@
 .header .headerContent .hamburgerMenu nav .navbarHamburger li a:hover {
   transition: 1s;
   color: transparent;
+}
+.header .headerContent .hamburgerMenu nav .navbarHamburger i {
+  font-size: 16px;
 }
 .header .headerContent .hamburgerMenu nav .active {
   z-index: 6;
@@ -334,7 +381,7 @@
 .header .headerContent .hamburgerMenu nav .active li {
   width: 60px;
   height: 60px;
-  transform: rotate(calc(40deg * var(--i))) translate(-70px);
+  transform: rotate(calc(45deg * var(--i))) translate(-70px);
 }
 .header .headerContent .hamburgerMenu nav .active li a {
   text-align: center;
@@ -902,8 +949,8 @@
   align-items: center;
   border-radius: 10px;
   box-shadow: 0px 0px 10px 1px rgba(245, 245, 245, 0.2666666667);
-  width: 90%;
-  padding: 0 5%;
+  width: 95%;
+  padding: 0 20px;
   transition: background-color 0.3s ease;
 }
 .scrollHeader .headerContent a {
@@ -938,6 +985,58 @@
   width: auto;
   height: 100%;
 }
+.scrollHeader .headerContent .navbar .navbarMain li button {
+  outline: none;
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid transparent;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transition: 0.4s;
+  letter-spacing: 0.5px;
+  padding: 10px 2px;
+  font-size: 12px;
+  gap: 5px;
+  color: #1d1d1d;
+  font-weight: 500;
+  text-shadow: 1px 1px 1px #9b9b9b;
+}
+.scrollHeader .headerContent .navbar .navbarMain li button i {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  transition: 0.4s;
+  color: #1d1d1d;
+}
+.scrollHeader .headerContent .navbar .navbarMain li button:after {
+  content: "";
+  position: absolute;
+  background-color: #0b704e;
+  height: 3px;
+  width: 0;
+  left: 0;
+  bottom: 0px;
+  transition: 0.4s;
+}
+.scrollHeader .headerContent .navbar .navbarMain li button:hover:after {
+  width: 100%;
+}
+.scrollHeader .headerContent .navbar .navbarMain li button:hover {
+  transition: 0.4s;
+  text-shadow: 1px 1px 2px rgba(11, 112, 78, 0.6666666667);
+  color: #0b704e;
+  transition: 0.4s;
+}
+.scrollHeader .headerContent .navbar .navbarMain li button:hover .categoriesIcon {
+  transition: 0.4s;
+  color: darkgray;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6666666667);
+}
 .scrollHeader .headerContent .navbar .navbarMain li a {
   width: 100%;
   height: 100%;
@@ -948,10 +1047,9 @@
   transition: 0.4s;
   letter-spacing: 0.5px;
   padding: 10px 2px;
-  font-size: 14px;
+  font-size: 12px;
   text-decoration: none;
   gap: 5px;
-  height: 100%;
   color: #1d1d1d;
   font-weight: 500;
   text-shadow: 1px 1px 1px #9b9b9b;
@@ -1012,15 +1110,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 15px;
   width: 200px;
   height: 85px;
+  margin-right: 15px;
+  margin-bottom: 0px;
+  padding: 0;
 }
 .scrollHeader .headerContent .navbarRight li {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 40px;
   height: 100%;
 }
 .scrollHeader .headerContent .navbarRight li a {
@@ -1135,7 +1235,7 @@
   padding: 0;
   position: absolute;
   top: -140px;
-  right: -130px;
+  right: -110px;
   width: 280px;
   height: 280px;
   display: flex;
@@ -1145,8 +1245,8 @@
 }
 .scrollHeader .headerContent .hamburgerMenu nav .navbarHamburger .toggleHamburger {
   position: absolute;
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   background: transparent;
   backdrop-filter: blur(10px);
   border: 2px solid #1d1d1d;
@@ -1188,6 +1288,9 @@
 .scrollHeader .headerContent .hamburgerMenu nav .navbarHamburger li a:hover {
   transition: 1s;
   color: #333;
+}
+.scrollHeader .headerContent .hamburgerMenu nav .navbarHamburger i {
+  font-size: 16px;
 }
 .scrollHeader .headerContent .hamburgerMenu nav .active {
   transition: 1s;
@@ -1407,6 +1510,73 @@ main #homeSecMostPopularScroll .banner::before {
   right: 0;
   bottom: 0;
   background: rgba(0, 0, 0, 0.5);
+}
+main #homeSecMostPopularScroll .allCategories {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  display: none;
+}
+main #homeSecMostPopularScroll .allCategories ul {
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 100vh;
+  background: #f5f5f5;
+  gap: 50px;
+}
+main #homeSecMostPopularScroll .allCategories ul .list {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+main #homeSecMostPopularScroll .allCategories ul .list li {
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+}
+main #homeSecMostPopularScroll .allCategories ul .list li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 1px 0;
+  font-size: 14px;
+  text-decoration: none;
+  color: #0b704e;
+  text-shadow: 1px 1px 2px #0b704e;
+  font-weight: 500;
+  border-top: 1px solid #0b704e;
+  border-bottom: 1px solid #0b704e;
+  transition: 0.4s;
+}
+main #homeSecMostPopularScroll .allCategories ul .list li a:hover {
+  transition: 0.4s;
+  color: #ff4f2f;
+  text-shadow: 1px 1px 2px #ff4f2f;
+  border-top: 1px solid #ff4f2f;
+  border-bottom: 1px solid #ff4f2f;
+}
+@keyframes slideInOut {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+@keyframes slideOutReverse {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
 }
 main .menuBanners {
   display: none;
@@ -1854,7 +2024,7 @@ footer #footerSec .footerContent .containerTwo .content .textContent p {
   .header .headerContent .hamburgerMenu nav .navbarHamburger li a {
     width: 50px;
     height: 50px;
-    transform: rotate(calc(-32.7272727273deg * var(--i)));
+    transform: rotate(calc(-36deg * var(--i)));
   }
   .header .headerContent .hamburgerMenu nav .navbarHamburger i {
     font-size: 14px;
@@ -1866,7 +2036,7 @@ footer #footerSec .footerContent .containerTwo .content .textContent p {
   .header .headerContent .hamburgerMenu nav .active li {
     width: 50px;
     height: 50px;
-    transform: rotate(calc(32.7272727273deg * var(--i))) translate(0px);
+    transform: rotate(calc(36deg * var(--i))) translate(0px);
   }
   .header .headerContent .hamburgerMenu nav .active li a {
     font-size: 8px;
@@ -2001,7 +2171,7 @@ footer #footerSec .footerContent .containerTwo .content .textContent p {
   .header .headerContent .hamburgerMenu nav .navbarHamburger li a {
     width: 50px;
     height: 50px;
-    transform: rotate(calc(-32.7272727273deg * var(--i)));
+    transform: rotate(calc(-36deg * var(--i)));
   }
   .header .headerContent .hamburgerMenu nav .navbarHamburger i {
     font-size: 14px;
@@ -2013,7 +2183,7 @@ footer #footerSec .footerContent .containerTwo .content .textContent p {
   .header .headerContent .hamburgerMenu nav .active li {
     width: 50px;
     height: 50px;
-    transform: rotate(calc(32.7272727273deg * var(--i))) translate(25px);
+    transform: rotate(calc(36deg * var(--i))) translate(25px);
   }
   .header .headerContent .hamburgerMenu nav .active li a {
     font-size: 8px;
@@ -4754,6 +4924,161 @@ main #shopSecMain .secContent .containerOne .content .textContent {
   text-align: center;
 }
 main #shopSecMain .secContent .containerOne .content .textContent h2 {
+  color: white;
+  text-shadow: 1px 1px 2px #0b704e;
+  font-weight: 500;
+  width: 65%;
+}
+
+main #popularSecMain {
+  padding: 250px 0 50px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #1d1d1d;
+}
+main #popularSecMain .secContent {
+  background: rgba(245, 245, 245, 0.0666666667);
+  width: 80%;
+}
+main #popularSecMain .secContent .containerOne .content .textContent {
+  padding: 50px 0;
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+main #popularSecMain .secContent .containerOne .content .textContent h2 {
+  color: #0b704e;
+  text-shadow: 1px 1px 2px #f5f5f5;
+  font-weight: 500;
+  width: 65%;
+}
+main #popularSecMain .secContent .pagination {
+  padding: 40px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+main #popularSecMain .secContent .pagination button {
+  width: 50px;
+  height: 50px;
+  color: #f5f5f5;
+  background: #0b704e;
+  border: 2px solid #1d1d1d;
+  font-weight: 600;
+}
+main #popularSecMain .secContent .pagination .active {
+  width: 51px;
+  height: 51px;
+  background: silver;
+  color: #1d1d1d;
+  border: 2px solid #0b704e;
+}
+
+main #imdbSecMain {
+  padding: 250px 0 50px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #1d1d1d;
+}
+main #imdbSecMain .secContent {
+  background: rgba(245, 245, 245, 0.0666666667);
+  width: 80%;
+}
+main #imdbSecMain .secContent .containerOne .content .textContent {
+  padding: 50px 0;
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+main #imdbSecMain .secContent .containerOne .content .textContent h2 {
+  color: #0b704e;
+  text-shadow: 1px 1px 2px #f5f5f5;
+  font-weight: 500;
+  width: 65%;
+}
+main #imdbSecMain .secContent .pagination {
+  padding: 40px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+main #imdbSecMain .secContent .pagination button {
+  width: 50px;
+  height: 50px;
+  color: #f5f5f5;
+  background: #0b704e;
+  border: 2px solid #1d1d1d;
+  font-weight: 600;
+}
+main #imdbSecMain .secContent .pagination .active {
+  width: 51px;
+  height: 51px;
+  background: silver;
+  color: #1d1d1d;
+  border: 2px solid #0b704e;
+}
+
+main #wishSecMain {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+main #wishSecMain .secContent .containerOne .content .textContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+main #wishSecMain .secContent .containerOne .content .textContent h2 {
+  color: white;
+  text-shadow: 1px 1px 2px #0b704e;
+  font-weight: 500;
+  width: 65%;
+}
+
+main #wishSecMain {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+main #wishSecMain .secContent .containerOne .content .textContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+main #wishSecMain .secContent .containerOne .content .textContent h2 {
+  color: white;
+  text-shadow: 1px 1px 2px #0b704e;
+  font-weight: 500;
+  width: 65%;
+}
+
+main #wishSecMain {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+main #wishSecMain .secContent .containerOne .content .textContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+main #wishSecMain .secContent .containerOne .content .textContent h2 {
   color: white;
   text-shadow: 1px 1px 2px #0b704e;
   font-weight: 500;
