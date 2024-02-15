@@ -20,202 +20,133 @@
 <body>
     <header class="header">
         <div class="headerContent">
-            <a href="./index.html"><img src="./assets/Media/Images/512x512.png" alt="MovieAreaİcon"></a>
-            <nav class="navbar">
-                <ul class="navbarMain">
-                    <li>
-                        <a href="./index.html">Home <i class="fa-solid fa-house"></i></a>
-                    </li>
-                    <li>
-                        <a href="#" aria-disabled="true">Categories <i
-                                class="fa-solid fa-layer-group categoriesIcon"></i></a>
-                    </li>
-                    <li>
-                        <a href="./popularFilms.html">Popular Films <i
-                                class="fa-brands fa-gratipay popularIcon"></i></a>
-                    </li>
-                    <li>
-                        <a href="./imdb.html">İMDB Top 250
-                            <i class="fa-brands fa-imdb imdbIcon"></i></a>
-                    </li>
-
-                    <li>
-                        <a href="./contact.html">Contact<i class="fa-solid fa-circle-info infoIcon"></i></a>
-                    </li>
-                </ul>
-            </nav>
-            <ul class="navbarRight">
-                <li>
-                    <a href="./shop.html"><i class="fa-solid fa-cart-shopping shopIcon"></i></a>
-                </li>
-                <li>
-                    <a href="./wishlist.html"><i class="fa-regular fa-square-plus wishIcon"></i></a>
-                </li>
-                <a href="./signIn.html" class="signIn"><button><i class="fa-solid fa-right-to-bracket"></i>Sign
-                        in</button></a>
-                <a href="./profile.html" class="profile"><button><i
-                            class="fa-solid fa-right-to-bracket"></i></button></a>
+          <a href="./index.html"><img src="./assets/Media/Images/512x512.png" alt="MovieAreaİcon"></a>
+          <nav class="navbar">
+            <ul class="navbarMain">
+              <li>
+                <a href="./index.html">Home <i class="fa-solid fa-house"></i></a>
+              </li>
+              <li class="categorie">
+                <button id="categoriesBtn">Categories <i class="fa-solid fa-layer-group categoriesIcon"></i></button>
+              </li>
+              <li>
+                <a href="./popularFilms.html">Popular Films <i class="fa-brands fa-gratipay popularIcon"></i></a>
+              </li>
+              <li>
+                <a href="./imdb.html">İMDB Rating
+                  <i class="fa-brands fa-imdb imdbIcon"></i></a>
+              </li>
+              <li>
+                <a href="./contact.html">Contact<i class="fa-solid fa-circle-info infoIcon"></i></a>
+              </li>
             </ul>
-            <div class="categoriesBurger">
-                <nav>
-                    <ul class="navbarCategories">
-                        <div class="toggleCategories"><i class="fa-solid fa-layer-group"></i></div>
-                        <li style="--i:0;--clr:#0b704e;">
-                            <a href="#">Action</a>
-                        </li>
-                        <li style="--i:1;--clr:red;">
-                            <a href="#">Adventure</a>
-                        </li>
-                        <li style="--i:2;--clr:orange;">
-                            <a href="#">Family</a>
-                        </li>
-                        <li style="--i:3;--clr:darkcyan;">
-                            <a href="#">Crime</a>
-                        </li>
-                        <li style="--i:4;--clr:gray;">
-                            <a href="#">History</a>
-                        </li>
-                        <li style="--i:5;--clr:orangered;">
-                            <a href="#">Comedy</a>
-                        </li>
-                        <li style="--i:6;--clr:cyan;">
-                            <a href="#">Animated</a>
-                        </li>
-                        <li style="--i:7;--clr:white;">
-                            <a href="#">Fantasy</a>
-                        </li>
-                        <li style="--i:8;--clr:#3b3bd3;">
-                            <a href="#">Mystery</a>
-                        </li>
-                        <li style="--i:9;--clr:#3b3bd3;">
-                            <a href="#">Romantic</a>
-                        </li>
-                        <li style="--i:10;--clr:#3b3bd3;">
-                            <a href="#">War</a>
-                        </li>
-                        <li style="--i:11;--clr:#3b3bd3;">
-                            <a href="#">Musical</a>
-                        </li>
-                        <li style="--i:12;--clr:#3b3bd3;">
-                            <a href="#">Thriller</a>
-                        </li>
-                        <li style="--i:13;--clr:#3b3bd3;">
-                            <a href="#">Horror</a>
-                        </li>
-                        <li style="--i:14;--clr:#3b3bd3;">
-                            <a href="#">Sciene Fiction</a>
-                        </li>
-                        <li style="--i:15;--clr:#3b3bd3;">
-                            <a href="#">Biography</a>
-                        </li>
-                        <li style="--i:16;--clr:#3b3bd3;">
-                            <a href="#">Short</a>
-                        </li>
-                        <li style="--i:17;--clr:#3b3bd3;">
-                            <a href="#">Sport</a>
-                        </li>
-                    </ul>
-                </nav>
+          </nav>
+          <ul class="navbarRight">
+    
+            <a href="./signIn.html" class="signIn"><button><i class="fa-solid fa-right-to-bracket"></i>Sign in</button></a>
+            <a href="./profile.html" class="profile"><button><i class="fa-solid fa-right-to-bracket"></i></button></a>
+          </ul>
+    
+          <div class="categoriesBurger">
+            <nav>
+              <ul class="navbarCategories">
+                <div class="toggleCategories" id="categoriesBtnTwo"><i class="fa-solid fa-layer-group"></i></div>
+    
+    
+    
+    
+              </ul>
+            </nav>
+          </div>
+    
+          <div class="hamburgerMenu">
+            <div class="signInDisplay">
+              <a href="./signIn.html" class="signIn"><button><i class="fa-solid fa-right-to-bracket"></i>Sign
+                  in</button></a>
+              <a href="./profile.html" class="profile"><button><i class="fa-solid fa-right-to-bracket"></i></button></a>
             </div>
-            <div class="hamburgerMenu">
-                <div class="signInDisplay">
-                    <a href="./signIn.html" class="signIn"><button><i class="fa-solid fa-right-to-bracket"></i>Sign
-                            in</button></a>
-                    <a href="./profile.html" class="profile"><button><i
-                                class="fa-solid fa-right-to-bracket"></i></button></a>
-                </div>
-                <nav>
-                    <ul class="navbarHamburger">
-                        <div class="toggleHamburger"><i class="fa-solid fa-bars"></i></div>
-                        <li style="--i:0;--clr:#0b704e;">
-                            <a href="./index.html">Home</a>
-                        </li>
-                        <li style="--i:1;--clr:red;">
-                            <a href="./popularFilms.html">Popular Movies</a>
-                        </li>
-                        <li style="--i:2;--clr:orange;">
-                            <a href="./imdb.html">IMDB top 250</a>
-                        </li>
-                        <li style="--i:3;--clr:#3b3bd3;">
-                            <a href="./releaseDate.html">Release Date</a>
-                        </li>
-                        <li style="--i:4;--clr:gray;">
-                            <a href="./contact.html">Contact</a>
-                        </li>
-                        <li style="--i:5;--clr:orangered;">
-                            <a href="./trends.html">Trend</a>
-                        </li>
-                        <li style="--i:6;--clr:darkcyan;">
-                            <a href="./series.html">Series</a>
-                        </li>
-                        <li style="--i:7;--clr:white;">
-                            <a href="./maRating.html">Movie Area Rating</a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
+            <nav>
+              <ul class="navbarHamburger">
+                <div class="toggleHamburger" id="menuBtn"><i class="fa-solid fa-bars"></i></div>
+    
+              </ul>
+            </nav>
+          </div>
+    
         </div>
         <div class="searchBar">
-            <nav>
-                <ul class="navbarSearch">
-                    <li>
-                        <a href="./trends.html">Trends <i class="fa-solid fa-fire trendIcon"></i></a>
-                    </li>
-                    <li>
-                        <a href="./series.html" aria-disabled="true">Series <i
-                                class="fa-solid fa-check-double seriesIcon"></i></a>
-                    </li>
-                    <li>
-                        <a href="./releaseDate.html">ReleaseDate <i class="fa-solid fa-calendar-days dateIcon"></i></a>
-                    </li>
-                    <li>
-                        <a id="maHover" href="./maRating.html">MovieAreaRating
-                            <img id="maWhite" src="./assets/Media/Images/512x512white.png" alt="MA"></a>
-                    </li>
-                    <div class="search">
-                        <div class="content">
-                            <form id="formSrc">
-                                <i class="fa-solid fa-magnifying-glass"></i>
-                                <input placeholder="Search..." id="inpSrc" type="text">
-                                <button id="btn" type="submit" class="btn">
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                    Search</button>
-                                <div class="signIn">
-                            </form>
-                        </div>
-                    </div>
-                </ul>
-            </nav>
+          <nav>
+            <ul class="navbarSearch">
+              <li>
+                <a href="./trends.html">Trends <i class="fa-solid fa-fire trendIcon"></i></a>
+              </li>
+              <li>
+                <a href="./series.html" aria-disabled="true">Series <i class="fa-solid fa-check-double seriesIcon"></i></a>
+              </li>
+              <li>
+                <a href="./releaseDate.html">ReleaseDate <i class="fa-solid fa-calendar-days dateIcon"></i></a>
+              </li>
+              <li>
+                <a id="maHover" href="./maRating.html">MovieAreaRating
+                  <img id="maWhite" src="./assets/Media/Images/512x512white.png" alt="MA"></a>
+              </li>
+              <div class="search">
+                <div class="content">
+                  <form id="formSrc">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input placeholder="Search..." id="inpSrc" type="text">
+                    <button id="btn" type="submit" class="btn">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      Search</button>
+                    <div class="signIn">
+                  </form>
+                </div>
+              </div>
+            </ul>
+          </nav>
         </div>
         <div class="navSearch">
-            <div class="search">
-                <div class="content">
-                    <form id="formSrc">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                        <input placeholder="Search..." id="inpSrc" type="text">
-                        <button id="btn" type="submit" class="btn">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            Search</button>
-                        <div class="signIn">
-                    </form>
-                </div>
+          <div class="search">
+            <div class="content">
+              <form id="formSrc">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input placeholder="Search..." id="inpSrc" type="text">
+                <button id="btn" type="submit" class="btn">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  Search</button>
+                <div class="signIn">
+              </form>
             </div>
+          </div>
         </div>
-
-
-
-
-    </header>
+    
+    
+    
+    
+      </header>
 
     <main>
-
-    </main>
+        <section id="maRatingSecMain">
+            <div class="container-fluid secContent">
+              <div class="row containerOne">
+                  <div class="col content">
+                      <div class="textContent">
+                          <h2>You can see the movies sorted by Site Rating here.</h2>
+                      </div>
+                  </div>
+              </div>
+              <div class="row containerTwo" id="products">
+      
+              </div>
+              <div class="row pagination" id="pagination"></div>
+          </div>
+          </section>    </main>
 
     <footer>
         <section id="footerSec">

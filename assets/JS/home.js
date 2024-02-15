@@ -1,50 +1,3 @@
-function toggleVideo() {
-  const trailer = document.querySelector(".trailer");
-  const video = document.querySelector("video");
-  video.pause();
-  trailer.classList.toggle("active");
-}
-
-// function changeBg(bg,title){
-//     const banner=document.querySelectorAll('.banner');
-//     const contents=document.querySelectorAll('.content');
-//     banner.style.background=`url("/assets/Media/Images/${bg}")`;
-//     banner.style.backgroundSize='cover';
-//     banner.style.backgroundPosition='center';
-
-//     contents.forEach(content=>{
-//         content.classList.remove('active');
-//         if(content.classList.contains(title)){
-//             content.classList.add('active');
-//         }
-//     });
-// }
-
-
-//!
-function changeBg(bg, title) {
-  const banners = document.querySelectorAll(".banner");
-  const contents = document.querySelectorAll(".content");
-
-  banners.forEach((banner, index) => {
-    banner.style.background = `url("/assets/Media/Images/${bg}")`;
-    banner.style.backgroundSize = "cover";
-    banner.style.backgroundPosition = "center";
-
-    contents.forEach((content) => {
-      content.classList.remove("active");
-    });
-
-    contents.forEach((content) => {
-      if (content.classList.contains(title)) {
-        content.classList.add("active");
-      }
-    });
-  });
-}
-
-
-
 //!
 $(document).ready(function () {
   $(window).scroll(function () {
@@ -233,32 +186,418 @@ $(document).ready(function () {
 
 //!
 document.addEventListener("DOMContentLoaded", function() {
-  var categoriesBtn = document.getElementById("categoriesBtn");
-  var allCategories = document.querySelector(".allCategories");
+  let categoriesBtn = document.getElementById("categoriesBtn");
+  let allCategories = document.querySelector(".allCategories");
 
-  categoriesBtn.addEventListener("click", function() {
-      // "allCategories" bölümünün görünürlüğünü değiştir
+  // Kategori butonuna tıklanınca menüyü aç veya kapat
+  categoriesBtn.addEventListener("click", function(event) {
+      event.stopPropagation(); // Bu olayın diğer elementlere ulaşmasını engelle
+
+      // Menüyü göster veya gizle
       if (allCategories.style.display === "none" || allCategories.style.display === "") {
-          // "show" sınıfını ekle
-          allCategories.classList.add("show");
-          // "slideInOut" animasyonunu uygula
-          allCategories.style.animation = "slideInOut 0.5s forwards";
-          // Animasyon bitince görünürlüğü değiştir
-          setTimeout(function() {
-              allCategories.style.display = "block";
-          }, 100); // Animasyon süresi (0.5 saniye) kadar beklet
+          // Menüyü göster
+          showMenu();
       } else {
-          // "slideOutReverse" animasyonunu uygula
-          allCategories.style.animation = "slideOutReverse 0.5s forwards";
-          // Animasyon bitince görünürlüğü değiştir
-          setTimeout(function() {
-              allCategories.style.display = "none";
-              // "show" sınıfını kaldır
-              allCategories.classList.remove("show");
-          }, 500); // Animasyon süresi (0.5 saniye) kadar beklet
+          // Menüyü gizle
+          hideMenu();
       }
   });
+
+  // Menüye tıklanınca menüyü kapat
+  allCategories.addEventListener("click", function(event) {
+      event.stopPropagation(); // Bu olayın diğer elementlere ulaşmasını engelle
+  });
+
+  // Sayfa herhangi bir yerine tıklanınca menüyü kapat
+  document.addEventListener("click", function() {
+      hideMenu();
+  });
+
+
+
+  // Menüyü gösterme fonksiyonu
+  function showMenu() {
+      // "show" sınıfını ekle
+      allCategories.classList.add("show");
+      // "slideInOut" animasyonunu uygula
+      allCategories.style.animation = "slideInOut 0.5s forwards";
+      // Animasyon bitince görünürlüğü değiştir
+      setTimeout(function() {
+          allCategories.style.display = "block";
+      }, 100); // Animasyon süresi (0.5 saniye) kadar beklet
+  }
+
+  // Menüyü gizleme fonksiyonu
+  function hideMenu() {
+      // "slideOutReverse" animasyonunu uygula
+      allCategories.style.animation = "slideOutReverse 0.5s forwards";
+      // Animasyon bitince görünürlüğü değiştir
+      setTimeout(function() {
+          allCategories.style.display = "none";
+          // "show" sınıfını kaldır
+          allCategories.classList.remove("show");
+      }, 500); // Animasyon süresi (0.5 saniye) kadar beklet
+  }
+});
+
+
+// //!
+// document.addEventListener("DOMContentLoaded", function() {
+//   let categoriesBtnTwo = document.getElementById("categoriesBtnTwo");
+//   let menuBtn = document.getElementById("menuBtn");
+//   let allCategories = document.querySelector(".allCategories");
+
+//   // Kategori butonuna tıklanınca menüyü aç veya kapat
+//   categoriesBtnTwo.addEventListener("click", function(event) {
+//       event.stopPropagation(); // Bu olayın diğer elementlere ulaşmasını engelle
+
+//       // Menüyü göster veya gizle
+//       if (allCategories.style.display === "none" || allCategories.style.display === "") {
+//           // Menüyü göster
+//           showMenu();
+//       } else {
+//           // Menüyü gizle
+//           hideMenu();
+//       }
+//   });
+
+//   // Menüye tıklanınca menüyü kapat
+//   allCategories.addEventListener("click", function(event) {
+//       event.stopPropagation(); // Bu olayın diğer elementlere ulaşmasını engelle
+//   });
+
+//   // Sayfa herhangi bir yerine tıklanınca menüyü kapat
+//   document.addEventListener("click", function() {
+//       hideMenu();
+//   });
+
+//   // Kategori butonuna tıklanınca menüyü kapat
+//   menuBtn.addEventListener("click", function(event) {
+//       event.stopPropagation(); // Bu olayın diğer elementlere ulaşmasını engelle
+//       hideMenu();
+//   });
+
+//   // Menüyü gösterme fonksiyonu
+//   function showMenu() {
+//       // "show" sınıfını ekle
+//       allCategories.classList.add("show");
+//       // "slideInOut" animasyonunu uygula
+//       allCategories.style.animation = "slideInOut 0.5s forwards";
+//       // Animasyon bitince görünürlüğü değiştir
+//       setTimeout(function() {
+//           allCategories.style.display = "block";
+//       }, 100); // Animasyon süresi (0.5 saniye) kadar beklet
+//   }
+
+//   // Menüyü gizleme fonksiyonu
+//   function hideMenu() {
+//       // "slideOutReverse" animasyonunu uygula
+//       allCategories.style.animation = "slideOutReverse 0.5s forwards";
+//       // Animasyon bitince görünürlüğü değiştir
+//       setTimeout(function() {
+//           allCategories.style.display = "none";
+//           // "show" sınıfını kaldır
+//           allCategories.classList.remove("show");
+//       }, 500); // Animasyon süresi (0.5 saniye) kadar beklet
+//   }
+// });
+
+
+// //!
+// document.addEventListener("DOMContentLoaded", function() {
+//   let categoriesBtnTwo = document.getElementById("categoriesBtnTwo");
+//   let menuBtn = document.getElementById("menuBtn");
+//   let allMenu = document.querySelector(".allMenu");
+
+
+//   // Kategori butonuna tıklanınca menüyü aç veya kapat
+//   menuBtn.addEventListener("click", function(event) {
+//       event.stopPropagation(); // Bu olayın diğer elementlere ulaşmasını engelle
+
+//       // Menüyü göster veya gizle
+//       if (allMenu.style.display === "none" || allMenu.style.display === "") {
+//           // Menüyü göster
+//           showMenu();
+//       } else {
+//           // Menüyü gizle
+//           hideMenu();
+//       }
+//   });
+
+//   // Menüye tıklanınca menüyü kapat
+//   allMenu.addEventListener("click", function(event) {
+//       event.stopPropagation(); // Bu olayın diğer elementlere ulaşmasını engelle
+//   });
+
+//   // Sayfa herhangi bir yerine tıklanınca menüyü kapat
+//   document.addEventListener("click", function() {
+//       hideMenu();
+//   });
+
+//   // Kategori butonuna tıklanınca menüyü kapat
+//   categoriesBtnTwo.addEventListener("click", function(event) {
+//       event.stopPropagation(); // Bu olayın diğer elementlere ulaşmasını engelle
+//       hideMenu();
+//   });
+
+//   // Menüyü gösterme fonksiyonu
+//   function showMenu() {
+//       // "show" sınıfını ekle
+//       allMenu.classList.add("show");
+//       // "slideInOut" animasyonunu uygula
+//       allMenu.style.animation = "slideInOut 0.5s forwards";
+//       // Animasyon bitince görünürlüğü değiştir
+//       setTimeout(function() {
+//           allMenu.style.display = "block";
+//       }, 100); // Animasyon süresi (0.5 saniye) kadar beklet
+//   }
+
+//   // Menüyü gizleme fonksiyonu
+//   function hideMenu() {
+//       // "slideOutReverse" animasyonunu uygula
+//       allMenu.style.animation = "slideOutReverse 0.5s forwards";
+//       // Animasyon bitince görünürlüğü değiştir
+//       setTimeout(function() {
+//           allMenu.style.display = "none";
+//           // "show" sınıfını kaldır
+//           allMenu.classList.remove("show");
+//       }, 500); // Animasyon süresi (0.5 saniye) kadar beklet
+//   }
+// });
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  let categoriesBtnTwo = document.getElementById("categoriesBtnTwo");
+  let menuBtn = document.getElementById("menuBtn");
+  let allCategories = document.querySelector(".allCategories");
+  let allMenu = document.querySelector(".allMenu");
+
+  // Kategori butonuna tıklanınca menüyü aç veya kapat (categoriesBtnTwo için)
+  categoriesBtnTwo.addEventListener("click", function(event) {
+      event.stopPropagation(); // Bu olayın diğer elementlere ulaşmasını engelle
+
+      // Kategori menüsünü göster veya gizle
+      if (allCategories.style.display === "none" || allCategories.style.display === "") {
+          // Kategori menüsünü göster
+          showCategories();
+          // Eğer ana menü açıksa, onu kapat
+          if (allMenu.style.display !== "none" && allMenu.style.display !== "") {
+              hideMenu();
+          }
+      } else {
+          // Kategori menüsünü gizle
+          hideCategories();
+      }
+  });
+
+  // Ana menü butonuna tıklanınca menüyü aç veya kapat (menuBtn için)
+  menuBtn.addEventListener("click", function(event) {
+      event.stopPropagation(); // Bu olayın diğer elementlere ulaşmasını engelle
+
+      // Ana menüyü göster veya gizle
+      if (allMenu.style.display === "none" || allMenu.style.display === "") {
+          // Ana menüyü göster
+          showMenu();
+          // Eğer kategori menüsü açıksa, onu kapat
+          if (allCategories.style.display !== "none" && allCategories.style.display !== "") {
+              hideCategories();
+          }
+      } else {
+          // Ana menüyü gizle
+          hideMenu();
+      }
+  });
+
+  // Kategori menüsüne tıklanınca menüyü kapat (categoriesBtnTwo için)
+  allCategories.addEventListener("click", function(event) {
+      event.stopPropagation(); // Bu olayın diğer elementlere ulaşmasını engelle
+  });
+
+  // Ana menüye tıklanınca menüyü kapat (menuBtn için)
+  allMenu.addEventListener("click", function(event) {
+      event.stopPropagation(); // Bu olayın diğer elementlere ulaşmasını engelle
+  });
+
+  // Sayfa herhangi bir yerine tıklanınca menüyü kapat (her iki menü için)
+  document.addEventListener("click", function() {
+      hideCategories();
+      hideMenu();
+  });
+
+  // Kategori menüsünü gösterme fonksiyonu
+  function showCategories() {
+      // "show" sınıfını ekle
+      allCategories.classList.add("show");
+      // "slideInOut" animasyonunu uygula
+      allCategories.style.animation = "slideInOut 0.5s forwards";
+      // Animasyon bitince görünürlüğü değiştir
+      setTimeout(function() {
+          allCategories.style.display = "block";
+      }, 100); // Animasyon süresi (0.5 saniye) kadar beklet
+  }
+
+  // Kategori menüsünü gizleme fonksiyonu
+  function hideCategories() {
+      // "slideOutReverse" animasyonunu uygula
+      allCategories.style.animation = "slideOutReverse 0.5s forwards";
+      // Animasyon bitince görünürlüğü değiştir
+      setTimeout(function() {
+          allCategories.style.display = "none";
+          // "show" sınıfını kaldır
+          allCategories.classList.remove("show");
+      }, 500); // Animasyon süresi (0.5 saniye) kadar beklet
+  }
+
+  // Ana menüyü gösterme fonksiyonu
+  function showMenu() {
+      // "show" sınıfını ekle
+      allMenu.classList.add("show");
+      // "slideInOut" animasyonunu uygula
+      allMenu.style.animation = "slideInOut 0.5s forwards";
+      // Animasyon bitince görünürlüğü değiştir
+      setTimeout(function() {
+          allMenu.style.display = "block";
+      }, 100); // Animasyon süresi (0.5 saniye) kadar beklet
+  }
+
+  // Ana menüyü gizleme fonksiyonu
+  function hideMenu() {
+      // "slideOutReverse" animasyonunu uygula
+      allMenu.style.animation = "slideOutReverse 0.5s forwards";
+      // Animasyon bitince görünürlüğü değiştir
+      setTimeout(function() {
+          allMenu.style.display = "none";
+          // "show" sınıfını kaldır
+          allMenu.classList.remove("show");
+      }, 500); // Animasyon süresi (0.5 saniye) kadar beklet
+  }
 });
 
 
 
+
+
+//! Search by name
+const formSrc=document.getElementById("formSrc")
+const inp=document.getElementById("inpSrc")
+formSrc.addEventListener("submit", srcFunc)
+function srcFunc(e){
+    e.preventDefault()
+    products.innerHTML=''
+    axios.get("http://localhost:3000/films")
+    .then(res=>{
+        let data=res.data;
+      let datas =  data.filter((item)=> item.name.toLowerCase().includes(inp.value.toLowerCase()))
+      datas.forEach(item => {
+            const box = document.createElement('div');
+            box.className = 'col content';
+            box.innerHTML = `<img src="${item.image}" alt="img">
+                    <h2>${item.name}</h2>
+                    <p>${item.price} $</p>
+                    <div class="basket"><button class="btn" onclick="addToBasket(${item.id})">Add to Basket</button>
+                    <i class="fa-solid fa-heart"></i></div>
+                `;
+            products.appendChild(box);
+        });
+ 
+    })
+}
+
+
+
+
+
+
+//! get products
+const trendProducts = document.getElementById("trendProducts");
+const popularProducts = document.getElementById("popularProducts");
+const releaseDate = document.getElementById("releaseDate");
+const ITEMS_PER_PAGE = 15;
+
+function getProduct(url, targetElement, sortBy) {
+  axios.get(url)
+      .then(response => {
+          const data = response.data;
+          // Verileri belirtilen şekilde sırala
+          const sortedData = data.sort((a, b) => {
+              if (sortBy === 'popularity') {
+                  return b.popularity - a.popularity;
+              } else if (sortBy === 'trend') {
+                  return b.trend - a.trend;
+              } else if (sortBy === 'year') {
+                  return b.year - a.year;
+              } else {
+                  return 0;
+              }
+          });
+          const paginatedData = sortedData.slice(0, ITEMS_PER_PAGE); // İlk sayfada gösterilecek verileri al
+ 
+          targetElement.innerHTML = ""; // Önceki içeriği temizle
+          paginatedData.forEach(item => {
+              const box = document.createElement('div');
+              box.className = 'col content';
+              box.innerHTML = `<img src="${item.image}" alt="img">
+                      <h2>${item.name}</h2>
+                      <p>${item.popularity} </p>
+                      <p>${item.trend} </p>
+                      <p>${item.year} </p>
+                      <div class="basket"><button class="btn" onclick="addToBasket(${item.id})">Add to Basket</button>
+                      <i class="fa-solid fa-heart" onclick="wishlist(${item.id})"></i></div>
+                  `;
+              targetElement.appendChild(box);
+          });
+      })
+      .catch(error => {
+          console.error('Error fetching data:', error);
+      });
+}
+
+getProduct('http://localhost:3000/films', trendProducts, 'trend');
+getProduct('http://localhost:3000/films', popularProducts, 'popularity');
+getProduct('http://localhost:3000/films', releaseDate, 'year');
+
+
+
+const seriesProducts = document.getElementById("seriesProducts");
+
+function getProducts(url) {
+    axios.get(url)
+        .then(response => {
+            const data = response.data;
+
+            // seriesNumber değeri 1 olan tüm filmleri filtrele
+            const filteredData = data.filter(item => item.seriesNumber === "1");
+
+            // seriesName'e göre filmleri grupla
+            const seriesGroupedData = filteredData.reduce((acc, curr) => {
+                if (!acc[curr.seriesName]) {
+                    acc[curr.seriesName] = [];
+                }
+                acc[curr.seriesName].push(curr);
+                return acc;
+            }, {});
+
+            seriesProducts.innerHTML = ""; // Önceki içeriği temizle
+            for (const seriesName in seriesGroupedData) {
+                const films = seriesGroupedData[seriesName];
+                films.forEach(item => {
+                    const box = document.createElement('div');
+                    box.className = 'col content';
+                    box.innerHTML = `<img src="${item.image}" alt="img">
+                            <h2>${item.name}</h2>
+                            <p>${item.popularity} </p>
+                            <p>${item.trend} </p>
+                            <p>${item.year} </p>
+                            <div class="basket"><button class="btn" onclick="addToBasket(${item.id})">Add to Basket</button>
+                            <i class="fa-solid fa-heart" onclick="wishlist(${item.id})"></i></div>
+                        `;
+                    seriesProducts.appendChild(box);
+                });
+            }
+        })
+        .catch(error => {
+            console.error('Error fetching data:', error);
+        });
+}
+
+getProducts('http://localhost:3000/films');
