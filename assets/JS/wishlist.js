@@ -94,34 +94,7 @@
   });
   
   
-  // //!
-  // $(document).ready(function() {
-  //   var isExtraItemsAdded = false;
-  
-  //   function addAdditionalItems() {
-  //     if ($(window).width() >= 250 && $(window).width() <= 299) {
-  //       if (!isExtraItemsAdded) {
-  //         $(".navbarHamburger").append(`
-  //           <li style="--i:9;--clr:goldenrod;">
-  //             <a href="#">Shop</a>
-  //           </li>
-  //           <li style="--i:10;--clr:limegreen;">
-  //             <a href="#">WishList</a>
-  //           </li>
-  //         `);
-  //         isExtraItemsAdded = true;
-  //       }
-  //     } else {
-  //       if (isExtraItemsAdded) {
-  //         $(".navbarHamburger li:contains('Shop'), .navbarHamburger li:contains('WishList')").remove();
-  //         isExtraItemsAdded = false;
-  //       }
-  //     }
-  //   }
-  
-  //   // Sayfa yüklendiğinde ve ekran boyutu değiştiğinde ekstra öğeleri ekleme veya kaldırma
-  //   $(window).on('load resize', addAdditionalItems);
-  // });
+ 
   
   
   
@@ -129,17 +102,16 @@
   $(document).ready(function() {
     function handleSearchBarVisibility() {
       if ($(window).width() >= 992) {
-        $(".searchBar").css("display", "flex"); // Ekran genişliği 992 pikselden büyükse .searchBar görünür olur
+        $(".searchBar").css("display", "flex"); 
       } else {
-        $(".searchBar").css("display", "none"); // Ekran genişliği 992 pikselden küçükse .searchBar gizlenir
+        $(".searchBar").css("display", "none"); 
       }
     }
-    // Sayfa yüklendiğinde ve ekran boyutu değiştiğinde .searchBar'ın görünürlüğünü kontrol et
     $(window).on('load resize', handleSearchBarVisibility);
   
     $(window).scroll(function () {
       if ($(window).width() < 992) {
-        $(".searchBar").hide(); // Ekran genişliği 992 pikselden küçükse, scroll ile de .searchBar gizlenir
+        $(".searchBar").hide(); 
       }
     });
   });
@@ -155,14 +127,14 @@
       if ($(this).scrollTop() > footerOffset - headerHeight) {
         $(".header").css({
           opacity: 0,
-          "z-index": -1, // z-index değerini ayarla
-          transition: " 0.4s ease" // Geçiş efekti
+          "z-index": -1, 
+          transition: " 0.4s ease" 
         });
       } else {
         $(".header").css({
           opacity: 1,
-          "z-index": 15, // z-index değerini orijinal değerine geri al
-          transition: " 0.4s ease" // Geçiş efekti
+          "z-index": 15, 
+          transition: " 0.4s ease"
         });
       }
     });
@@ -176,18 +148,17 @@
         $(".navSearch").css({
           opacity: 0,
           "z-index": -1,
-          transition: "opacity 0.5s ease" // 0.5 saniyelik geçiş efekti
+          transition: "opacity 0.5s ease" 
         });
       } else {
         $(".navSearch").css({
           opacity: 1,
           "z-index": 15,
-          transition: "opacity 0.5s ease" // 0.5 saniyelik geçiş efekti
+          transition: "opacity 0.5s ease" 
         });
       }
     });
   });
-
 
   $(document).ready(function() {
     function handleSearchBarVisibility() {
@@ -198,10 +169,60 @@
         }
     }
 
-    // Sayfa yüklendiğinde ve ekran boyutu değiştiğinde .searchBar'ın görünürlüğünü kontrol et
     $(window).on('load resize', handleSearchBarVisibility);
 
     $(window).scroll(function() {
-        handleSearchBarVisibility(); // Scroll olayı olduğunda .searchBar'ın görünürlüğünü kontrol et
+        handleSearchBarVisibility(); 
     });
 });
+
+
+
+
+const products=document.getElementById("products");
+function getProduct() {
+    axios.get(`http://localhost:3000/films`)
+        .then(response => {
+            const data = response.data;
+            db = data;
+            db.forEach(item => {
+                const box = document.createElement('div');
+                box.className = 'col-2 col-sm-2 col-md-2 col-xl-2 col-lg-2 col-xxl-2 content';
+                box.innerHTML = `<div class="poster">
+                <img src="${item.image}" alt="image"/>
+              </div>
+              <div class="language">
+                <span class="dubbing">Dubbing</span>
+                <span class="subtitle">Subtitle</span>
+                
+              </div>
+              <div class="buton"><button class="btn" onclick="remove(${item.id})">Remove</button>
+
+              <div class="textArea">
+                <h2>${item.name}</h2>
+                <h5>${item.director}</h5>
+                <h4><i>${item.genre}</i></h4>
+                <h3 class="year">${item.year}</h3>
+                <div class="ratings">
+
+                  <h3><i class="fa-brands fa-imdb"></i>${item.imdb}</h3>
+                <h3><img src="./assets/Media/Images/512x512.png" alt="MA">${item.ma}</h3>
+                </div>
+              </div> `;
+                products.appendChild(box);
+            });
+        })
+}
+getProduct();
+
+
+
+
+
+// to remove
+function remove(index){
+    let cart=JSON.parse(localStorage.getItem("cart")) || []
+    cart.splice(index,1)
+    localStorage.setItem("cart",JSON.stringify(cart))
+    getProduct()
+}

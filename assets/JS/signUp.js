@@ -1,30 +1,3 @@
-// const form=document.getElementById("form");
-// const nameInput=document.getElementById("name");
-// const surname=document.getElementById("surname");
-// const nickname=document.getElementById("nickname");
-// const email=document.getElementById("email");
-// const passwordInp=document.getElementById("password");
-
-
-
-// function signUp(e){
-//     e.preventDefault()
-//     axios.post("http://localhost:3000/profile",{
-//         name:nameInput.value,
-//         surname:surname.value,
-//         nickname:nickname.value,
-//         email:email.value,
-//         password:passwordInp.value,
-        
-//     })
-//     .then(res=>{
-//         console.log(res);
-//         form.reset();
-//     })
-// }
-// form.addEventListener("submit",signUp)
-
-
 const form = document.getElementById("form");
 const nameInput = document.getElementById("name");
 const surname = document.getElementById("surname");
@@ -211,3 +184,116 @@ let password = document.getElementById('password');
                 }
             });
         });
+
+
+        //!
+document.addEventListener("DOMContentLoaded", function () {
+    let categoriesBtn = document.getElementById("categoriesBtn");
+    let allCategories = document.querySelector(".allCategories");
+    categoriesBtn.addEventListener("click", function (event) {
+      event.stopPropagation();
+      if (
+        allCategories.style.display === "none" ||
+        allCategories.style.display === ""
+      ) {
+        showMenu();
+      } else {
+        hideMenu();
+      }
+    });
+    allCategories.addEventListener("click", function (event) {
+      event.stopPropagation();
+    });
+    document.addEventListener("click", function () {
+      hideMenu();
+    });
+    function showMenu() {
+      allCategories.classList.add("show");
+      allCategories.style.animation = "slideInOut 0.5s forwards";
+      setTimeout(function () {
+        allCategories.style.display = "block";
+      }, 100);
+    }
+  
+    function hideMenu() {
+      allCategories.style.animation = "slideOutReverse 0.5s forwards";
+      setTimeout(function () {
+        allCategories.style.display = "none";
+        allCategories.classList.remove("show");
+      }, 500);
+    }
+  });
+  
+  //!
+  document.addEventListener("DOMContentLoaded", function () {
+    let categoriesBtnTwo = document.getElementById("categoriesBtnTwo");
+    let menuBtn = document.getElementById("menuBtn");
+    let allCategories = document.querySelector(".allCategories");
+    let allMenu = document.querySelector(".allMenu");
+    categoriesBtnTwo.addEventListener("click", function (event) {
+      event.stopPropagation();
+      if (
+        allCategories.style.display === "none" ||
+        allCategories.style.display === ""
+      ) {
+        showCategories();
+        if (allMenu.style.display !== "none" && allMenu.style.display !== "") {
+          hideMenu();
+        }
+      } else {
+        hideCategories();
+      }
+    });
+    menuBtn.addEventListener("click", function (event) {
+      event.stopPropagation();
+      if (allMenu.style.display === "none" || allMenu.style.display === "") {
+        showMenu();
+        if (
+          allCategories.style.display !== "none" &&
+          allCategories.style.display !== ""
+        ) {
+          hideCategories();
+        }
+      } else {
+        hideMenu();
+      }
+    });
+    allCategories.addEventListener("click", function (event) {
+      event.stopPropagation();
+    });
+    allMenu.addEventListener("click", function (event) {
+      event.stopPropagation();
+    });
+    document.addEventListener("click", function () {
+      hideCategories();
+      hideMenu();
+    });
+    function showCategories() {
+      allCategories.classList.add("show");
+      allCategories.style.animation = "slideInOut 0.5s forwards";
+      setTimeout(function () {
+        allCategories.style.display = "block";
+      }, 100);
+    }
+    function hideCategories() {
+      allCategories.style.animation = "slideOutReverse 0.5s forwards";
+      setTimeout(function () {
+        allCategories.style.display = "none";
+        allCategories.classList.remove("show");
+      }, 500);
+    }
+    function showMenu() {
+      allMenu.classList.add("show");
+      allMenu.style.animation = "slideInOut 0.5s forwards";
+      setTimeout(function () {
+        allMenu.style.display = "block";
+      }, 100);
+    }
+    function hideMenu() {
+      allMenu.style.animation = "slideOutReverse 0.5s forwards";
+      setTimeout(function () {
+        allMenu.style.display = "none";
+        allMenu.classList.remove("show");
+      }, 500);
+    }
+  });

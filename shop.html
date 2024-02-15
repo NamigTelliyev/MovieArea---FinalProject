@@ -26,18 +26,15 @@
           <li>
             <a href="./index.html">Home <i class="fa-solid fa-house"></i></a>
           </li>
-          <li>
-            <a href="#" aria-disabled="true">Categories <i class="fa-solid fa-layer-group categoriesIcon"></i></a>
+          <li class="categorie">
+            <button id="categoriesBtn">Categories <i class="fa-solid fa-layer-group categoriesIcon"></i></button>
           </li>
           <li>
-            <a href="">Popular Films <i class="fa-brands fa-gratipay popularIcon"></i></a>
+            <a href="./popularFilms.html">Popular Films <i class="fa-brands fa-gratipay popularIcon"></i></a>
           </li>
           <li>
-            <a href="">İMDB Top 250
+            <a href="./imdb.html">İMDB Rating
               <i class="fa-brands fa-imdb imdbIcon"></i></a>
-          </li>
-          <li>
-            <a href="">Send Movie Request <i class="fa-regular fa-paper-plane sendIcon"></i></a>
           </li>
           <li>
             <a href="./contact.html">Contact<i class="fa-solid fa-circle-info infoIcon"></i></a>
@@ -45,138 +42,52 @@
         </ul>
       </nav>
       <ul class="navbarRight">
-        <li>
-          <a href="./shop.html"><i class="fa-solid fa-cart-shopping shopIcon"></i></a>
-        </li>
-        <li>
-          <a href="./wishlist.html"><i class="fa-regular fa-square-plus wishIcon"></i></a>
-        </li>
+
         <a href="./signIn.html" class="signIn"><button><i class="fa-solid fa-right-to-bracket"></i>Sign in</button></a>
-        <a href="#" class="profile"><button><i class="fa-solid fa-right-to-bracket"></i></button></a>
+        <a href="./profile.html" class="profile"><button><i class="fa-solid fa-right-to-bracket"></i></button></a>
       </ul>
-      
+
       <div class="categoriesBurger">
         <nav>
           <ul class="navbarCategories">
-            <div class="toggleCategories"><i class="fa-solid fa-layer-group"></i></div>
-            <li style="--i:0;--clr:#0b704e;">
-              <a href="#">Action</a>
-            </li>
-            <li style="--i:1;--clr:red;">
-              <a href="#">Adventure</a>
-            </li>
-            <li style="--i:2;--clr:orange;">
-              <a href="#">Family</a>
-            </li>
-            <li style="--i:3;--clr:darkcyan;">
-              <a href="#">Crime</a>
-            </li>
-            <li style="--i:4;--clr:gray;">
-              <a href="#">History</a>
-            </li>
-            <li style="--i:5;--clr:orangered;">
-              <a href="#">Comedy</a>
-            </li>
-            <li style="--i:6;--clr:cyan;">
-              <a href="#">Animated</a>
-            </li>
-            <li style="--i:7;--clr:white;">
-              <a href="#">Fantasy</a>
-            </li>
-            <li style="--i:8;--clr:#3b3bd3;">
-              <a href="#">Mystery</a>
-            </li>
-            <li style="--i:9;--clr:#3b3bd3;">
-              <a href="#">Romantic</a>
-            </li>
-            <li style="--i:10;--clr:#3b3bd3;">
-              <a href="#">War</a>
-            </li>
-            <li style="--i:11;--clr:#3b3bd3;">
-              <a href="#">Musical</a>
-            </li>
-            <li style="--i:12;--clr:#3b3bd3;">
-              <a href="#">Thriller</a>
-            </li>
-            <li style="--i:13;--clr:#3b3bd3;">
-              <a href="#">Horror</a>
-            </li>
-            <li style="--i:14;--clr:#3b3bd3;">
-              <a href="#">Sciene Fiction</a>
-            </li>
-            <li style="--i:15;--clr:#3b3bd3;">
-              <a href="#">Biography</a>
-            </li>
-            <li style="--i:16;--clr:#3b3bd3;">
-              <a href="#">Short</a>
-            </li>
-            <li style="--i:17;--clr:#3b3bd3;">
-              <a href="#">Sport</a>
-            </li>
-          
+            <div class="toggleCategories" id="categoriesBtnTwo"><i class="fa-solid fa-layer-group"></i></div>
+
 
 
 
           </ul>
         </nav>
       </div>
+
       <div class="hamburgerMenu">
         <div class="signInDisplay">
-          <a href="./signIn.html" class="signIn"><button><i class="fa-solid fa-right-to-bracket"></i>Sign in</button></a>
-          <a href="#" class="profile"><button><i class="fa-solid fa-right-to-bracket"></i></button></a>
+          <a href="./signIn.html" class="signIn"><button><i class="fa-solid fa-right-to-bracket"></i>Sign
+              in</button></a>
+          <a href="./profile.html" class="profile"><button><i class="fa-solid fa-right-to-bracket"></i></button></a>
         </div>
         <nav>
           <ul class="navbarHamburger">
-            <div class="toggleHamburger"><i class="fa-solid fa-bars"></i></div>
-            <li style="--i:0;--clr:#0b704e;">
-              <a href="#">Home</a>
-            </li>
-            <li style="--i:1;--clr:red;">
-              <a href="#">Popular Movies</a>
-            </li>
-            <li style="--i:2;--clr:orange;">
-              <a href="#">IMDB top 250</a>
-            </li>
-            <li style="--i:3;--clr:darkcyan;">
-              <a href="#">Send Movie Request</a>
-            </li>
-            <li style="--i:4;--clr:gray;">
-              <a href="#">Contact</a>
-            </li>
-            <li style="--i:5;--clr:orangered;">
-              <a href="#">Trend</a>
-            </li>
-            <li style="--i:6;--clr:cyan;">
-              <a href="#">Series</a>
-            </li>
-            <li style="--i:7;--clr:white;">
-              <a href="#">Movie Area Rating</a>
-            </li>
-            <li style="--i:8;--clr:#3b3bd3;">
-              <a href="#">Release Date</a>
-            </li>
-
-
+            <div class="toggleHamburger" id="menuBtn"><i class="fa-solid fa-bars"></i></div>
 
           </ul>
         </nav>
       </div>
-     
+
     </div>
     <div class="searchBar">
       <nav>
         <ul class="navbarSearch">
           <li>
-            <a href="./index.html">Trends <i class="fa-solid fa-fire trendIcon"></i></a>
+            <a href="./trends.html">Trends <i class="fa-solid fa-fire trendIcon"></i></a>
           </li>
           <li>
-            <a href="#" aria-disabled="true">Series <i class="fa-solid fa-check-double seriesIcon"></i></a>
+            <a href="./series.html" aria-disabled="true">Series <i class="fa-solid fa-check-double seriesIcon"></i></a>
           </li>
           <li>
-            <a href="">ReleaseDate <i class="fa-solid fa-calendar-days dateIcon"></i></a>
+            <a href="./releaseDate.html">ReleaseDate <i class="fa-solid fa-calendar-days dateIcon"></i></a>
           </li>
           <li>
-            <a id="maHover" href="">MovieAreaRating
+            <a id="maHover" href="./maRating.html">MovieAreaRating
               <img id="maWhite" src="./assets/Media/Images/512x512white.png" alt="MA"></a>
           </li>
           <div class="search">
@@ -214,8 +125,8 @@
         </div>
       </div>
     </div>
-    
-    
+
+
 
 
   </header>
@@ -259,23 +170,19 @@
           </div>
           <div class="col-xl-4 col-sm-6 col-md-6 col-lg-6 contentTwo">
             <div class="textContent">
-              <h3>Best Categories</h3>
+              <h3>Best Movies</h3>
               <div class="bestCategories">
                 <div class="partOne">
-                  <a href=""><i>Action</i></a>
-                  <a href=""><i>Animation</i></a>
-                  <a href=""><i>Cartoons</i></a>
-                  <a href=""><i>Fantasy</i></a>
-                  <a href=""><i>Family</i></a>
-                  <a href=""><i>Drama</i></a>
+                  <a href="./popularFilms.html"><i>Popular Films</i></a>
+                  <a href="./trends.html"><i>Trends</i></a>
+                  <a href="./releaseDate.html"><i>Release Date</i></a>
+                  
                 </div>
                 <div class="partTwo">
-                  <a href=""><i>Comedy</i></a>
-                  <a href=""><i>Mystery</i></a>
-                  <a href=""><i>Anime</i></a>
-                  <a href=""><i>War</i></a>
-                  <a href=""><i>History</i></a>
-                  <a href=""><i>Romantic</i></a>
+                  <a href="./imdb.html"><i>Imdb Rating</i></a>
+                  <a href="./maRating.html"><i>Movie Area Rating</i></a>
+                  <a href="./series.html"><i>Series</i></a>
+              
                 </div>
               </div>
             </div>
@@ -285,8 +192,7 @@
               <h3>Site Map</h3>
               <div class="mapContent">
                 <a href="./index.html"><i>Home</i></a>
-                <a href=""><i>About Us</i></a>
-                <a href=""><i>Contact</i></a>
+                <a href="./contact.html"><i>Contact</i></a>
               </div>
             </div>
           </div>
@@ -311,14 +217,15 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
     integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
     crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
-    integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+    integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
     crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
-    integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+    integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
     crossorigin="anonymous"></script>
   <script src="./assets/JS/shop.js"></script>
   

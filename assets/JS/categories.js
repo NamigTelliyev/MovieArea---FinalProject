@@ -124,83 +124,7 @@ $(document).ready(function () {
   
   
   //?
-  const seriesProducts = document.getElementById("products");
-  const pagination = document.getElementById("pagination");
-  const ITEMS_PER_PAGE = 30; // Her sayfada gösterilecek dizi sayısı
-  let currentPage = 1; // Başlangıçta varsayılan olarak 1. sayfa
   
-  function getProducts(url) {
-    axios
-      .get(url)
-      .then((response) => {
-        const data = response.data;
-        const filteredData = data.filter((item) => item.seriesNumber === "1");
-        const seriesGroupedData = filteredData.reduce((acc, curr) => {
-          if (!acc[curr.seriesName]) {
-            acc[curr.seriesName] = [];
-          }
-          acc[curr.seriesName].push(curr);
-          return acc;
-        }, {});
-        seriesProducts.innerHTML = "";
-        for (const seriesName in seriesGroupedData) {
-          const films = seriesGroupedData[seriesName];
-          films.forEach((item) => {
-            const box = document.createElement("div");
-            box.className = "col col-sm-3 col-md-2 col-xl-2 col-lg-2 col-xxl-2 content";
-            box.innerHTML = `<a href="#">
-            <div class="poster">
-            <img src="${item.image}" alt="image"/>
-          </div>
-          <div class="language">
-            <span class="dubbing">Dubbing</span>
-            <span class="subtitle">Subtitle</span>
-          </div>
-          <div class="textArea">
-            <h2>${item.name}</h2>
-            <h5>${item.director}</h5>
-            <h4><i>${item.genre}</i></h4>
-            <h3 class="year">${item.year}</h3>
-            <div class="ratings">
-              <h3><i class="fa-brands fa-imdb"></i>${item.imdb}</h3>
-            <h3><img src="./assets/Media/Images/512x512.png" alt="MA">${item.ma}</h3>
-            </div>
-          </div>    
-            </a>`;
-            seriesProducts.appendChild(box);
-          });
-        }
-        createPaginationButtons(Math.ceil(filteredData.length / ITEMS_PER_PAGE)); // Sayfalandırma düğmelerini oluştur
-      })
-      .catch((error) => {
-        console.error("Error fetching data:", error);
-      });
-  }
-  
-  function createPaginationButtons(totalPages) {
-    pagination.innerHTML = ""; // Önceki düğmeleri temizle
-    for (let i = 1; i <= totalPages; i++) {
-      const button = document.createElement("button");
-      button.textContent = i;
-      if (i === currentPage) {
-        button.classList.add("active"); // Aktif sayfayı belirtmek için bir sınıf ekle
-        button.disabled = true; // Aktif sayfa düğmesini devre dışı bırak
-      } else {
-        button.addEventListener("click", () => {
-          currentPage = i;
-          getProducts("http://localhost:3000/films"); // Yeni sayfa yüklendiğinde dizileri yeniden getir
-          window.scrollTo(0, 0); // Yeni sayfa yüklendiğinde sayfanın üstüne git
-        });
-      }
-      pagination.appendChild(button);
-    }
-  }
-  
-  // İlk sayfayı yükle
-  getProducts("http://localhost:3000/films");
-  
-  
- 
   
 
   //! Search by name
@@ -241,4 +165,82 @@ $(document).ready(function () {
       });
     });
   }
+  
+
+
+
+
+
+
+
+
+  const products = document.getElementById("products");
+  const pagination = document.getElementById("pagination");
+  const ITEMS_PER_PAGE = 30;
+  let currentPage = 1;
+  
+  function getAnimationMovies(page) {
+    axios
+      .get("http://localhost:3000/films", {
+        params: {
+          category: "Animation"
+        }
+      })
+      .then((response) => {
+        const data = response.data;
+        const start = (page - 1) * ITEMS_PER_PAGE;
+        const end = start + ITEMS_PER_PAGE;
+        const paginatedData = data.slice(start, end);
+        products.innerHTML = "";
+        paginatedData.forEach((item) => {
+          const box = document.createElement("div");
+          box.className = "col col-sm-3 col-md-2 col-xl-2 col-lg-2 col-xxl-2 content";
+          box.innerHTML = `<a href="#">
+          <div class="poster">
+          <img src="${item.image}" alt="image"/>
+        </div>
+        <div class="language">
+          <span class="dubbing">Dubbing</span>
+          <span class="subtitle">Subtitle</span>
+        </div>
+        <div class="textArea">
+          <h2>${item.name}</h2>
+          <h5>${item.director}</h5>
+          <h4><i>${item.genre}</i></h4>
+          <h3 class="year">${item.year}</h3>
+          <div class="ratings">
+            <h3><i class="fa-brands fa-imdb"></i>${item.imdb}</h3>
+          <h3><img src="./assets/Media/Images/512x512.png" alt="MA">${item.ma}</h3>
+          </div>
+        </div>    
+          </a>`;
+          products.appendChild(box);
+        });
+        createPaginationButtons(Math.ceil(data.length / ITEMS_PER_PAGE));
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+      });
+  }
+  
+  function createPaginationButtons(totalPages) {
+    pagination.innerHTML = "";
+    for (let i = 1; i <= totalPages; i++) {
+      const button = document.createElement("button");
+      button.textContent = i;
+      if (i === currentPage) {
+        button.classList.add("active"); 
+        button.disabled = true;
+      } else {
+        button.addEventListener("click", () => {
+          currentPage = i;
+          getAnimationMovies(currentPage);
+          window.scrollTo(0, 0);
+        });
+      }
+      pagination.appendChild(button);
+    }
+  }
+  
+  getAnimationMovies(currentPage);
   

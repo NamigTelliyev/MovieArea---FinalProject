@@ -1,7 +1,7 @@
 //!
 $(document).ready(function () {
   $(window).scroll(function () {
-    if ($(this).scrollTop() > 200) {
+    if ($(this).scrollTop() > 900) {
       $(".header").addClass("scrollHeader");
     } else {
       $(".header").removeClass("scrollHeader");
@@ -12,7 +12,7 @@ $(document).ready(function () {
 //!
 $(document).ready(function () {
   $(window).scroll(function () {
-    if ($(this).scrollTop() > 200) {
+    if ($(this).scrollTop() > 900) {
       $(".searchBar").hide();
     } else {
       $(".searchBar").show();
@@ -29,11 +29,12 @@ $(document).ready(function () {
   });
 
   $(".toggleCategories").click(function (e) {
-    e.stopPropagation();
+    e.stopPropagation(); // Bu tıklamanın diğer elementlere ulaşmasını engeller
     $(".navbarCategories").toggleClass("active");
-    $(".navbarHamburger").removeClass("active");
+    $(".navbarHamburger").removeClass("active"); // Diğer menüyü kapat
   });
 
+  // Dokümana herhangi bir yere tıklandığında menülerin kapanmasını sağlar
   $(document).click(function (e) {
     if (!$(e.target).closest(".hamburgerMenu").length) {
       $(".navbarHamburger").removeClass("active");
@@ -53,9 +54,7 @@ $(document).ready(function () {
       $(".searchBar").css("display", "none");
     }
   }
-
   $(window).on("load resize", handleSearchBarVisibility);
-
   $(window).scroll(function () {
     if ($(window).width() < 992) {
       $(".searchBar").hide();
@@ -66,8 +65,8 @@ $(document).ready(function () {
 //!
 $(document).ready(function () {
   $(window).scroll(function () {
-    let footerOffset = $("footer").offset().top;
-    let headerHeight = $(".header").outerHeight();
+    var footerOffset = $("footer").offset().top;
+    var headerHeight = $(".header").outerHeight();
 
     if ($(this).scrollTop() > footerOffset - headerHeight) {
       $(".header").css({
@@ -86,39 +85,138 @@ $(document).ready(function () {
 });
 
 //!
-$(document).ready(function () {
-  $(window).scroll(function () {
-    if ($(this).scrollTop() > 900) {
-      $(".navSearch").css({
-        opacity: 0,
-        "z-index": -1,
-        transition: "opacity 0.5s ease",
-      });
+// $(document).ready(function () {
+//   $(window).scroll(function () {
+//     if ($(this).scrollTop() > 900) {
+//       $(".navSearch").css({
+//         opacity: 0,
+//         "z-index": -1,
+//         transition: "opacity 0.5s ease",
+//       });
+//     } else {
+//       $(".navSearch").css({
+//         opacity: 1,
+//         "z-index": 15,
+//         transition: "opacity 0.5s ease",
+//       });
+//     }
+//   });
+// });
+
+//!
+document.addEventListener("DOMContentLoaded", function () {
+  let categoriesBtn = document.getElementById("categoriesBtn");
+  let allCategories = document.querySelector(".allCategories");
+  categoriesBtn.addEventListener("click", function (event) {
+    event.stopPropagation();
+    if (
+      allCategories.style.display === "none" ||
+      allCategories.style.display === ""
+    ) {
+      showMenu();
     } else {
-      $(".navSearch").css({
-        opacity: 1,
-        "z-index": 15,
-        transition: "opacity 0.5s ease",
-      });
+      hideMenu();
     }
   });
+  allCategories.addEventListener("click", function (event) {
+    event.stopPropagation();
+  });
+  document.addEventListener("click", function () {
+    hideMenu();
+  });
+  function showMenu() {
+    allCategories.classList.add("show");
+    allCategories.style.animation = "slideInOut 0.5s forwards";
+    setTimeout(function () {
+      allCategories.style.display = "block";
+    }, 100);
+  }
+
+  // Menüyü gizleme fonksiyonu
+  function hideMenu() {
+    // "slideOutReverse" animasyonunu uygula
+    allCategories.style.animation = "slideOutReverse 0.5s forwards";
+    // Animasyon bitince görünürlüğü değiştir
+    setTimeout(function () {
+      allCategories.style.display = "none";
+      // "show" sınıfını kaldır
+      allCategories.classList.remove("show");
+    }, 500); // Animasyon süresi (0.5 saniye) kadar beklet
+  }
 });
 
 //!
-$(document).ready(function () {
-  function handleSearchBarVisibility() {
-    if ($(window).width() >= 992 && $(window).scrollTop() <= 200) {
-      $(".searchBar").show();
+document.addEventListener("DOMContentLoaded", function () {
+  let categoriesBtnTwo = document.getElementById("categoriesBtnTwo");
+  let menuBtn = document.getElementById("menuBtn");
+  let allCategories = document.querySelector(".allCategories");
+  let allMenu = document.querySelector(".allMenu");
+  categoriesBtnTwo.addEventListener("click", function (event) {
+    event.stopPropagation();
+    if (
+      allCategories.style.display === "none" ||
+      allCategories.style.display === ""
+    ) {
+      showCategories();
+      if (allMenu.style.display !== "none" && allMenu.style.display !== "") {
+        hideMenu();
+      }
     } else {
-      $(".searchBar").hide();
+      hideCategories();
     }
-  }
-
-  $(window).on("load resize", handleSearchBarVisibility);
-
-  $(window).scroll(function () {
-    handleSearchBarVisibility();
   });
+  menuBtn.addEventListener("click", function (event) {
+    event.stopPropagation();
+    if (allMenu.style.display === "none" || allMenu.style.display === "") {
+      showMenu();
+      if (
+        allCategories.style.display !== "none" &&
+        allCategories.style.display !== ""
+      ) {
+        hideCategories();
+      }
+    } else {
+      hideMenu();
+    }
+  });
+  allCategories.addEventListener("click", function (event) {
+    event.stopPropagation();
+  });
+  allMenu.addEventListener("click", function (event) {
+    event.stopPropagation();
+  });
+  document.addEventListener("click", function () {
+    hideCategories();
+    hideMenu();
+  });
+  function showCategories() {
+    allCategories.classList.add("show");
+    allCategories.style.animation = "slideInOut 0.5s forwards";
+    setTimeout(function () {
+      allCategories.style.display = "block";
+    }, 100);
+  }
+  function hideCategories() {
+    allCategories.style.animation = "slideOutReverse 0.5s forwards";
+    setTimeout(function () {
+      allCategories.style.display = "none";
+      allCategories.classList.remove("show");
+    }, 500);
+  }
+  function showMenu() {
+    allMenu.classList.add("show");
+    allMenu.style.animation = "slideInOut 0.5s forwards";
+    setTimeout(function () {
+      allMenu.style.display = "block";
+    }, 100);
+  }
+  function hideMenu() {
+    allMenu.style.animation = "slideOutReverse 0.5s forwards";
+    setTimeout(function () {
+      allMenu.style.display = "none";
+      allMenu.classList.remove("show");
+    }, 500);
+  }
 });
 
 
@@ -141,15 +239,15 @@ function getProduct(page) {
       products.innerHTML = "";
       paginatedData.forEach((item) => {
         const box = document.createElement("div");
-        box.className = "col col-sm-3 col-md-2 col-xl-2 col-lg-2 col-xxl-2 content";
-        box.innerHTML = `<a href="#">
-        <div class="poster">
+        box.className = "col-2 col-sm-3 col-md-2 col-xl-2 col-lg-2 col-xxl-2 content";
+        box.innerHTML = `<div class="poster">
         <img src="${item.image}" alt="image"/>
       </div>
       <div class="language">
         <span class="dubbing">Dubbing</span>
         <span class="subtitle">Subtitle</span>
       </div>
+
       <div class="textArea">
         <h2>${item.name}</h2>
         <h5>${item.director}</h5>
@@ -159,8 +257,7 @@ function getProduct(page) {
           <h3><i class="fa-brands fa-imdb"></i>${item.imdb}</h3>
         <h3><img src="./assets/Media/Images/512x512.png" alt="MA">${item.ma}</h3>
         </div>
-      </div>    
-        </a>`;
+      </div>   `;
         products.appendChild(box);
       });
       createPaginationButtons(Math.ceil(data.length / ITEMS_PER_PAGE));
@@ -189,6 +286,9 @@ function createPaginationButtons(totalPages) {
   }
 }
 getProduct(currentPage);
+
+
+
 
 
 
@@ -232,3 +332,5 @@ function srcFunc(e) {
     });
   });
 }
+
+
